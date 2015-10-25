@@ -1,11 +1,17 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: {
+    sessions: 'users/sessions'
+  }
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   resources :groups
   resources 'nodes'
+  resources 'vk_groups'
 
   root 'nodes#index'
+  resources :node_vks, controller: 'nodes', type: 'Node::Vk'
+  resources :node_emails, controller: 'nodes', type: 'Node::Email'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

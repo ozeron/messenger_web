@@ -12,7 +12,12 @@
 //
 //= require jquery
 //= require jquery.turbolinks
+//= require jquery-ui
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require turbolinks
+//= require lodash
+//= require react
+//= require react_ujs
+//= require components
 //= require_tree .

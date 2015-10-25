@@ -1,0 +1,8 @@
+<%= simple_form_for(b.new_email_node, defaults: { input_html: { class: 'form-horizontal' } }) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :email %>
+  <%= f.input :tag_list %>
+  <br>
+  <%= f.button :submit, class: 'btn btn-primary' %>
+<% end %>

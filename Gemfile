@@ -13,9 +13,11 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-
+gem 'react-rails', '~> 1.4.0'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+gem 'hashie'
+gem 'lodash-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -28,6 +30,9 @@ gem 'acts_as_tree'
 gem 'acts-as-taggable-on', '~> 3.4'
 gem 'activeadmin', github: 'activeadmin'
 gem "bower-rails", "~> 0.10.0"
+gem 'jquery-ui-rails'
+gem 'pry-rails'
+gem 'vk-ruby', github: 'ikonyshev/vk-ruby', branch: 'client_auth_greedy_regexp'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

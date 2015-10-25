@@ -3,4 +3,13 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  def vk_app
+    @app ||= ApiWrapper::VkFabric.build(connection_parameters['vk'])
+    if connection_parameters['vk']['access_token'] != @app.access_token
+      connection_parameters['vk']['access_token'] = @app.access_token
+      save
+    end
+    @app
+  end
 end

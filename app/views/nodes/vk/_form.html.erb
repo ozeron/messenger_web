@@ -1,0 +1,20 @@
+<div class="find_group_modal">
+<!-- Button trigger modal -->
+  <button class="btn btn-primary" data-toggle="modal" data-target="#find-vk-group-modal">
+    Find group
+  </button>
+
+  <!-- Modal -->
+  <%= render 'nodes/vk/modal' %>
+</div>
+<br>
+
+<h3>OR</h3>
+
+<%= simple_form_for(b.new_vk_node, defaults: { input_html: { class: 'form-horizontal' } }) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :vk_id %>
+  <%= f.input :tag_list %>
+  <%= f.button :submit, class: 'btn btn-primary' %>
+<% end %>

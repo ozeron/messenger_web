@@ -21,7 +21,7 @@ class NodesController < ApplicationController
   # POST /nodes
   # POST /nodes.json
   def create
-    b.node = Node.new(node_params)
+    b.node = type.build(node_params)
 
     respond_to do |format|
       if b.node.save
@@ -58,13 +58,21 @@ class NodesController < ApplicationController
     end
   end
 
+  def type
+    type_name.safe_constantize
+  end
+
+  def type_name
+    Node.types.include?(params[:type]) ? params[:type] : "Node"
+  end
+
   def board
     @board = NodesBoard.new(self)
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def node_params
-    params.require(:node).permit(:name, :description, :node_groups_attributes,
-                                 node_groups_attributes: [:id, :group_id, :_destroy])
+    params.require(type_name.parameterize('_').to_sym)
+          .permit(:name, :description, :email, :vk_id, :tag_list)
   end
 end
