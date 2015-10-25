@@ -1,16 +1,30 @@
-<h1>Listing Nodes</h1>
+<div class="row">
+  <div class="col-md-11">
+    <h1>Listing Nodes</h1>
+  </div>
+  <div class="col-md-1">
+    <%= link_to 'New Node', new_node_path, class: 'btn btn-primary pull-right' %>
+  </div>
+</div>
 
 <table class='table table-striped'>
   <thead>
     <tr>
-      <th colspan="4"></th>
+      <th colspan="1">ID</th>
+      <th colspan="1">Name</th>
+      <th colspan="1">Tags</th>
+      <th colspan="1">Show</th>
+      <th colspan="1">Edit</th>
+      <th colspan="1">Destory</th>
     </tr>
   </thead>
 
   <tbody>
     <% b.nodes.each do |node| %>
       <tr>
+        <td><%= node.id %></td>
         <td><%= node.name %></td>
+        <td><%= node.tag_list %></td>
         <td><%= link_to 'Show', node %></td>
         <td><%= link_to 'Edit', edit_node_path(node) %></td>
         <td><%= link_to 'Destroy', node, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -20,5 +34,3 @@
 </table>
 
 <br>
-
-<%= link_to 'New Node', new_node_path %>
