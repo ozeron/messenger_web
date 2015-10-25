@@ -1,0 +1,41 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <%=b.group.name%>
+    <%= b.parent? ? link_to('Parent', b.parent) : ''%>
+  </div>
+  <div class="panel-body">
+    <%=b.group.description %>
+  </div>
+</div>
+<div class="panel panel-default">
+  <div class="panel-heading">Subgoups</div>
+  <div class="panel-body">
+    <% if b.group_children.present? %>
+      <ul>
+        <% b.group_children.each do |n| %>
+          <li><%= link_to n.name, group_path(n) %></li>
+        <% end %>
+      </ul>
+    <% else %>
+      No subgroups yet.
+    <% end %>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">Nested nodes</div>
+  <div class="panel-body">
+    <% if b.group_nodes.present? %>
+      <ul>
+        <% b.group_nodes.each do |n| %>
+          <li><%= link_to n.name, node_path(n) %></li>
+        <% end %>
+      </ul>
+    <% else %>
+      Don't include any nodes.
+    <% end %>
+  </div>
+</div>
+
+<%= link_to 'Edit', edit_group_path(b.group) %> |
+<%= link_to 'Back', groups_path %>

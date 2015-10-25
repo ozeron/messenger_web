@@ -1,0 +1,25 @@
+<div class="panel panel-default">
+  <div class="panel-heading"><%=b.node_name%></div>
+  <div class="panel-body">
+    <%= b.node.description %>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">Belongs to groups</div>
+  <div class="panel-body">
+    <% if b.node_groups.present? %>
+      <ul>
+        <% b.node_groups.each do |g| %>
+          <li><%= link_to g.name, group_path(g) %></li>
+        <% end %>
+      </ul>
+    <% else %>
+      Don't belongs to any group yet.
+    <% end %>
+  </div>
+</div>
+
+
+<%= link_to 'Edit', edit_node_path(b.node) %> |
+<%= link_to 'Back', nodes_path %>

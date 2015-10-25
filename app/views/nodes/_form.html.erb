@@ -1,0 +1,10 @@
+<%= simple_form_for(b.node, defaults: { input_html: { class: 'form-horizontal' } }) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.simple_fields_for :node_groups do |p| %>
+    <%= render 'node_group_fields', f: p %>
+  <% end %>
+  <%= link_to_add_fields 'Add group', f, :node_groups, b %>
+  <br>
+  <%= f.button :submit, class: 'btn btn-primary' %>
+<% end %>

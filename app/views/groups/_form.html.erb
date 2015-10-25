@@ -1,0 +1,16 @@
+<%= simple_form_for(b.group, defaults: { input_html: { class: 'form-horizontal' } }) do |f| %>
+  <%= f.input :parent_id, collection: b.groups,
+              include_blank: false,
+              label_method: ->(g) { g.name },
+              value_method: ->(g) { g.id } %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+
+  <div class='form-group'>
+    <%= f.simple_fields_for :node_groups do |p| %>
+      <%= render 'node_group_fields', f: p %>
+    <% end %>
+    <%= link_to_add_fields 'Add node', f, :node_groups, b %>
+  </div>
+  <%= f.button :submit, class: 'btn btn-primary' %>
+<% end %>
