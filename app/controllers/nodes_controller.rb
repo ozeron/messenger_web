@@ -3,6 +3,10 @@ class NodesController < ApplicationController
   # GET /nodes
   # GET /nodes.json
   def index
+    respond_to do |format|
+      format.html
+      format.json { render json: DataTable::Nodes.new(view_context) }
+    end
   end
 
   # GET /nodes/1

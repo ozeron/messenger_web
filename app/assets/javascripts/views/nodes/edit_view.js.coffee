@@ -11,7 +11,7 @@ class Views.Nodes.EditView extends Views.ApplicationView
   _renderTabLinks = (e)->
     e.preventDefault()
     $(this).tab('show')
-    _fill_form_with_data(form, e.data)
+
 
   _setFormInputs = (e)->
     $(e.target).closest(modal_id).modal('hide');

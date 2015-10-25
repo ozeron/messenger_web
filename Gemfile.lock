@@ -321,6 +321,7 @@ DEPENDENCIES
   jquery-rails
   jquery-turbolinks
   jquery-ui-rails
+  kaminari
   less-rails
   lodash-rails
   pg

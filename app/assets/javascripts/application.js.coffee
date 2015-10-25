@@ -11,7 +11,6 @@
 # about supported directives.
 #
 #= require jquery
-#= require jquery.turbolinks
 #= require jquery-ui
 #= require jquery_ujs
 #= require dataTables/jquery.dataTables
@@ -25,6 +24,7 @@
 #= require_tree .
 
 pageLoad = ->
+  console.log('page:load')
   className = $('body').attr('data-class-name')
   window.applicationView = try
     eval("new #{className}()")
@@ -37,9 +37,11 @@ head ->
     pageLoad()
     $(document).on 'page:load', pageLoad
     $(document).on 'page:before-change', ->
+      console.log('page:before-change')
       window.applicationView.cleanup()
       true
     $(document).on 'page:restore', ->
+      console.log('page:restore')
       window.applicationView.cleanup()
       pageLoad()
       true
