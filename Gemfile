@@ -31,6 +31,7 @@ gem 'acts-as-taggable-on', '~> 3.4'
 gem 'activeadmin', github: 'activeadmin'
 gem "bower-rails", "~> 0.10.0"
 gem 'jquery-ui-rails'
+gem "headjs-rails"
 gem 'pry-rails'
 gem 'vk-ruby', github: 'ikonyshev/vk-ruby', branch: 'client_auth_greedy_regexp'
 # Use ActiveModel has_secure_password
