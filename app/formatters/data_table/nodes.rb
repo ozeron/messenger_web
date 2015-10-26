@@ -24,7 +24,7 @@ module DataTable
           node.id,
           link_to(node.name, node),
           truncate(ERB::Util.h(node.description), length: 300),
-          node.tag_list,
+          node.tags.map(&:name).join('; '),
           link_to('Edit', edit_node_path(node)),
           link_to('Destroy', node, method: :delete, data: { confirm: 'Are you sure?' })
         ]
@@ -36,11 +36,10 @@ module DataTable
     end
 
     def fetch_nodes
-      nodes = Node.order("#{sort_column} #{sort_direction}")
+      nodes = Node.includes_tags.order("#{sort_column} #{sort_direction}")
       nodes = nodes.page(page).per(per_page)
       if params[:sSearch].present?
-        nodes = nodes.where('name ILIKE :search OR description ILIKE :search',
-                            search: "%#{params[:sSearch]}%")
+        nodes = nodes.search(params[:sSearch])
       end
       nodes
     end
