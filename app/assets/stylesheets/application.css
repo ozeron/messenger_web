@@ -14,7 +14,6 @@
  *= require jquery-ui
  *= require groups
  *= require nodes
-*= require font-awesome
  *= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
  *= require_self
  */

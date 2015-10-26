@@ -13,9 +13,9 @@
 #= require jquery
 #= require jquery-ui
 #= require jquery_ujs
+#= require twitter/bootstrap
 #= require dataTables/jquery.dataTables
 #= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
-#= require twitter/bootstrap
 #= require turbolinks
 #= require lodash
 #= require react
@@ -24,7 +24,6 @@
 #= require_tree .
 
 pageLoad = ->
-  console.log('page:load')
   className = $('body').attr('data-class-name')
   window.applicationView = try
     eval("new #{className}()")

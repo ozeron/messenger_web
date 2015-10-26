@@ -8,7 +8,8 @@ class Views.Nodes.IndexView extends Views.ApplicationView
     {
       bProcessing: true,
       bServerSide: true,
-      sAjaxSource: $(table).data('source')
+      sAjaxSource: $(table).data('source'),
+      oLanguage: { sSearch: '<i class="icon-search"></i>' }
     }
 
   _renderDataTable = ->
