@@ -1,0 +1,11 @@
+<div class="panel panel-default">
+  <div class="panel-heading"><%=b.message.title%></div>
+  <div class="panel-body">
+    <%= simple_format(b.message.content) %>
+  </div>
+  <div class="panel-footer"><%= b.message.tag_list %></div>
+</div>
+
+
+<%= link_to 'Edit', edit_message_path(b.message) %> |
+<%= link_to 'Back', messages_path %>

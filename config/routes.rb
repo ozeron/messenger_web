@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   resources :groups
   resources 'nodes'
+  resources 'messages'
   resources 'vk_groups'
+
 
   root 'nodes#index'
   resources :node_vks, controller: 'nodes', type: 'Node::Vk'

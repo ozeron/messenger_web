@@ -1,0 +1,24 @@
+<div class="row header">
+  <div class="col-md-11">
+    <h1>Listing Messages</h1>
+  </div>
+  <div class="col-md-1">
+    <%= link_to 'New Message', new_message_path, class: 'btn btn-primary pull-right' %>
+  </div>
+</div>
+
+<table class='table table-striped' id="nodes" data-source="<%= messages_url(format: :json)%>">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Tags</th>
+      <th>Edit</th>
+      <th>Destory</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  </tbody>
+</table>

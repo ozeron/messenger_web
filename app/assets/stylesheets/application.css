@@ -34,3 +34,7 @@ footer {
   height: 60px;
   background-color: #f5f5f5;
 }
+
+.header .btn.pull-right {
+  margin-top: 19px;
+}

@@ -1,0 +1,7 @@
+<%= simple_form_for(b.message, defaults: { input_html: { class: 'form-horizontal' } }) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :content, as: :text, input_html: { rows: 20 }%>
+  <%= f.input :tag_list %>
+  <br>
+  <%= f.button :submit, class: 'btn btn-primary' %>
+<% end %>

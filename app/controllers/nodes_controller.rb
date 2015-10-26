@@ -67,7 +67,7 @@ class NodesController < ApplicationController
   end
 
   def type_name
-    Node.types.include?(params[:type]) ? params[:type] : "Node"
+    Node.types.include?(params[:type]) ? params[:type] : 'Node'
   end
 
   def board
