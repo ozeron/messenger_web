@@ -50,8 +50,6 @@ group :development, :test do
   gem "better_errors"
 end
 gem 'jquery-datatables-rails', '~> 3.3.0'
-gem 'therubyracer'
-gem 'less-rails' #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem 'twitter-bootstrap-rails'
 gem "font-awesome-rails"
 

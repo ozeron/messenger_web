@@ -1,0 +1,13 @@
+/*
+  =require twitter-bootstrap-static/bootstrap
+
+  Use Font Awesome icons (default)
+  To use Glyphicons sprites instead of Font Awesome, replace with "require twitter-bootstrap-static/sprites"
+  =require twitter-bootstrap-static/fontawesome
+  */
+
+  @font-face {
+    font-family: 'Glyphicons Halflings';
+    src: url('glyphicons-halflings-regular.woff') format('woff'),
+         url('glyphicons-halflings-regular.ttf') format('truetype')
+  }
