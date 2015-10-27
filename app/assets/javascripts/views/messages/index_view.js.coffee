@@ -1,10 +1,10 @@
-window.Views.Nodes ||= {}
+window.Views.Messages ||= {}
 
-class Views.Nodes.IndexView extends Views.ApplicationView
+class Views.Messages.IndexView extends Views.ApplicationView
+
   render: ->
     super()
     Widgets.Nodes.DataTable.enable()
-
   cleanup: ->
     super()
     Widgets.Nodes.DataTable.cleanup()

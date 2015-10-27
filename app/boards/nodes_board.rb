@@ -17,10 +17,6 @@ class NodesBoard < BasicBoard
     node.tag_list
   end
 
-  def groups
-    @groups ||= Group.all
-  end
-
   def nodes
     @nodes ||= Node.all
   end
