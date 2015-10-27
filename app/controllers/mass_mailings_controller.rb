@@ -1,6 +1,7 @@
 class MassMailingsController < InheritedResources::Base
   before_filter :board
 
+
   def board
     @board ||= MassMailingsBoard.new(self)
   end

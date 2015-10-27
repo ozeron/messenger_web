@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :mass_mailings
+
   devise_for :users, controllers: {
     sessions: 'users/sessions'
   }
@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   resources 'nodes'
   resources 'messages'
   resources 'vk_groups'
+  resources :mass_mailings
 
+  resources :mass_mailing_nodes, controller: 'mass_mailing_nodes'
 
   root 'nodes#index'
   resources :node_vks, controller: 'nodes', type: 'Node::Vk'
