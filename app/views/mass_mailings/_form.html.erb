@@ -1,4 +1,4 @@
-<%= simple_form_for(@mass_mailing) do |f| %>
+<%= simple_form_for(b.mass_mailing) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
@@ -10,7 +10,12 @@
     <%= f.input :message_id, collection: Message.all,
                 label_method: ->(m) { m.title },
                 value_method: ->(m) { m.id } %>
-    <%= f.input :started %>
+
+    <%= f.simple_fields_for :mass_mailing_nodes do |p| %>
+      <%= p.input :node_id, collection: Node.all,
+                  label_method: ->(n) { n.name },
+                  value_method: ->(n) { n.id } %>
+    <% end %>
   </div>
 
   <div class="form-actions">
