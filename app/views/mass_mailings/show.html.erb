@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @mass_mailing.title %>
+</p>
+
+<p>
+  <strong>Started:</strong>
+  <%= @mass_mailing.started %>
+</p>
+
+<p>
+  <strong>Finished:</strong>
+  <%= @mass_mailing.finished %>
+</p>
+
+<%= link_to 'Edit', edit_mass_mailing_path(@mass_mailing) %> |
+<%= link_to 'Back', mass_mailings_path %>

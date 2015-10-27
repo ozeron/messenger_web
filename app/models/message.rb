@@ -1,5 +1,6 @@
 class Message < ActiveRecord::Base
   has_many :taggings, as: :taggable
+  belongs_to :mass_mailing
   acts_as_taggable
 
   scope :includes_tags, -> { includes(:tags) }

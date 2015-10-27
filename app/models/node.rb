@@ -1,5 +1,6 @@
 class Node < ActiveRecord::Base
   has_many :taggings, as: :taggable
+  has_and_belongs_to_many :mass_mailings
   acts_as_taggable
 
   scope :includes_tags, -> { includes(:tags) }

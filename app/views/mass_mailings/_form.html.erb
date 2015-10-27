@@ -1,0 +1,19 @@
+<%= simple_form_for(@mass_mailing) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :title %>
+    <%= f.input :started %>
+  </div>
+
+  <div class="form-inputs">
+    <%= f.input :message_id, collection: Message.all,
+                label_method: ->(m) { m.title },
+                value_method: ->(m) { m.id } %>
+    <%= f.input :started %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, class: 'btn btn-primary' %>
+  </div>
+<% end %>

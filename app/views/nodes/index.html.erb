@@ -7,18 +7,4 @@
   </div>
 </div>
 
-<table class='table table-striped' id="nodes" data-source="<%= nodes_url(format: :json)%>">
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Tags</th>
-      <th>Edit</th>
-      <th>Destory</th>
-    </tr>
-  </thead>
-
-  <tbody>
-  </tbody>
-</table>
+<%= render 'data_table' %>
