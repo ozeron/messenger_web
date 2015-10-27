@@ -11,21 +11,24 @@
                 label_method: ->(m) { m.title },
                 value_method: ->(m) { m.id } %>
 
-    <%= f.simple_fields_for :mass_mailing_nodes do |p| %>
-      <%= p.input :node_id, collection: Node.all,
-                  label_method: ->(n) { n.name },
-                  value_method: ->(n) { n.id } %>
-    <% end %>
   </div>
 
-  <table class='table table-striped' id="nodes" data-source="<%= mass_mailing_nodes_url(format: :json)%>">
+  <div class="form-group string required mass_mailing_nodes_node_id">
+    <div class="hidden" id="mass_mailing_nodes_ids" data-ids="<%= b.mass_mailing_nodes_ids %>" >
+    </div>
+    <!-- <%= f.simple_fields_for :mass_mailing_nodes do |builder| %>
+      <%= builder.input :node_id %>
+    <% end %> -->
+  </div>
+
+  <table class='table table-striped' id="mass_mailing_nodes" data-source="<%= mass_mailing_nodes_url(format: :json)%>">
     <thead>
       <tr>
         <th>ID</th>
         <th>Name</th>
         <th>Description</th>
         <th>Tags</th>
-        <th>Active</th>
+        <th .checkbox><input name="select_all" value="1" type="checkbox"></th>
       </tr>
     </thead>
 

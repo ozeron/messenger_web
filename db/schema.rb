@@ -66,13 +66,13 @@ ActiveRecord::Schema.define(version: 20151028110612) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "mass_mailings_nodes", force: :cascade do |t|
+  create_table "mass_mailing_nodes", force: :cascade do |t|
     t.integer "mass_mailing_id"
     t.integer "node_id"
   end
 
-  add_index "mass_mailings_nodes", ["mass_mailing_id"], name: "index_mass_mailings_nodes_on_mass_mailing_id", using: :btree
-  add_index "mass_mailings_nodes", ["node_id"], name: "index_mass_mailings_nodes_on_node_id", using: :btree
+  add_index "mass_mailing_nodes", ["mass_mailing_id"], name: "index_mass_mailing_nodes_on_mass_mailing_id", using: :btree
+  add_index "mass_mailing_nodes", ["node_id"], name: "index_mass_mailing_nodes_on_node_id", using: :btree
 
   create_table "messages", force: :cascade do |t|
     t.string   "title"

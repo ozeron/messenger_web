@@ -9,7 +9,7 @@ class CreateMassMailings < ActiveRecord::Migration
       t.timestamps null: false
     end
 
-    create_table :mass_mailings_nodes do |t|
+    create_table :mass_mailing_nodes do |t|
       t.belongs_to :mass_mailing, index: true
       t.belongs_to :node, index: true
     end
