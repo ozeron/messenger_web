@@ -26,6 +26,8 @@
 
 pageLoad = ->
   className = $('body').attr('data-class-name')
+  I18n.defaultLocale = $('body').attr('data-default-locale')
+  I18n.locale = $('body').attr('data-locale')
   window.applicationView = try
     eval("new #{className}()")
   catch error

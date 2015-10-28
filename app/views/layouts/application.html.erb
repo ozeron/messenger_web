@@ -36,7 +36,7 @@
     <%= javascript_include_tag 'head.min' %>
     <%= headjs_include_tag 'application' %>
   </head>
-  <body data-class-name = "<%=js_class_name%>">
+  <body data-class-name = "<%=js_class_name%>" data-locale="<%= I18n.locale %>" data-default-locale="<%= I18n.default_locale %>">
 
     <div class="navbar navbar-default navbar-static-top">
       <div class="container">
@@ -51,12 +51,12 @@
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
             <li><%= link_to t('nodes.plural'), nodes_path  %></li>
-            <li><%= link_to "Messages", messages_path  %></li>
-            <li><%= link_to "MassMailings", mass_mailings_path  %></li>
+            <li><%= link_to t('nodes.messages'), messages_path  %></li>
+            <li><%= link_to t('nodes.massmailings'), mass_mailings_path  %></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <% if current_user %>
-              <li><%= link_to "Log out", destroy_user_session_path, method: :delete%></li>
+              <li><%= link_to t('log_out'), destroy_user_session_path, method: :delete%></li>
             <%end%>
           </ul>
         </div>
@@ -86,8 +86,10 @@
 
     </div> <!-- /container -->
     <footer>
+
       <div class="container">
-        <p>&copy; Company 2015</p>
+        <img src="assets/images/mil-grey.jpg" >
+        <p>&copy; <%=t('copy') %> </p>
       </div>
     </footer>
 

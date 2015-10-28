@@ -7,11 +7,12 @@ uk:
         name: Им’я
         email: Email
         description: Опис
-        vk_id: Ідентифікатов Вконтакті
+        vk_id: Ідентифікатор Вконтакті
         tag_list: Список тегів
   nodes:
     plural: Об’єкти для розсилки
-
+    messages: Повідомлення
+    massmailings: Масова розсилка
 
     index:
       list: Список об’єктів для розсилки
