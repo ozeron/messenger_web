@@ -1,6 +1,6 @@
 module DataTable
   class Messages
-    delegate :params, :truncate, :h, :link_to, :number_to_currency, :edit_message_path,
+    delegate :params, :truncate, :h, :t, :link_to, :number_to_currency, :edit_message_url,
              to: :@view
 
     def initialize(view)
@@ -25,7 +25,8 @@ module DataTable
           link_to(message.title, message),
           truncate(ERB::Util.h(message.content), length: 300),
           message.tags.map(&:name).join('; '),
-          
+          link_to(t('edit'), edit_message_url(message)),
+          link_to(t('destroy'), message, method: :delete, data: { confirm: t('confirmation') })
         ]
       end
     end

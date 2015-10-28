@@ -1,12 +1,12 @@
-<table class='table table-striped' id="nodes" data-source="<%= nodes_url(format: :json)%>">
+<table class='table' id="nodes" data-source="<%= nodes_url(format: :json)%>">
   <thead>
     <tr>
-      <th>ID</th>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Tags</th>
-      <th>Edit</th>
-      <th>Destory</th>
+      <th><%= t('.id') %></th>
+      <th><%= t('.name') %></th>
+      <th><%= t('.description') %></th>
+      <th><%= t('.tag_list') %></th>
+      <th><%= t('.edit') %></th>
+      <th><%= t('.destroy') %></th>
     </tr>
   </thead>
 

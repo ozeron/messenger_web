@@ -1,10 +1,17 @@
-<div class="row header">
+<div class="row header header_row">
   <div class="col-md-11">
-    <h1>Listing Nodes</h1>
+    <h1> <%= t('.list') %> </h1>
   </div>
   <div class="col-md-1">
-    <%= link_to 'New Node', new_node_path, class: 'btn btn-primary pull-right' %>
+    <div class="header_toolbar pull-right">
+        <%= link_to glyphicon_with_text('plus', t('.new')), new_node_path, class: 'btn btn-primary pull-right' %>
+    </div>
+
   </div>
 </div>
-
-<%= render 'data_table' %>
+<br>
+<div class="row">
+  <div class="col-md-12">
+    <%= render 'data_table' %>
+  </div>
+</div>

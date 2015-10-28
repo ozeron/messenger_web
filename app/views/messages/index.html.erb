@@ -1,24 +1,29 @@
-<div class="row header">
+<div class="row header header_row">
   <div class="col-md-11">
-    <h1>Listing Messages</h1>
+    <h1><%= t('listing_messages') %></h1>
   </div>
   <div class="col-md-1">
-    <%= link_to 'New Message', new_message_path, class: 'btn btn-primary pull-right' %>
+
+    <%= link_to glyphicon_with_text('plus', t('new_message')), new_message_path, class: 'btn btn-primary pull-right' %>
   </div>
 </div>
+<br>
+<div class="row">
+  <div class="col-md-12">
+    <table class='table' id="nodes" data-source="<%= messages_url(format: :json)%>">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Content</th>
+          <th>Tags</th>
+          <th>Edit</th>
+          <th>Destory</th>
+        </tr>
+      </thead>
 
-<table class='table table-striped' id="nodes" data-source="<%= messages_url(format: :json)%>">
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Title</th>
-      <th>Content</th>
-      <th>Tags</th>
-      <th>Edit</th>
-      <th>Destory</th>
-    </tr>
-  </thead>
-
-  <tbody>
-  </tbody>
-</table>
+      <tbody>
+      </tbody>
+    </table>
+  </div>
+</div>

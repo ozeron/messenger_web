@@ -1,0 +1,1476 @@
+$cropio_body_font:    "Helvetica Neue", Helvetica, Arial, sans-serif;
+$cropio_caption_font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$cropio_text_font:    "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+/* Bootstrap variables */
+$font-size-base: 13px;
+$navbar-height: 39px;
+$grid-gutter-width: 20px;
+$table-border-color: #f5f5f5;
+
+html, body{
+  min-height:100%;
+  height: 100%;
+}
+
+.dropdown-menu a {
+display: block;
+padding: 3px 15px;
+clear: both;
+font-weight: normal;
+line-height: 18px;
+color: #333333;
+white-space: nowrap;
+}
+
+.dropdown-menu li > a:hover, .dropdown-menu .active > a, .dropdown-menu .active > a:hover {
+color: #ffffff;
+text-decoration: none;
+background-color: #0088cc;
+}
+
+.navbar-nav > li > a{
+  padding: 10px 13px;
+  padding-top: 11px;
+}
+
+::-moz-selection { background: #FCF1CF; text-shadow: none; }
+::selection { background: #FCF1CF; text-shadow: none; }
+
+.obsolete_browser_notification{
+  margin: 0.2em 0;
+  background: #f2390a;
+  color: #fff;
+  padding: 0.2em 0;
+  text-align: center;
+}
+
+div.page{
+  padding-top: 69px;
+  padding-bottom: 40px;
+}
+
+.wrapper_content{
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin-bottom: -160px;
+
+  .space{
+    height: 160px;
+  }
+
+}
+
+p {
+  font-family: $cropio_text_font;
+  color: #444;
+}
+
+
+hr {
+  border-top: 1px solid #EEE;
+  border-bottom: 1px solid white;
+  margin-top: 14px;
+  margin-bottom: 14px;
+}
+
+ul{
+  padding-left: 0px;
+}
+
+label{
+  font-weight: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-family: $cropio_caption_font;
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 30px;
+  line-height: 36px;
+}
+
+h1 small {
+  font-size: 18px;
+}
+
+h2 {
+  font-size: 24px;
+  line-height: 36px;
+}
+
+h2 small {
+  font-size: 18px;
+}
+
+h3 {
+  font-size: 18px;
+  line-height: 27px;
+}
+
+h3 small {
+  font-size: 14px;
+}
+
+h4,
+h5,
+h6 {
+  line-height: 18px;
+}
+
+h4 {
+  font-size: 14px;
+}
+
+h4 small {
+  font-size: 12px;
+}
+
+h5 {
+  font-size: 12px;
+}
+
+h6 {
+  font-size: 11px;
+  color: #999999;
+  text-transform: uppercase;
+}
+
+.change_up{
+  color: #70b60f;
+}
+
+.change_down{
+  color: #e86c13;
+}
+
+.no_change{
+  color: #777;
+}
+
+.top_menu_acc_icon{
+  opacity: 0.5;
+}
+
+.dropdown:hover .top_menu_acc_icon{
+  opacity: 0.9;
+}
+
+// Best in place additional styles
+td.bip_editable{
+  padding-right: 20px;
+  cursor: pointer;
+
+  &:hover{
+    background: #FCF1CF asset-url('pencil_icon.png') no-repeat right;
+  }
+}
+
+span.best_in_place{
+  form{
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+
+    input[type="text"]{
+      padding: 2px;
+      padding-top: 3px;
+      border: 1px solid #eee;
+      box-shadow: none;
+      border-radius: 0px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      width: 100%;
+    }
+  }
+}
+
+
+// (Best_In_Place Gem notifications)
+.purr {
+  position: fixed;
+  top: 60px;
+  right: 100px;
+  width: 250px;
+  padding: 20px;
+  background-color: #FCC;
+  border: solid 2px #C66;
+  &:first-letter { text-transform: uppercase; }
+}
+
+// Best in place
+//.best_in_place{
+//  @include transition(all 0.1s linear);
+//}
+
+.map_settings_button{
+  display: inline-block;
+  margin-bottom: 0px;
+  margin-top: 5px;
+  margin-right: 5px;
+
+  a.dropdown-toggle{
+    border-radius: 0px;
+  }
+
+}
+
+// styles for rails simple format helper
+.simple_format p:last-child{
+  margin-bottom: 0px;
+}
+
+.widget{
+
+  background-color: white;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 18px;
+
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+
+  .widget_header{
+    border-bottom: solid 1px #EEE;
+  }
+
+  h3{
+    padding-bottom: 8px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 12px;
+    color: #777;
+    font-size: 14px;
+    line-height: 24px;
+    display: inline-block;
+  }
+
+  .widget_inside{
+    padding: 20px;
+  }
+
+  .field_show_page{
+    .winter_mode_selector{
+      margin-top: -26px;
+    }
+  }
+
+  .winter_mode_selector:hover{
+    text-decoration: none;
+  }
+
+}
+
+.widget_scrolling{
+  .widget_header{
+    border-bottom: solid 1px transparent;
+    box-shadow: 0px 0px 10px #DDD;
+  }
+}
+
+/* Twitter Bootstrap rewrites */
+.navbar .cropio_logo {
+  padding-top: 9px;
+  padding-bottom: 0px;
+  font-size: 14px;
+}
+
+ul.dropdown-menu{
+  z-index: 1001;
+}
+
+span.notifications_counter{
+  font-size: 11px;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #999;
+  padding: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 1px;
+  padding-bottom: 2px;
+  margin-left: 2px;
+  border-radius: 9px;
+  box-shadow: 0px 1px 2px #555 inset;
+}
+
+.widget_field_scout_reports {
+  .widget_field_scout_report_row{
+    border-top: solid 1px #eee;
+    padding-top: 18px;
+    margin-top: 12px;
+
+    &:first-child{
+      border-top: none;
+      margin-top: 0px;
+      padding-top: 0px;
+    }
+
+
+    .field_scout_report_title{
+      h4{
+        font-size: 16px;
+        margin-bottom: 6px;
+      }
+      .ndvi_info{
+        color: #777;
+        font-size: 0.8em;
+      }
+      .growth_stage_info{
+        margin-bottom: 6px;
+      }
+    }
+
+    .field_scout_report_time_and_author{
+      color: #aaa;
+      font-size: 10px;
+    }
+
+    .field_scout_report_description{
+      margin-top: 6px;
+      p{
+        margin-bottom: 6px;
+      }
+    }
+
+    .field_scout_report_list_of_photos{
+      margin-top: 8px;
+      margin-bottom: 8px;
+
+      img {
+        width: 100px;
+        margin-right: 4px;
+        border-radius: 4px;
+      }
+      img:hover{
+        box-shadow: 0px 4px 8px #bbb;
+      }
+    }
+
+  }
+
+}
+
+.weather_forecast_shared_block{
+
+  table{
+    font-size: 11px;
+    margin-bottom: 12px;
+
+    tr:first-child{
+      td{
+        border-top: none;
+      }
+    }
+
+    td.temperature{
+      font-size: 14px;
+      text-align: right;
+      width: 72px;
+      .temperature_dash{
+        color: #999;
+      }
+
+    }
+
+    td.date{
+      width: 50px;
+
+      .day_name{
+        font-size: 13px;
+        text-transform: lowercase;
+      }
+
+      .month_date{
+        font-size: 10px;
+        color: #999;
+      }
+
+    }
+
+    td.weather_icon{
+      width:16px;
+    }
+
+    img.weather_icon{
+      width: 16px;
+      height: 16px;
+    }
+
+    .precip_chance{
+      color: #777;
+      background-color: #eee;
+    }
+
+    .precip_chance_value{
+
+    }
+
+    .precip_chance_warning_value{
+      color: #333;
+    }
+
+    .precip_chance_important_value{
+      color: #333;
+      font-weight: bold;
+      font-size: 12px;
+    }
+
+  }
+
+  .weather_forecast_additional_info{
+    font-size: 10px;
+    color: #777;
+    line-height: 14px;
+  }
+
+}
+
+.chart_buttons{
+  left: 30px;
+  top:20px;
+  position: absolute;
+}
+
+
+/* make lighter color in table lines */
+.table th, .table td {
+  border-top: 1px solid #f5f5f5;
+}
+
+/* set PT Sans font to tabs */
+.nav-tabs > li {
+  font-family: $cropio_text_font;
+}
+
+a.disabled{
+  color: #999;
+}
+
+
+.indside_content_block_row{
+  margin-left:0px;
+}
+
+.footer_application{
+  background: #EEE;
+  border-top: solid 1px #DDD;
+  box-shadow: 0px 0px 4px #ccc inset;
+
+  height: 40px;
+  clear:both;
+
+  .contact_us_menu{
+
+    h4{
+      padding-top: 22px;
+      font-size: 14px;
+      color: #AAA;
+      text-shadow: 0px 1px 0px #fff;
+    }
+
+    ul{
+      list-style: none;
+      padding-top: 13px;
+      margin: 0 0 9px 0px;
+      margin-bottom: 20px;
+    }
+
+    li{
+      padding-top: 0px;
+      color: #999;
+    }
+
+    a{
+      color: #6AC;
+      border-bottom: solid 1px #B3D4E6;
+      padding-bottom: 1px;
+      &:hover{
+        text-decoration: none;
+        color: #08C;
+        border-bottom: solid 1px #08C;
+      }
+    }
+
+  }
+
+
+  .support_menu{
+
+    h4{
+      padding-top: 22px;
+      font-size: 14px;
+      color: #AAA;
+      text-shadow: 0px 1px 0px #fff;
+    }
+
+    ul{
+      list-style: none;
+      padding-top: 4px;
+      margin: 0 0 9px 0px;
+      margin-bottom: 20px;
+    }
+
+    li{
+      padding-top: 6px;
+    }
+
+    a{
+      color: #6AC;
+      border-bottom: solid 1px #B3D4E6;
+      padding-bottom: 1px;
+      &:hover{
+        text-decoration: none;
+        color: #08C;
+        border-bottom: solid 1px #08C;
+      }
+    }
+  }
+
+  .copyright{
+    text-shadow: 0px 1px 0px #fff;
+    //font: normal 14px "helvetica neue", helvetica, arial, sans-serif;
+    color: #AAA;
+    padding-top: 9px;
+    padding-bottom: 4px;
+    text-align: center;
+    border-top: solid 1px #e0e0e0;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer_application{
+   background-color: transparent;
+   box-shadow: none;
+  }
+}
+
+.shared_top_menu{
+  span.period{
+    font-size: 0.8em;
+    color: #777;
+  }
+
+  li > a:hover span.period{
+    color: #fff;
+  }
+
+  .number_of_open_alerts{
+    border-radius: 8px;
+    font-size: 10px;
+    background-color: #e00;
+    color: #fff;
+    min-width: 13px;
+    padding: 0px;
+    margin: 0px;
+    line-height: 13px;
+    text-align: center;
+    position: absolute;
+    margin-left: 4px;
+    margin-top: -4px;
+  }
+
+  #groups_menu_box{
+    max-height: 400px;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .company_logo_wrapper{
+    padding-top: 0px;
+    padding-bottom: 0px;
+
+    .company_logo{
+      max-width: 140px;
+      max-height: 50px;
+      margin-top: 5px;
+    }
+  }
+
+  .company_name_wrapper{
+    padding-top: 4px;
+    padding-left: 20px;
+  }
+
+  .user_avatar_dropdown_button{
+    padding-top: 2px;
+    padding-bottom: 1px;
+    padding-left: 2px;
+
+    img{
+      width: 36px;
+    }
+
+    b.caret{
+      vertical-align: baseline;
+    }
+  }
+
+  #work_time_registration_menu_item{
+    a.work_time_recording{
+      background-color: #d2322d;
+      color: #fff;
+    }
+
+    a.work_time_recording_active{
+      background-color: #47a447;
+      color: #fff;
+    }
+  }
+
+  .user_dropdown_menu_block{
+    padding-left: 20px;
+    padding-right: 20px;
+
+    table{
+      width: 220px;
+    }
+
+    td.user_avatar{
+      vertical-align: top;
+      width: 50px;
+    }
+
+    img.user_avatar{
+      width: 50px;
+    }
+
+    td.user_info{
+      padding-left: 12px;
+    }
+
+    .user_position{
+       color: #777;
+       line-height: 14px;
+       font-size: 11px;
+       margin-top: 2px;
+    }
+  }
+
+
+}
+
+.scrollable_dropdown_wrapper{
+  max-height: 400px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.not_current_year_notification_wrapper{
+  text-align: center;
+  margin-bottom: 12px;
+
+  .not_current_year_notification{
+    text-align: center;
+    background-color: #FCF1CF;
+    padding-left: 12px;
+    padding-right: 12px;
+    margin: 0px auto;
+    margin-top: -30px;
+    padding-top: 6px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    color: #777;
+    padding-bottom: 4px;
+    font-size: 11px;
+    box-shadow: 0px 1px 0 #DDD;
+  }
+}
+
+.form_delete_link{
+
+  vertical-align: middle;
+  color: #777;
+  margin-left: 3px;
+
+  a{
+    color: #D33;
+    border-bottom: dotted 1px;
+  }
+
+  a:hover{
+    text-decoration: none;
+  }
+}
+
+// date list of availble images
+.dropdown-menu a.cloudy{
+  color: #999;
+}
+
+
+
+// top menu global filter styles
+.global_filter {
+
+  .field_groups{
+    min-width: 170px;
+    display: table-cell;
+  }
+
+  .additional_settings{
+    min-width: 150px;
+    border-left: solid 4px #eee;
+    display: table-cell;
+
+    .additinal_settings_block{
+      padding-top: 8px;
+    }
+
+    .additional_settings_subheader{
+      border-top: solid 1px #ccc;
+    }
+  }
+
+  .global_filter_footer{
+    border-top: solid 1px #ccc;
+    background-color: #eee;
+    clear: both;
+    padding: 8px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    text-align: right;
+  }
+
+  .column_header{
+    background-color: #eee;
+    border-bottom: solid 1px #ccc;
+    padding: 6px;
+    padding-left: 15px;
+    font-weight: bold;
+    color: #777;
+    text-shadow: 0px 1px 0px #fff;
+  }
+
+  .scrollable_block{
+    max-height:400px;
+    overflow-y:scroll;
+  }
+
+  .scrollable_block_years{
+    max-height:150px;
+  }
+
+  li.depth-0 a{
+    padding-left: 15px;
+  }
+
+  li.depth-1 a{
+    margin-left: 15px;
+    padding-left: 10px;
+  }
+
+  li.depth-2 a{
+    margin-left: 25px;
+    padding-left: 10px;
+  }
+
+  li.depth-3 a{
+    margin-left: 35px;
+    padding-left: 10px;
+  }
+
+  li.depth-4 a{
+    margin-left: 45px;
+    padding-left: 10px;
+  }
+
+  li.depth-5 a{
+    margin-left: 55px;
+    padding-left: 10px;
+  }
+
+  li.depth-6 a{
+    margin-left: 65px;
+    padding-left: 10px;
+  }
+
+  li.depth-7 a{
+    margin-left: 75px;
+    padding-left: 10px;
+  }
+
+  li.has_subfolders a{
+    font-weight: bold;
+  }
+
+  a.shared_top_menu_group_folder{
+    font-weight: bold;
+  }
+
+  .scrollable_block li.active span.period{
+    color: #fff;
+  }
+
+  .machine_regions{
+    min-width: 170px;
+    border-left: none;
+    display: table-cell;
+
+    .column_header{
+      background-color: #eee;
+      border-bottom: solid 1px #ccc;
+      padding: 6px;
+      padding-left: 15px;
+      font-weight: bold;
+      color: #777;
+      text-shadow: 0px 1px 0px #fff;
+      border-top-left-radius: 6px;
+      border-top-right-radius: 6px;
+    }
+  }
+
+
+}
+
+.nav{
+  li.dropdown a img.car_icon{
+    width: 12px;
+    height: 10px;
+    vertical-align: baseline;
+    opacity: 0.5;
+  }
+
+  li.dropdown:hover a img.car_icon{
+    opacity: 1;
+  }
+
+  .car_icon{
+    width: 12px;
+    height: 10px;
+    vertical-align: baseline;
+    opacity: 0.5;
+  }
+}
+
+.nav .global_filter{
+  li.active a{
+    border-left: solid 1px #777;
+    background-color: #777;
+  }
+
+  li.active a:hover{
+    background-color: #777;
+  }
+}
+
+// map leaflet field name labels
+
+.z0 div.map_field_label,
+.z1 div.map_field_label,
+.z2 div.map_field_label,
+.z3 div.map_field_label,
+.z4 div.map_field_label,
+.z5 div.map_field_label,
+.z6 div.map_field_label,
+.z7 div.map_field_label,
+.z8 div.map_field_label,
+.z9 div.map_field_label,
+.z10 div.map_field_label,
+.z11 div.map_field_label{
+  display: none;
+}
+.z12 div.map_field_label{
+  font-size: 8px;
+}
+
+.z13 div.map_field_label{
+  font-size: 9px;
+}
+
+.z14 div.map_field_label{
+  font-size: 10px;
+}
+
+.z15 div.map_field_label{
+  font-size: 11px;
+}
+
+.z16 div.map_field_label,
+.z17 div.map_field_label,
+.z18 div.map_field_label,
+.z19 div.map_field_label,
+.z20 div.map_field_label,
+.z21 div.map_field_label{
+  font-size: 12px;
+}
+
+
+// leaflet styles fixes
+.leaflet-bar{
+  box-shadow: 0px 0px 2px rgba(0,0,0,0.5);
+}
+
+.leaflet-control-scale-line{
+  font-size: 9px !important;
+  box-shadow: none !important;
+  border-color: #999 !important;
+  color: #333 !important;
+}
+
+.map_field_label {
+  color: #000;
+  display: block;
+  font: 10px/10px "Helvetica Neue", Arial, Helvetica, sans-serif;
+  text-shadow:
+       -1px -1px 1px #fff,
+        1px -1px 1px #fff,
+       -1px  1px 1px #fff,
+        1px  1px 1px #fff,
+        0px  0px 1px #fff;
+
+  position: absolute;
+  white-space: nowrap;
+  margin-left: -12px;
+  margin-top: 14px;
+
+}
+
+.point_data_time_label {
+  color: #000;
+  display: block;
+  font: 10px/10px "Helvetica Neue", Arial, Helvetica, sans-serif;
+  text-shadow:
+       -1px -1px 1px #fff,
+        1px -1px 1px #fff,
+       -1px  1px 1px #fff,
+        1px  1px 1px #fff,
+        0px  0px 1px #fff;
+
+  position: absolute;
+  white-space: nowrap;
+  margin-left: -12px;
+  margin-top: 0px;
+
+}
+
+.well{
+  box-shadow: 0 1px 3px rgba(0,0,0,0.25) inset;
+}
+
+.left_fixed_menu_edit_button{
+  position: absolute;
+  z-index: 1000;
+  padding: 2px 6px;
+  color: #444;
+  background-color: #fff;
+  top: -7px;
+  border-radius: 36px;
+  right: 8px;
+  box-shadow: 0px 1px 2px rgba(0,0,0,0.3);
+  text-align: center;
+  display: block;
+  padding-right: 5px;
+}
+
+.left_fixed_menu_edit_button:hover{
+  color: #222;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.3);
+}
+
+.page_content_wrapper{
+  background: #fff;
+  border: solid 1px #e0e0e0;
+  padding: 36px;
+  padding-left: 60px;
+  padding-right: 60px;
+  border-radius: 3px;
+}
+
+.page_content_wrapper_narrow{
+  background: #fff;
+  border: solid 1px #e0e0e0;
+  padding: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+  border-radius: 3px;
+  padding-top: 24px;
+}
+
+.page_content_wrapper_no_paddings{
+  background: #fff;
+  border: solid 1px #e0e0e0;
+  border-radius: 3px;
+  margin-bottom: 20px;
+
+  .header_row{
+    border-bottom: solid 1px #eee;
+    .header_toolbar{
+      padding-right: 20px;
+      padding-top: 20px;
+    }
+  }
+
+  h1{
+    padding-top: 24px;
+    padding-bottom: 12px;
+    padding-left: 36px;
+  }
+
+  .inside_block{
+    padding: 36px;
+    padding-left: 36px;
+    padding-right: 36px;
+  }
+}
+
+.subpage_wrapper{
+  background-color: white;
+  border: solid 1px #e0e0e0;
+  border-radius: 3px;
+  margin-bottom: 18px;
+}
+
+.subpage_wrapper_inside{
+  padding: 20px;
+}
+
+.managing_menu{
+  padding-top: 12px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  border: solid 1px #e0e0e0;
+  background-color: #fff;
+}
+
+.field_submenu{
+  margin-bottom: 18px;
+
+  .nav-pills > li > a {
+    border-radius: 3px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+  }
+
+  .nav-pills > .active > a,
+  .nav-pills > .active > a:hover,
+  .nav-pills > .active > a:focus {
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.3) inset;
+  }
+
+  .nav-pills > li > a:hover,
+  .nav-pills > li > a:focus {
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.15) inset;
+  }
+}
+
+// rewrite Select2 styles
+
+.select2-chosen > .implement_item,
+.select2-chosen > .machine_item {
+  //padding-top: 0px;
+  //padding-bottom: 0px;
+  //margin-top: -6px;
+}
+
+.select2-drop-active {
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+.select2-drop {
+
+}
+
+.select2-container-active .select2-choice,
+.select2-container-active .select2-choices{
+  border: 1px solid #ccc;
+  background-image: none;
+  background-color: #fff;
+}
+
+.select2-results li.select2-no-results{
+  background: none;
+  padding-left: 0;
+
+  .cant_find_this_crop{
+    font-size: 11px;
+    color: #777;
+    font-style: italic;
+    border-bottom: solid 1px #ccc;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 4px;
+  }
+
+  .add_new_crop_button{
+    text-align: center;
+    padding: 8px 4px 4px 4px;
+  }
+
+}
+
+.select2-drop{
+  padding-top: 6px;
+}
+
+.select2-drop.select2-drop-above.select2-drop-active {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+.select2-drop-active{
+  border-top: solid 1px #ccc;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
+}
+
+.select2-results {
+  padding: 0px;
+  margin: 4px 0px 4px 0;
+}
+
+.select2-result-label{
+  font-size: 12px;
+  padding-left: 8px;
+}
+
+.select2-results ul.select2-result-sub > li .select2-result-label {
+  padding-left: 8px;
+}
+
+// leaflet layers control panel
+form.leaflet-control-layers-list{
+  margin-left: 6px;
+}
+
+.leaflet-control-layers-list input.leaflet-control-layers-selector {
+  margin-right: 6px;
+}
+
+.leaflet-control-layers-group-name {
+  font-weight: bold;
+  margin-bottom: 4px;
+  margin-top: 12px;
+  display: block;
+}
+
+.leaflet-control-layers-group {
+  margin-bottom: 0px;
+}
+
+.leaflet-control-layers-group label {
+  padding-left: 0px;
+}
+
+.leaflet-control-layers-separator{
+  margin: 10px -12px 10px -12px;
+}
+
+.leaflet-control-layers-expanded {
+  padding-right: 12px;
+}
+
+// fix bug with bootstrap 3 and select2
+div.select2-container {
+  padding: 0px;
+  border: 0px;
+  height: auto;
+  transition: none;
+  -webkit-transition: none;
+  border-radius: 0px;
+  background-color: transparent;
+}
+
+// Add spinner to bootstrap3
+
+.spinner {
+  display: inline-block;
+  width: 0;
+
+  -webkit-transition: opacity 0.25s, width 0.25s;
+  -moz-transition: opacity 0.25s, width 0.25s;
+  -o-transition: opacity 0.25s, width 0.25s;
+  transition: opacity 0.25s, width 0.25s;
+}
+
+.has-spinner.active {
+  cursor:progress;
+}
+
+.has-spinner.active .spinner {
+  opacity: 1;
+  width: auto; /* This doesn't work, just fix for unkown width elements */
+}
+
+.has-spinner.btn-mini.active .spinner {
+    width: 10px;
+}
+
+.has-spinner.btn-small.active .spinner {
+    width: 13px;
+}
+
+.has-spinner.btn.active .spinner {
+    width: 16px;
+}
+
+.has-spinner.btn-large.active .spinner {
+    width: 19px;
+}
+
+
+// jQuery Sparcline fix with Bootstrap3
+.jqstooltip {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+// Jquery UI widgets style rewrites
+
+.ui-widget {
+ font-family: $cropio_body_font;
+}
+
+.ui-widget-content{
+  border: 1px solid #ccc;
+  box-shadow: 0px 2px 10px rgba(0,0,0,0.2);
+  background-image: none;
+  background-color: #fff;
+}
+
+.ui-corner-all{
+  border-radius: 0;
+  z-index: 1002 !important;
+}
+
+.ui-widget-header{
+  border: none;
+  background: none;
+  font-weight: normal;
+}
+
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default {
+  border: none;
+  background: none;
+  background-color: #f5f5f5;
+}
+
+.ui-state-highlight,
+.ui-widget-content .ui-state-highlight,
+.ui-widget-header .ui-state-highlight{
+  background-color: #ff7;
+}
+
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active {
+  border: none;
+  background: none;
+  color: #fff;
+  background-color: #0088cc;
+}
+
+.ui-state-hover ,
+.ui-widget-content .ui-state-hover,
+.ui-widget-header .ui-state-hover {
+  color: #fff;
+  background: none;
+  background-color: #0088cc;
+}
+
+.ui-datepicker-calendar{
+  th{
+    font-weight: normal;
+  }
+}
+
+// Updates for fullCalendar styles
+
+.fc-event-container a.fc-event{
+
+  &:hover{
+    color: #fff;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.5);
+  }
+}
+
+
+// fix bootstrap3 & select2
+.ac-select2{
+  padding: 0px;
+  border: none;
+}
+
+// Add nav-list from bootstrap 2.3
+
+.nav-header {
+  display: block;
+  padding: 3px 15px;
+  font-size: 11px;
+  font-weight: bold;
+  line-height: 20px;
+  color: #999999;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+}
+
+.nav li + .nav-header {
+  margin-top: 9px;
+}
+
+.nav-list {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-bottom: 0;
+}
+
+.nav-list > li > a,
+.nav-list .nav-header {
+  margin-right: -15px;
+  margin-left: -15px;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.nav-list > li > a {
+  padding: 3px 15px;
+}
+
+.nav-list > .active > a,
+.nav-list > .active > a:hover,
+.nav-list > .active > a:focus {
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+  background-color: #0088cc;
+}
+
+.nav-list [class^="icon-"],
+.nav-list [class*=" icon-"] {
+  margin-right: 2px;
+}
+
+.nav-list .divider {
+  *width: 100%;
+  height: 1px;
+  margin: 9px 1px;
+  *margin: -5px 0 5px;
+  overflow: hidden;
+  background-color: #e5e5e5;
+}
+
+// Other Bootsrap 3 fixes
+.form-horizontal .radio-inline{
+  margin-left: 0px;
+  display: block;
+}
+
+select.form-control{
+  display: inline-block;
+}
+
+button.close{
+  line-height: 14px;
+  opacity: 0.4;
+}
+
+.alert-danger {
+  background-color: rgba(255,100,100,0.3);
+  border-color: #a94442;
+  color: #a94442;
+  font-weight: bold;
+  text-shadow: 0px 1px 0px rgba(255,255,255,0.4);
+}
+
+.alert {
+  padding: 15px;
+  margin-bottom: 18px;
+  border: none;
+  border-radius: 4px;
+  padding-bottom: 12px;
+  font-size: 14px;
+}
+
+.table > thead > tr > th {
+  border-bottom: none;
+}
+
+.input-group[class*="col-"] {
+  padding-left: 10px;
+}
+
+.label-inverse{
+  background-color: #333;
+}
+
+// FIX BOOTSTRAP
+
+@media print {
+  a[href]:after {
+    content: "" !important;
+    content: none !important;
+  }
+  abbr[title]:after {
+    content: "" !important;
+    content: none !important;
+  }
+}
+
+
+@media only print {
+  .field_submenu{
+    display: none;
+  }
+  .managing_menu{
+    display: none;
+  }
+  .field_page_content{
+    margin-left: 60px;
+    margin-right: 60px;
+    width: 92%;
+  }
+}
+
+@media only print {
+
+  .page_content_wrapper{
+    box-shadow: none;
+    border: none;
+    background-color: transparent;
+  }
+
+  .page-break{
+    page-break-before: always;
+  }
+
+  body{
+    background:none;
+
+    .container{
+      width: 100%;
+    }
+
+    .page{
+      padding-top:20px;
+    }
+
+    .navbar{
+      display:none;
+    }
+
+  }
+
+  .leaflet-control-container .leaflet-control-zoom{
+    display:none;
+  }
+
+
+  .not_current_year_notification_wrapper{
+    display:none;
+  }
+
+  footer{
+    display:none;
+  }
+
+}

@@ -1,0 +1,137 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require jquery-ui
+ *= require groups
+ *= require nodes
+ *= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
+ *= require_self
+ *= require_tree .
+ */
+
+
+
+ @font-face {
+   font-family: 'Glyphicons Halflings';
+   src: url('glyphicons-halflings-regular.woff') format('woff'),
+        url('glyphicons-halflings-regular.ttf') format('truetype')
+ }
+
+//--Sticky--Foooter--
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  // Margin bottom by footer height
+  //margin-bottom: 60px !important;
+
+  .logo{
+    position: relative;
+    top: -25px;
+    height: 120px;
+  }
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 40px;
+  background-color: #f5f5f5;
+}
+/*--Sticky--Footer--*/
+
+.navbar {
+  li > .a {
+    color: #f5f5f5 !important;
+  }
+}
+
+body {
+  background: #f6f6f6 url(/images/noise.png) repeat;
+}
+
+.navbar.header {
+  h2, h3, h4 {
+    color: #f5f5f5;
+    font-family: 'Futura';
+  }
+
+  h2 {
+    margin-top: 10px;
+  }
+
+  h3 {
+    margin-top: 0px;
+  }
+
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#258dc8+0,113f5e+100 */
+  background: rgb(37,141,200); /* Old browsers */
+  background: -moz-linear-gradient(top,  rgba(37,141,200,1) 0%, rgba(17,63,94,1) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(37,141,200,1)), color-stop(100%,rgba(17,63,94,1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  rgba(37,141,200,1) 0%,rgba(17,63,94,1) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  rgba(37,141,200,1) 0%,rgba(17,63,94,1) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  rgba(37,141,200,1) 0%,rgba(17,63,94,1) 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  rgba(37,141,200,1) 0%,rgba(17,63,94,1) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#258dc8', endColorstr='#113f5e',GradientType=0 ); /* IE6-9 */
+
+
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  border: none;
+}
+
+.navbar.second {
+  .nav {
+    li >a, a:visited {
+      color: #f5f5f5;
+    }
+
+    li >a:hover {
+      color: #d5d5d5;
+    }
+  }
+
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#258dc8+0,113f5e+1,08202b+100 */
+  background: rgb(37,141,200); /* Old browsers */
+  background: -moz-linear-gradient(top,  rgba(37,141,200,1) 0%, rgba(17,63,94,1) 1%, rgba(8,32,43,1) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(37,141,200,1)), color-stop(1%,rgba(17,63,94,1)), color-stop(100%,rgba(8,32,43,1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  rgba(37,141,200,1) 0%,rgba(17,63,94,1) 1%,rgba(8,32,43,1) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  rgba(37,141,200,1) 0%,rgba(17,63,94,1) 1%,rgba(8,32,43,1) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  rgba(37,141,200,1) 0%,rgba(17,63,94,1) 1%,rgba(8,32,43,1) 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  rgba(37,141,200,1) 0%,rgba(17,63,94,1) 1%,rgba(8,32,43,1) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#258dc8', endColorstr='#08202b',GradientType=0 ); /* IE6-9 */
+  border: none;
+}
+
+.navbar {
+  .active > a {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#103e5c+0,08202b+93,08202b+100 */
+background: rgb(16,62,92); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(16,62,92,1) 0%, rgba(8,32,43,1) 93%, rgba(8,32,43,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(16,62,92,1)), color-stop(93%,rgba(8,32,43,1)), color-stop(100%,rgba(8,32,43,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(16,62,92,1) 0%,rgba(8,32,43,1) 93%,rgba(8,32,43,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(16,62,92,1) 0%,rgba(8,32,43,1) 93%,rgba(8,32,43,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(16,62,92,1) 0%,rgba(8,32,43,1) 93%,rgba(8,32,43,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(16,62,92,1) 0%,rgba(8,32,43,1) 93%,rgba(8,32,43,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#103e5c', endColorstr='#08202b',GradientType=0 ); /* IE6-9 */
+    color: #d5d5d5 !important;
+  }
+}
+
+table tbody tr:hover td {
+  background-color: #f5f5f5;
+}

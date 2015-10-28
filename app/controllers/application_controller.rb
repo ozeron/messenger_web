@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   before_action :authenticate_user!
+  around_filter :set_user_time_zone_and_language
 
   def board
     @board ||= BasicBoard.new(self)
@@ -19,4 +20,14 @@ class ApplicationController < ActionController::Base
     "Views.#{self.class.name.gsub('::', '.').gsub(/Controller$/, '')}.#{action}View"
   end
   helper_method :js_class_name
+
+  def set_user_time_zone_and_language
+    if current_user
+      I18n.locale = current_user.language  if current_user.language
+    end
+
+    yield
+  ensure
+    I18n.locale = I18n.default_locale
+  end
 end

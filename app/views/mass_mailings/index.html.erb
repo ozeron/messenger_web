@@ -1,35 +1,41 @@
-<p id="notice"><%= notice %></p>
+<div class="row header header_row">
+  <div class="col-md-11">
+    <h1><%= t('mass_mailings.list') %></h1>
+  </div>
+  <div class="col-md-1">
 
-<h1>Listing Mass Mailings</h1>
-
-<table class='table table-striped'>
-  <thead>
-    <tr>
-      <th>Id</th>
-      <th>Title</th>
-      <th>Message Title</th>
-      <th>Nodes</th>
-      <th>Started</th>
-      <th>Finished</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @mass_mailings.each do |mass_mailing| %>
-      <tr>
-        <td><%= mass_mailing.id %></td>
-        <td><%= link_to mass_mailing.title, mass_mailing %></td>
-        <td><%= link_to mass_mailing.message.title, mass_mailing.message %></td>
-        <td><%= mass_mailing.nodes.map(&:name).join(', ') %></td>
-        <td><%= mass_mailing.started %></td>
-        <td><%= mass_mailing.finished %></td>
-        <td><%= link_to 'Edit', edit_mass_mailing_path(mass_mailing) %></td>
-        <td><%= link_to 'Destroy', mass_mailing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+    <%= link_to glyphicon_with_text('plus', t('mass_mailings.new')), new_message_path, class: 'btn btn-primary pull-right' %>
+  </div>
+</div>
 <br>
+<div class="row">
+  <div class="col-md-12">
+    <table class='table'>
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Title</th>
+          <th>Message Title</th>
+          <th>Nodes</th>
+          <th>Started</th>
+          <th>Finished</th>
+        </tr>
+      </thead>
 
-<%= link_to 'New Mass mailing', new_mass_mailing_path %>
+      <tbody>
+        <% @mass_mailings.each do |mass_mailing| %>
+          <tr>
+            <td><%= mass_mailing.id %></td>
+            <td><%= link_to mass_mailing.title, mass_mailing %></td>
+            <td><%= link_to mass_mailing.message.title, mass_mailing.message %></td>
+            <td><%= mass_mailing.nodes.map(&:name).join(', ') %></td>
+            <td><%= mass_mailing.started %></td>
+            <td><%= mass_mailing.finished %></td>
+            <td><%= link_to 'Edit', edit_mass_mailing_path(mass_mailing) %></td>
+            <td><%= link_to 'Destroy', mass_mailing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

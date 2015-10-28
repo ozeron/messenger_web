@@ -13,7 +13,7 @@
 #= require jquery
 #= require jquery-ui
 #= require jquery_ujs
-#= require twitter/bootstrap
+#= require bootstrap-sprockets
 #= require dataTables/jquery.dataTables
 #= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
 #= require turbolinks
@@ -26,6 +26,8 @@
 
 pageLoad = ->
   className = $('body').attr('data-class-name')
+  I18n.defaultLocale = $('body').attr('data-default-locale')
+  I18n.locale = $('body').attr('data-locale')
   window.applicationView = try
     eval("new #{className}()")
   catch error

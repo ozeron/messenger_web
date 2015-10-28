@@ -1,0 +1,22 @@
+uk:
+  simple_form:
+      labels:
+        user:
+          email: Email
+          password: Пароль
+          remember_me: Запам'ятати мене
+  log_in_header: 'Увійти в систему'
+  log_out: Вийти
+  log_in: Війти
+  sign_up: Зареєструватись
+  forgot_password: Забули пароль?
+  confirm_account: Підтвертити акаунт
+  change_my_password: Змінити мій пароль
+  unlock_my_account: Розблокувати мій акаунт
+  change_my_password: Змінити мій пароль
+  new_password: Новий пароль
+  confirm_your_new_password: Підтвердити ваш новий пароль
+  send_me_reset_password_instructions: Відправити мені інструкцію по зміні пароля
+  copy: 2001—2015 Міністерство оборони України, Управління Інформаційних Технологій 
+  new_message: Нове повідомлення
+  listing_messages: Список повідомлень
