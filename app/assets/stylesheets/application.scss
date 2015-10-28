@@ -25,6 +25,11 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
+  .logo {
+    position: relative;
+    top: -25px;
+    height: 120px;
+  }
 }
 footer {
   position: absolute;

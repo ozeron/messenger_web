@@ -9,11 +9,17 @@ uk:
         description: Опис
         vk_id: Ідентифікатов Вконтакті
         tag_list: Список тегів
-  node:
-    name: Им’я
-    email: Email
-    description: Опис
-    vk_id: Ідентифікатов Вконтакті
-    tag_list: Список тегів
-    vk:
-      find_group: Знайти групу Вконтакті
+  nodes:
+    plural: Об’єкти для розсилки
+
+
+    index:
+      list: Список об’єктів для розсилки
+      new: Створити об’єкт
+    data_table:
+      id: ID
+      name: Им’я
+      description: Опис
+      tag_list: Список тегів
+      edit: Редагувати
+      destroy: Видалили
