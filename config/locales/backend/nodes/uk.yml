@@ -1,0 +1,19 @@
+uk:
+  activerecord:
+    models:
+      node: Об’єкт для розсилки
+    attributes:
+      node:
+        name: Им’я
+        email: Email
+        description: Опис
+        vk_id: Ідентифікатов Вконтакті
+        tag_list: Список тегів
+  node:
+    name: Им’я
+    email: Email
+    description: Опис
+    vk_id: Ідентифікатов Вконтакті
+    tag_list: Список тегів
+    vk:
+      find_group: Знайти групу Вконтакті
