@@ -74,7 +74,7 @@ class window.Widgets.MassMailings.DataTable extends window.Widgets.Base
     updateDataTableSelectAllCtrl(dataTable);
 
   _new_lement = (id, key, value) ->
-    "<input class='string required form-control' name='mass_mailing[mass_mailing_nodes_attributes][#{id}][#{key}]' id='mass_mailing_mass_mailing_nodes_attributes_#{id}_#{key}' value='#{value}' />"
+    "<input class='string required form-control' type='hidden' name='mass_mailing[mass_mailing_nodes_attributes][#{id}][#{key}]' id='mass_mailing_mass_mailing_nodes_attributes_#{id}_#{key}' value='#{value}' />"
 
   _hiddenInputsAdd = (id) ->
     if ($("#mass_mailing_mass_mailing_nodes_attributes_#{id}__destroy").length > 0)
@@ -128,7 +128,7 @@ class window.Widgets.MassMailings.DataTable extends window.Widgets.Base
           $(row).find('input[type="checkbox"]').prop 'checked', true
           $(row).addClass 'selected'
         return
-    }
+
 
 
   _renderDataTable = ->

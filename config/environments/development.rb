@@ -17,11 +17,11 @@ Rails.application.configure do
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.smtp_settings = {
-    address: 'smtp.gmail.com',
-    port: 587,
+    address: 'smtp.yandex.com',
+    port: 465,
     authentication: 'plain',
     enable_starttls_auto: true,
-    user_name: ENV['GMAIL_USERNAME'],
+    user_name: ENV['GMAIL_EMAIL'],
     password: ENV['GMAIL_PASSWORD']
   }
 

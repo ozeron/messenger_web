@@ -31,13 +31,13 @@ class MassMailingsController < ApplicationController
 
     respond_to do |format|
       if b.mass_mailing.save
-        b.mass_mailing.nodes do |node|
+        b.mass_mailing.reload
+        b.mass_mailing.nodes.each do |node|
           MassMailer.send_to_node(node, b.mass_mailing.message, current_user).deliver
         end
         format.html { redirect_to b.mass_mailing, notice: 'Mass Mailing was successfully created.' }
         format.json { render :show, status: :created, location: b.mass_mailing }
       else
-        byebug
         format.html { render :new }
         format.json { render json: b.mass_mailing.errors, status: :unprocessable_entity }
       end

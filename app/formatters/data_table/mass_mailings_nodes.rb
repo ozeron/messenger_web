@@ -25,7 +25,7 @@ module DataTable
           link_to(node.name, node),
           truncate(ERB::Util.h(node.description), length: 300),
           node.tags.map(&:name).join('; '),
-          0
+          "<input type='checkbox' >"
         ]
       end
     end
