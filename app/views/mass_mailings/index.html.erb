@@ -4,7 +4,7 @@
   </div>
   <div class="col-md-1">
 
-    <%= link_to glyphicon_with_text('plus', t('mass_mailings.new')), new_message_path, class: 'btn btn-primary pull-right' %>
+    <%= link_to glyphicon_with_text('plus', t('mass_mailings.new')), new_mass_mailing_path, class: 'btn btn-primary pull-right' %>
   </div>
 </div>
 <br>
@@ -23,7 +23,7 @@
       </thead>
 
       <tbody>
-        <% @mass_mailings.each do |mass_mailing| %>
+        <% b.mass_mailings.each do |mass_mailing| %>
           <tr>
             <td><%= mass_mailing.id %></td>
             <td><%= link_to mass_mailing.title, mass_mailing %></td>
