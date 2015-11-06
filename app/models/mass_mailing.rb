@@ -46,7 +46,7 @@ class MassMailing < ActiveRecord::Base
   def calculate_success_or_not
     children_statuses = mass_mailing_nodes.map(&:status).uniq
     case children_statuses
-    when ['error']
+    when ['failed']
       self.status = 'failed'
     when ['success']
       self.status = 'success'

@@ -14,7 +14,6 @@ class MassMailingNodeSendJob < ActiveJob::Base
     mass_mailing_node.status = 'failed'
     mass_mailing_node.status_text = e.message
     mass_mailing_node.save
-    raise e
   ensure
     mass_mailing.processed_node_counter += 1
     mass_mailing.calculate_status
