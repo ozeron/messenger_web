@@ -12,6 +12,10 @@ module ApplicationHelper
     "<span class='glyphicon glyphicon-#{glyphicon}' aria-hidden='true'></span> #{text}".html_safe
   end
 
+  def tag_badges(array)
+    array.map { |a| "<span class='badge'>#{a}</span>" }.join(' ').html_safe
+  end
+
   def nav_link(text, link)
     content_tag(:li, activity_class(link)) do
       link_to(text, link)

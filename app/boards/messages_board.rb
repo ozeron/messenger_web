@@ -4,4 +4,8 @@ class MessagesBoard < BasicBoard
   def message
     @message ||= params[:id] ? Message.find(params[:id]) : Message.new
   end
+
+  def message_tags
+    message.tags.map(&:name)
+  end
 end

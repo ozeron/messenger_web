@@ -1,0 +1,16 @@
+.row.header.header_row
+  .col-md-10
+    h1
+      = b.message.title
+      = tag_badges(b.message_tags)
+  .col-md-2
+    .header_toolbar.pull-right
+      = link_to glyphicon_with_text('pencil', 'Edit'), edit_message_path(b.message), class: 'btn btn-primary pull-right'
+
+br
+.row
+  .col-md-12
+    = simple_format(b.message.content)
+.row
+  .col-md-12
+    = link_to 'Back', mass_mailings_path, class: 'btn btn-default'
