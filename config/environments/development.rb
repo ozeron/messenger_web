@@ -17,12 +17,15 @@ Rails.application.configure do
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.smtp_settings = {
-    address: 'smtp.yandex.com',
+    address: 'smtp.mail.ru',
     port: 465,
-    authentication: 'plain',
+    domain: 'mail.ru',
+    authentication: :plain,
+    user_name: 'ozeron.95@mail.ru',
+    password: 'Ozeron1995',
     enable_starttls_auto: true,
-    user_name: ENV['GMAIL_EMAIL'],
-    password: ENV['GMAIL_PASSWORD']
+    ssl: true,
+    tls: true
   }
 
   # Print deprecation notices to the Rails logger.

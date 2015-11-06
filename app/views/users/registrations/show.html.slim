@@ -1,0 +1,33 @@
+.row.header.header_row
+  .col-md-11
+    h1
+      = t('devise.registrations.show.cabinet')
+  .col-md-1
+    .header_toolbar.pull-right
+        = link_to glyphicon_with_text('pencil', t('devise.registrations.edit.link')), edit_user_registration_path, class: 'btn btn-primary pull-right'
+
+br
+.row
+  .col-md-12
+    table.table
+      tr
+        td Email
+        td
+          = current_user.email
+      tr
+        td
+          = t('.language')
+        td
+          = current_user.language_human
+      tr
+        td[colspan=2]
+          strong Vkontakte
+      tr
+        td Login
+        td
+          = current_user.vk.login
+      tr
+        td Password
+        td
+          = current_user.vk.password ? '*'*10 : 'No password'
+    = link_to t('log_out'), destroy_user_session_path, method: :delete, class: 'btn btn-danger'     

@@ -8,6 +8,6 @@ class MassMailer < ApplicationMailer
   def send_to_node(node, message, current_user)
     @text = message.content
     @title = message.title
-    mail to: node.email, subject: @title, from: current_user.email
+    mail to: node.email, subject: @title, from: 'ozeron.95@mail.ru'
   end
 end

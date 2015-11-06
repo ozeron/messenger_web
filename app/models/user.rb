@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
 
   validates :language,
             presence: true,
-            inclusion: {in: LANGUAGES.map(&:second)}
+            inclusion: { in: LANGUAGES.map(&:second) }
 
   def vk_app
     @app ||= ApiWrapper::VkFabric.build(connection_parameters['vk'])
@@ -17,5 +17,13 @@ class User < ActiveRecord::Base
       save
     end
     @app
+  end
+
+  def vk
+    Hashie::Mash.new connection_parameters.fetch('vk', {})
+  end
+
+  def language_human
+    Hash[User::LANGUAGES].invert[language]
   end
 end
