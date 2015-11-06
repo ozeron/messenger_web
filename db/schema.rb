@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151028110612) do
+ActiveRecord::Schema.define(version: 20151106090849) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,17 +62,18 @@ ActiveRecord::Schema.define(version: 20151028110612) do
     t.integer  "message_id"
     t.datetime "started"
     t.datetime "finished"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.string   "status",     default: "pending"
   end
 
-  create_table "mass_mailing_nodes", force: :cascade do |t|
+  create_table "mass_mailings_nodes", force: :cascade do |t|
     t.integer "mass_mailing_id"
     t.integer "node_id"
   end
 
-  add_index "mass_mailing_nodes", ["mass_mailing_id"], name: "index_mass_mailing_nodes_on_mass_mailing_id", using: :btree
-  add_index "mass_mailing_nodes", ["node_id"], name: "index_mass_mailing_nodes_on_node_id", using: :btree
+  add_index "mass_mailings_nodes", ["mass_mailing_id"], name: "index_mass_mailings_nodes_on_mass_mailing_id", using: :btree
+  add_index "mass_mailings_nodes", ["node_id"], name: "index_mass_mailings_nodes_on_node_id", using: :btree
 
   create_table "messages", force: :cascade do |t|
     t.string   "title"

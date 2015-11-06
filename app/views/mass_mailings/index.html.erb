@@ -24,15 +24,13 @@
 
       <tbody>
         <% b.mass_mailings.each do |mass_mailing| %>
-          <tr>
+          <tr class="<%=mass_mailing_status(mass_mailing)%>">
             <td><%= mass_mailing.id %></td>
             <td><%= link_to mass_mailing.title, mass_mailing %></td>
             <td><%= link_to mass_mailing.message.title, mass_mailing.message %></td>
             <td><%= mass_mailing.nodes.map(&:name).join(', ') %></td>
             <td><%= mass_mailing.started %></td>
             <td><%= mass_mailing.finished %></td>
-            <td><%= link_to 'Edit', edit_mass_mailing_path(mass_mailing) %></td>
-            <td><%= link_to 'Destroy', mass_mailing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>
         <% end %>
       </tbody>
