@@ -7,4 +7,7 @@ class MassMailingNode < ActiveRecord::Base
   validates :node, presence: true
 
   delegate :name, to: :node
+  delegate :message, to: :mass_mailing
+
+  scope :include_nested, -> { includes(:node, mass_mailing: :message) }
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151106093301) do
+ActiveRecord::Schema.define(version: 20151106103817) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,9 +62,10 @@ ActiveRecord::Schema.define(version: 20151106093301) do
     t.integer  "message_id"
     t.datetime "started"
     t.datetime "finished"
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
-    t.string   "status",     default: "pending"
+    t.datetime "created_at",                                 null: false
+    t.datetime "updated_at",                                 null: false
+    t.string   "status",                 default: "pending"
+    t.integer  "processed_node_counter", default: 0
   end
 
   create_table "mass_mailings_nodes", force: :cascade do |t|
