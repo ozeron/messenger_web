@@ -5,4 +5,6 @@ class MassMailingNode < ActiveRecord::Base
   belongs_to :mass_mailing
 
   validates :node, presence: true
+
+  delegate :name, to: :node
 end

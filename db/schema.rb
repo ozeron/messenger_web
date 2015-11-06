@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151106090849) do
+ActiveRecord::Schema.define(version: 20151106093301) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,6 +70,8 @@ ActiveRecord::Schema.define(version: 20151106090849) do
   create_table "mass_mailings_nodes", force: :cascade do |t|
     t.integer "mass_mailing_id"
     t.integer "node_id"
+    t.string  "status",          default: "pending"
+    t.string  "status_text",     default: "pending"
   end
 
   add_index "mass_mailings_nodes", ["mass_mailing_id"], name: "index_mass_mailings_nodes_on_mass_mailing_id", using: :btree

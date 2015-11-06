@@ -1,0 +1,35 @@
+.row.header.header_row
+  .col-md-10
+    h1
+      = b.mass_mailing.title
+      span.badge
+        span[class="#{mass_mailing_badge(b.mass_mailing)}"]
+  .col-md-2
+    = link_to 'Повторити', edit_mass_mailing_path(b.mass_mailing), class: 'btn btn-primary'
+br
+.row
+  .col-md-12
+    p
+      strong Started:
+      = b.mass_mailing.started
+    p
+      strong Finished:
+      = b.mass_mailing.finished
+.row
+  .col-md-12
+    h2 Статистика по об’єктам
+    table.table
+      thead
+        th Назва
+        th Результат відправки
+      tbody
+        - b.mass_mailing.mass_mailing_nodes.each do |mmn|
+          tr[class="#{mass_mailing_status(mmn)}"]
+            td
+              = mmn.name
+            td
+              = mmn.status_text
+
+.row
+  .col-md-12
+    = link_to 'Back', mass_mailings_path, class: 'btn btn-default'
