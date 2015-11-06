@@ -18,7 +18,6 @@ class MessagesController < ApplicationController
 
   def create
     b.message = Message.new(message_params)
-
     respond_to do |format|
       if b.message.save
         format.html { redirect_to b.message, notice: 'Message was successfully created.' }

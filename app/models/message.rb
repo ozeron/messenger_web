@@ -3,6 +3,7 @@ class Message < ActiveRecord::Base
   belongs_to :mass_mailing
   acts_as_taggable
 
+
   scope :includes_tags, -> { includes(:tags) }
 
   def self.search(query)
