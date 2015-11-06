@@ -2,7 +2,7 @@ class MassMailingsBoard < BasicBoard
   attr_accessor :mass_mailing
 
   def mass_mailings
-    @mass_mailings ||= MassMailing.all
+    @mass_mailings ||= MassMailing.all.order(id: :desc)
   end
 
   def mass_mailing

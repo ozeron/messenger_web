@@ -100,6 +100,7 @@ class window.Widgets.MassMailings.DataTable extends window.Widgets.Base
       bServerSide: true,
       pagingType: "full_numbers",
       sAjaxSource: $(table).data('source'),
+      order: [[ 0, "desc" ]],
       columnDefs: [
         { "targets": 3, "orderable": false },
         { "targets": 4, "orderable": false }

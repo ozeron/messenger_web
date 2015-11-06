@@ -1,0 +1,20 @@
+.row.header.header_row
+  .col-md-11
+    h1
+      = t('.header')
+br
+.row
+  .col-md-12
+    table.table
+      tr
+        td  Створено розсилок
+        td
+          = MassMailing.count
+      tr
+        td Створено повідомлень
+        td
+          = Message.count
+      tr
+        td Створено об`єктів для розсилки
+        td
+          = Node.count
