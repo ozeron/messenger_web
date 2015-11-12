@@ -11,5 +11,12 @@ br
   .col-md-12
     = render 'nodes_data_table'
 .row
+  .col-md-10
+    = render 'add_nodes_modal'
+  .col-md-2
+    .pull-right
+      button.btn.btn-success.pull-right[type="bytton" data-toggle="modal" data-target="#addNodesModal"]
+        = glyphicon_with_text('plus', t('.add'))
+.row
   .col-md-12
     = link_to 'Back', groups_path, class: 'btn btn-default'

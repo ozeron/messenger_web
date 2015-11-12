@@ -10,6 +10,9 @@ class GroupsController < ApplicationController
   def new
   end
 
+  def edit
+  end
+
   def board
     @board = GroupsBoard.new(self)
   end
