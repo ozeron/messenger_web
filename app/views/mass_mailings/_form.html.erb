@@ -16,9 +16,6 @@
   <div class="form-group string required mass_mailing_nodes_node_id">
     <div class="hidden" id="mass_mailing_nodes_ids" data-ids="<%= b.mass_mailing_nodes_ids %>" >
     </div>
-    <!-- <%= f.simple_fields_for :mass_mailing_nodes do |builder| %>
-      <%= builder.input :node_id %>
-    <% end %> -->
   </div>
 
   <table class='table table-striped' id="mass_mailing_nodes" data-source="<%= mass_mailing_nodes_url(format: :json)%>">

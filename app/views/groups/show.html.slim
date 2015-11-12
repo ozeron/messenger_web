@@ -1,0 +1,15 @@
+.row.header.header_row
+  .col-md-10
+    h1
+      = b.group.name
+  .col-md-2
+    .header_toolbar.pull-right
+      = link_to glyphicon_with_text('pencil', 'Edit'), edit_group_path(b.group), class: 'btn btn-primary pull-right'
+
+br
+.row
+  .col-md-12
+    = render 'nodes_data_table'
+.row
+  .col-md-12
+    = link_to 'Back', groups_path, class: 'btn btn-default'

@@ -3,6 +3,7 @@ class Node < ActiveRecord::Base
   has_many :mass_mailing_nodes
   has_and_belongs_to_many :mass_mailings
   acts_as_taggable
+  acts_as_taggable_on :groups
 
   scope :includes_tags, -> { includes(:tags) }
 

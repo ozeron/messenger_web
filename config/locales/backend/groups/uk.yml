@@ -1,0 +1,11 @@
+uk:
+  groups:
+    plural: Групи об’єктів
+    index:
+      id: ID
+      name: Ім’я
+      node_count: Кількість групп
+      edit: Редагувати
+      destroy: Видалити
+      new: Створити нову групу
+      list: Список груп об’єктів

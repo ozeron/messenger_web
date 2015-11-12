@@ -1,0 +1,5 @@
+= simple_form_for(b.group, url: new_group_path, method: :post) do |f|
+  = f.input :name
+  .form-group.string.required.groups_node_id
+    .hidden#groups_ids[data-ids="#{b.group_node_ids}"]
+  = f.submit class: 'btn btn-primary'

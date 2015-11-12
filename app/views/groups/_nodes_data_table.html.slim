@@ -1,0 +1,25 @@
+table.table
+  thead
+    tr
+      th
+        = t('.id')
+      th
+        = t('.name')
+      th
+        = t('.description')
+      th
+        = t('.edit')
+      th
+        = t('.destroy')
+  tbody
+    - b.group_nodes.each do |n|
+      tr
+        td
+          = n.id
+        td
+          = n.name
+        td
+          = n.description
+        td
+          = link_to t('.edit'), edit_node_path(n)
+        td = link_to t('.destroy'), n, method: :delete, data: { confirm: 'Are you sure?' }

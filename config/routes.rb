@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources 'nodes'
   resources 'messages'
   resources 'vk_groups'
+  resources 'groups'
   resources :mass_mailings
 
   resources :mass_mailing_nodes, controller: 'mass_mailing_nodes'
