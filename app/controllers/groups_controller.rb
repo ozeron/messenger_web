@@ -10,10 +10,20 @@ class GroupsController < ApplicationController
   def new
   end
 
+  def create
+    byebug
+    
+  end
+
   def edit
   end
 
   def board
     @board = GroupsBoard.new(self)
+  end
+
+  def groups_params
+    params.require('tag')
+      .permit(:name)
   end
 end

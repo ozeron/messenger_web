@@ -1,10 +1,12 @@
 class GroupsBoard < BasicBoard
+  attr_accessor :group
+
   def groups
     @groups = Tag.groups
   end
 
   def group
-    @groups = params[:id] ? Tag.find(params[:id]) : Tag.new
+    @group ||= params[:id] ? Tag.find(params[:id]) : Tag.new
   end
 
   def group_nodes
