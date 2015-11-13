@@ -6,17 +6,29 @@
           span[aria-hidden="true"] &times;
         h1[class="modal-title" id="addNodesModalLabel"]
           = t('.modal.title')
+      .form-group.string.required.mass_mailing_nodes_node_id
+            .hidden#mass_mailing_nodes_ids[data-ids="#{b.group_node_ids}"]
+
       .modal-body
         table.table.table-striped#mass_mailing_nodes[data-source="#{mass_mailing_nodes_url(format: :json)}"]
           thead
             tr
               th ID
               th Name
-              th Description
               th Tags
               th
                 input[name="select_all" value="1" type="checkbox"]
           tbody
+            - b.all_free_nodes.each do |node|
+              tr
+                td
+                  = node.id
+                td
+                  = node.name
+                td
+                  = node.tags.map(&:name).join('; ')
+                td
+                  input[type='checkbox']
       .modal-footer
         button[type="button" class="btn btn-default" data-dismiss="modal"] Close
         button[type="button" class="btn btn-primary"] Save changes
