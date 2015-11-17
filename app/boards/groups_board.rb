@@ -6,7 +6,7 @@ class GroupsBoard < BasicBoard
   end
 
   def group
-    @group ||= params[:id] ? Tag.find(params[:id]) : Tag.new
+    @group ||= params[:id] ? Tag.includes(:nodes).find(params[:id]) : Tag.new
   end
 
   def group_nodes
@@ -14,7 +14,7 @@ class GroupsBoard < BasicBoard
   end
 
   def all_free_nodes
-    Node.all.where.not(id: group_node_ids)
+    Node.all.includes_tags.where.not(id: group_node_ids)
   end
 
   def group_node_ids
