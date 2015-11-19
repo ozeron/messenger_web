@@ -13,6 +13,38 @@ class Node::Email < Node
     options.key?('email') ? options['email'] : options['emails'].first
   end
 
+  def telephones=(value)
+    options['telephones'] = [value]
+  end
+
+  def telephones
+    options['telephones']
+  end
+
+  def address=(value)
+    options['address'] = value
+  end
+
+  def address
+    options['address']
+  end
+
+  def city=(value)
+    options['city'] = value
+  end
+
+  def city
+    options['city']
+  end
+
+  def website=(value)
+    options['website'] = value
+  end
+
+  def website
+    options['website']
+  end
+
   def options
     return @options_mash if @options_mash
     @options_mash = Hashie::Mash.new(self['options'])

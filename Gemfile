@@ -53,7 +53,7 @@ gem 'simple_form'
 gem 'devise'
 gem 'acts_as_tree'
 gem 'acts-as-taggable-on', '~> 3.4'
-#gem 'activeadmin', github: 'activeadmin'
+gem 'rails_admin'
 
 gem 'kaminari'
 
