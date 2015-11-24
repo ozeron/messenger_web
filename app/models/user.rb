@@ -10,6 +10,12 @@ class User < ActiveRecord::Base
             presence: true,
             inclusion: { in: LANGUAGES.map(&:second) }
 
+  enum permission: {
+    'user' => 'user',
+    'moderator' => 'moderator',
+    'admin' => 'admin'
+  }
+
   def vk_login
     vk.login
   end
@@ -42,4 +48,29 @@ class User < ActiveRecord::Base
   def language_human
     Hash[User::LANGUAGES].invert[language]
   end
+
+  def email_parameters
+    connection_parameters.fetch('email', {})
+  end
+
+  %w(port domain address).each do |m|
+    define_method m do
+      email_parameters[m]
+    end
+
+    define_method "#{m}=" do |value|
+      connection_parameters['email'][m] = value
+    end
+  end
+
+  %w(name password).each do |m|
+    define_method "email_#{m}" do
+      email_parameters[m]
+    end
+
+    define_method "email_#{m}=" do |value|
+      connection_parameters['email'][m] = value
+    end
+  end
+
 end

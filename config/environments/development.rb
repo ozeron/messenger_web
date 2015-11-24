@@ -16,13 +16,9 @@ Rails.application.configure do
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.smtp_settings = {
-    address: 'smtp.mail.ru',
+  config.action_mailer.default_settings = {
     port: 465,
-    domain: 'mail.ru',
     authentication: :plain,
-    user_name: 'ozeron.95@mail.ru',
-    password: 'Ozeron1995',
     enable_starttls_auto: true,
     ssl: true,
     tls: true

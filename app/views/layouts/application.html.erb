@@ -76,6 +76,7 @@
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <% if current_user %>
+              <li><%= link_to glyphicon_with_text('control-sign', "#{t('devise.registrations.show.admin')},"), rails_admin_path%></li>
               <li><%= link_to glyphicon_with_text('info-sign', "#{t('devise.registrations.show.cabinet')},"), cabinet_path%></li>
               <li><%= link_to t('log_out'), destroy_user_session_path, method: :delete%></li>
             <%end%>

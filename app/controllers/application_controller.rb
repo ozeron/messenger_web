@@ -23,11 +23,14 @@ class ApplicationController < ActionController::Base
 
   def set_user_time_zone_and_language
     if current_user
-      I18n.locale = current_user.language  if current_user.language
+      I18n.locale = current_user.language if current_user.language
     end
-
     yield
   ensure
     I18n.locale = I18n.default_locale
+  end
+
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to main_app.root_path, alert: exception.message
   end
 end

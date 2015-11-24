@@ -42,6 +42,7 @@ uk:
       show:
         cabinet: 'Мій кабінет'
         language: 'Мова'
+        admin: Адміністрування
       edit:
         link: 'Редагувати'
     sessions:

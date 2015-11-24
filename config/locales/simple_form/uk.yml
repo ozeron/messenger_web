@@ -3,7 +3,15 @@ uk:
       labels:
         user:
           email: Email
+          language: Мова
           password: Пароль
+          vk_login: Логін для Вконтакті
+          vk_password: Пароль для Вконтакті
+          address: 'Адреса SMTP сервера'
+          domain: 'Доменне ім’я вашого провайдера'
+          port: Порт
+          email_name: Ваш Email
+          email_password: Пароль для Email
           remember_me: Запам'ятати мене
   log_in_header: 'Увійти в систему'
   log_out: Вийти
@@ -17,6 +25,6 @@ uk:
   new_password: Новий пароль
   confirm_your_new_password: Підтвердити ваш новий пароль
   send_me_reset_password_instructions: Відправити мені інструкцію по зміні пароля
-  copy: 2001—2015 Міністерство оборони України, Управління Інформаційних Технологій 
+  copy: 2001—2015 Міністерство оборони України, Управління Інформаційних Технологій
   new_message: Нове повідомлення
   listing_messages: Список повідомлень

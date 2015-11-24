@@ -43,6 +43,7 @@ en:
       show:
         cabinet: 'My profile'
         language: 'Language'
+        admin: Admin Panel
       edit:
         link: 'Edit'
     sessions:

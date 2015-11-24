@@ -5,7 +5,7 @@ class MassMailer < ApplicationMailer
   #
   #   en.mass_mailer.send_to_node.subject
   #
-  def send_to_node(mass_mailing_node, _user)
+  def send_to_node(mass_mailing_node, user)
     mass_mailing_node.status = 'in_progress'
     mass_mailing_node.save
 
@@ -14,6 +14,8 @@ class MassMailer < ApplicationMailer
 
     @text = message_to_send.content
     @title = message_to_send.title
+    Rails.application.config.action_mailer
+      .smtp_settings.merge!(user.email_parameters)
     mail to: node.email, subject: @title, from: 'ozeron.95@mail.ru'
   end
 end
