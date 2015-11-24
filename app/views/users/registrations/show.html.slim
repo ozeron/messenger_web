@@ -4,7 +4,7 @@
       = t('devise.registrations.show.cabinet')
   .col-md-1
     .header_toolbar.pull-right
-        = link_to glyphicon_with_text('pencil', t('devise.registrations.edit.link')), edit_user_registration_path, class: 'btn btn-primary pull-right'
+        = link_to glyphicon_with_text('pencil', t('devise.registrations.edit.link')), cabinet_edit_path, class: 'btn btn-primary pull-right'
 
 br
 .row
@@ -30,4 +30,4 @@ br
         td Password
         td
           = current_user.vk.password ? '*'*10 : 'No password'
-    = link_to t('log_out'), destroy_user_session_path, method: :delete, class: 'btn btn-danger'     
+    = link_to t('log_out'), destroy_user_session_path, method: :delete, class: 'btn btn-danger'
