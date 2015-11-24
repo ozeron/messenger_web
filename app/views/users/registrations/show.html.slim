@@ -30,4 +30,28 @@ br
         td Password
         td
           = current_user.vk.password ? '*'*10 : 'No password'
+      tr
+        td[colspan=2]
+          strong Email
+      tr
+        td Address
+        td
+          = current_user.email_config.address
+      tr
+        td Port
+        td
+          = current_user.email_config.port
+      tr
+        td Domain
+        td
+          = current_user.email_config.domain
+      tr
+        td Login
+        td
+          = current_user.email_config.user_name
+      tr
+        td Password
+        td
+          = current_user.email_config.password ? '*'*10 : 'No password'
+
     = link_to t('log_out'), destroy_user_session_path, method: :delete, class: 'btn btn-danger'

@@ -45,6 +45,10 @@ class User < ActiveRecord::Base
     Hashie::Mash.new connection_parameters.fetch('vk', {})
   end
 
+  def email_config
+    Hashie::Mash.new email_parameters
+  end
+
   def language_human
     Hash[User::LANGUAGES].invert[language]
   end
@@ -63,14 +67,19 @@ class User < ActiveRecord::Base
     end
   end
 
-  %w(name password).each do |m|
-    define_method "email_#{m}" do
-      email_parameters[m]
-    end
-
-    define_method "email_#{m}=" do |value|
-      connection_parameters['email'][m] = value
-    end
+  def email_password
+    email_parameters['password']
   end
 
+  def email_name
+    email_parameters['user_name']
+  end
+
+  def email_password=(val)
+    email_parameters['password'] = val
+  end
+
+  def email_name=(val)
+    email_parameters['user_name'] = val
+  end
 end
