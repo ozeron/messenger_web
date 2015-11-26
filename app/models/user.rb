@@ -7,6 +7,31 @@ class User < ActiveRecord::Base
   LANGUAGES = [['English','en'], ['Русский','ru'], ['Українська','uk']]
   AUTHENTICATIONS = [['plain','plain'], ['login','login'], ['cram_md5','cram_md5']]
 
+  after_initialize do
+    if new_record?
+      self.permission ||= 'user'
+      self.connection_parameters ||= {}
+    end
+  end
+
+  before_save do
+    self.connection_parameters ||= {}
+  end
+
+  rails_admin do
+    create do
+      exclude_fields :reset_password_sent_at, :remember_created_at, :sign_in_count,
+        :current_sign_in_at, :last_sign_in_at, :current_sign_in_ip, :last_sign_in_ip
+    end
+    edit do
+      exclude_fields :reset_password_sent_at, :remember_created_at, :sign_in_count,
+        :current_sign_in_at, :last_sign_in_at, :current_sign_in_ip, :last_sign_in_ip
+    end
+
+    field :permission, :enum do
+    end
+  end
+
   validates :language,
             presence: true,
             inclusion: { in: LANGUAGES.map(&:second) }
@@ -25,11 +50,17 @@ class User < ActiveRecord::Base
     vk.password
   end
 
+  def connection_parameters
+    self['connection_parameters'] ||= {}
+  end
+
   def vk_password=(value)
+    connection_parameters['vk'] ||= {}
     connection_parameters['vk']['password'] = value
   end
 
   def vk_login=(value)
+    connection_parameters['vk'] ||= {}
     connection_parameters['vk']['login'] = value
   end
 
@@ -64,6 +95,7 @@ class User < ActiveRecord::Base
     end
 
     define_method "#{m}=" do |value|
+      connection_parameters['email'] ||= {}
       connection_parameters['email'][m] = value
     end
   end
@@ -77,10 +109,12 @@ class User < ActiveRecord::Base
   end
 
   def email_password=(val)
-    email_parameters['password'] = val
+    connection_parameters['email'] ||= {}
+    connection_parameters['email']['password'] = val
   end
 
   def email_name=(val)
-    email_parameters['user_name'] = val
+    connection_parameters['email'] ||= {}
+    connection_parameters['email']['user_name'] = val
   end
 end
