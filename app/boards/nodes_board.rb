@@ -18,6 +18,6 @@ class NodesBoard < BasicBoard
   end
 
   def nodes
-    @nodes ||= Node.all
+    @nodes ||= Node.all.includes(:tags)
   end
 end

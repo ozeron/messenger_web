@@ -1,4 +1,5 @@
 class NodesController < ApplicationController
+  load_and_authorize_resource except: [:create]
   before_filter :board
   # GET /nodes
   # GET /nodes.json
@@ -26,7 +27,7 @@ class NodesController < ApplicationController
   # POST /nodes.json
   def create
     b.node = type.build(node_params)
-
+    authorize! :create, b.node
     respond_to do |format|
       if b.node.save
         format.html { redirect_to b.node, notice: 'Node was successfully created.' }

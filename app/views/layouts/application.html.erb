@@ -69,14 +69,16 @@
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
             <li><%= nav_link t('nodes.plural'), nodes_path  %></li>
-            <li><%= nav_link t('groups.plural'), groups_path  %></li>
+            <!-- <li><%= nav_link t('groups.plural'), groups_path  %></li> -->
             <li><%= nav_link t('nodes.messages'), messages_path  %></li>
             <li><%= nav_link t('nodes.massmailings'), mass_mailings_path  %></li>
             <li><%= nav_link t('statistics.index.header'), statistics_path %></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <% if current_user %>
-              <li><%= link_to glyphicon_with_text('control-sign', "#{t('devise.registrations.show.admin')},"), rails_admin_path%></li>
+              <% if can? :access, :rails_admin %>
+                <li><%= link_to glyphicon_with_text('control-sign', "#{t('devise.registrations.show.admin')},"), rails_admin_path%></li>
+              <% end %>
               <li><%= link_to glyphicon_with_text('info-sign', "#{t('devise.registrations.show.cabinet')},"), cabinet_path%></li>
               <li><%= link_to t('log_out'), destroy_user_session_path, method: :delete%></li>
             <%end%>

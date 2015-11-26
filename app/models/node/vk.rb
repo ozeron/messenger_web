@@ -11,4 +11,8 @@ class Node::Vk < Node
   def vk_id
     options['vk_id']
   end
+
+  def mailer
+    VkMailer
+  end
 end

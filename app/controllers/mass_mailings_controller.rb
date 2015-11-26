@@ -1,4 +1,5 @@
 class MassMailingsController < ApplicationController
+  load_and_authorize_resource
   before_filter :board
 
   def board
@@ -21,8 +22,8 @@ class MassMailingsController < ApplicationController
   end
 
   # GET /nodes/1/edit
-  def edit
-  end
+  # def edit
+  # end
 
   # POST /nodes
   # POST /nodes.json
@@ -41,5 +42,16 @@ class MassMailingsController < ApplicationController
     end
   end
 
+  def retry
+    attributes = board.mass_mailing.attributes
+    attributes["mass_mailing_nodes_attributes"] = board.mass_mailing.mass_mailing_nodes.map { |mmn| { "node_id" => mmn.node_id } }
+    params[:mass_mailing] = attributes
+    create
+  end
 
+  private
+
+  def mass_mailing_params
+    params.require(:mass_mailing).permit(:title, :started, :message_id, mass_mailing_nodes_attributes: [:node_ir, :_destroy])
+  end
 end

@@ -9,3 +9,6 @@ uk:
       destroy: Видалити
       new: Створити нову групу
       list: Список груп об’єктів
+    add_nodes_modal:
+      modal:
+        title: Дадати об’єкти до групи

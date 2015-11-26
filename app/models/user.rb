@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   LANGUAGES = [['English','en'], ['Русский','ru'], ['Українська','uk']]
+  AUTHENTICATIONS = [['plain','plain'], ['login','login'], ['cram_md5','cram_md5']]
 
   validates :language,
             presence: true,
@@ -57,7 +58,7 @@ class User < ActiveRecord::Base
     connection_parameters.fetch('email', {})
   end
 
-  %w(port domain address).each do |m|
+  %w(port domain address enable_starttls_auto ssl tls authentication).each do |m|
     define_method m do
       email_parameters[m]
     end

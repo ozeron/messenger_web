@@ -3,8 +3,9 @@
     <h1><%= t('listing_messages') %></h1>
   </div>
   <div class="col-md-1">
-
-    <%= link_to glyphicon_with_text('plus', t('new_message')), new_message_path, class: 'btn btn-primary pull-right' %>
+    <% if can? :create, Message %>
+      <%= link_to glyphicon_with_text('plus', t('new_message')), new_message_path, class: 'btn btn-primary pull-right' %>
+    <% end %>
   </div>
 </div>
 <br>
@@ -17,11 +18,24 @@
           <th>Title</th>
           <th>Content</th>
           <th>Tags</th>
-          <th>Edit</th>
-          <th>Destory</th>
+          <% if can? :update, Node %>
+            <th>Edit</th>
+            <th>Destory</th>
+          <% end %>
         </tr>
       </thead>
-
+        <% b.messages.each do |message| %>
+          <tr>
+            <td><%= message.id %></td>
+            <td><%= message.title %></td>
+            <td><%= truncate(ERB::Util.h(message.content), length: 300) %></td>
+            <td><%= message.tag_list_name %></td>
+            <% if can? :update, Node %>
+              <td><%= link_to(t('.edit'), edit_message_path(message)) %></td>
+              <td><%= link_to(t('.destroy'), message, method: :delete, data: { confirm: t('.confirmation') }) %></td>
+            <% end %>
+          </tr>
+        <% end %>
       <tbody>
       </tbody>
     </table>

@@ -1,17 +1,17 @@
 <div id="node_form">
 
   <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation" class="active"><a href="#vk" aria-controls="home" role="tab" data-toggle="tab">Vk</a></li>
-    <li role="presentation"><a href="#email" aria-controls="profile" role="tab" data-toggle="tab">Email</a></li>
+    <li role="presentation" class="active"><a href="#email" aria-controls="profile" role="tab" data-toggle="tab">Email</a></li>
+    <li role="presentation" ><a href="#vk" aria-controls="home" role="tab" data-toggle="tab">Vk</a></li>
   </ul>
 
   <!-- Tab panes -->
   <div class="tab-content">
-    <div role="tabpanel" class="tab-pane active" id="vk">
-      <%= render 'nodes/vk/form' %>
-    </div>
-    <div role="tabpanel" class="tab-pane" id="email">
+    <div role="tabpanel" class="tab-pane active" id="email">
       <%= render 'nodes/email/form' %>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="vk">
+      <%= render 'nodes/vk/form' %>
     </div>
   </div>
 

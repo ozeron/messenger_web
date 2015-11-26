@@ -5,31 +5,36 @@
       span.badge
         span[class="#{mass_mailing_badge(b.mass_mailing)}"]
   .col-md-2
-    = link_to 'Повторити', edit_mass_mailing_path(b.mass_mailing), class: 'btn btn-primary'
+    = link_to 'Повторити', retry_mass_mailing_path(b.mass_mailing), class: 'btn btn-primary', data: { confirm: t('.confirmation') }
 br
 .row
   .col-md-12
     p
       strong Started:
-      = b.mass_mailing.started
+      = time_ago_in_words(b.mass_mailing.started)
     p
       strong Finished:
-      = b.mass_mailing.finished
+      = time_ago_in_words(b.mass_mailing.finished)
 .row
-  .col-md-12
-    h2 Статистика по об’єктам
-    table.table
-      thead
-        th Назва
-        th Результат відправки
-      tbody
-        - b.mass_mailing.mass_mailing_nodes.each do |mmn|
-          tr[class="#{mass_mailing_status(mmn)}"]
-            td
-              = mmn.name
-            td
-              = mmn.status_text
-
+  - if b.mass_mailing.mass_mailing_nodes.present?
+    .col-md-12
+      h2 Статистика по об’єктам
+      table.table
+        thead
+          th Назва
+          th Результат відправки
+        tbody
+          - b.mass_mailing.mass_mailing_nodes.each do |mmn|
+            tr[class="#{mass_mailing_status(mmn)}"]
+              td
+                = mmn.name
+              td
+                = mmn.status_text
+  - else
+    .col-md-12
+      p
+        strong = t('.mass_mailing_empty')
+br
 .row
   .col-md-12
     = link_to 'Back', mass_mailings_path, class: 'btn btn-default'

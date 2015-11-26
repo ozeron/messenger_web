@@ -5,11 +5,24 @@
       <th><%= t('.name') %></th>
       <th><%= t('.description') %></th>
       <th><%= t('.tag_list') %></th>
-      <th><%= t('.edit') %></th>
-      <th><%= t('.destroy') %></th>
+      <% if can? :update, Node %>
+        <th><%= t('.edit') %></th>
+        <th><%= t('.destroy') %></th>
+      <% end %>
     </tr>
   </thead>
-    
   <tbody>
+    <% b.nodes.each do |node| %>
+      <tr>
+        <td><%= node.id %></td>
+        <td><%= node.name %></td>
+        <td><%= truncate(ERB::Util.h(node.description), length: 300) %></td>
+        <td><%= node.tag_list_name %></td>
+        <% if can? :update, Node %>
+          <td><%= link_to(t('.edit'), edit_node_path(node)) %></td>
+          <td><%= link_to(t('.destroy'), node, method: :delete, data: { confirm: t('.confirmation') }) %></td>
+        <% end %>
+      </tr>
+    <% end %>
   </tbody>
 </table>

@@ -42,6 +42,18 @@ br
         td
           = current_user.email_config.port
       tr
+        td SSL
+        td
+          = current_user.email_config.ssl
+      tr
+        td TLS
+        td
+          = current_user.email_config.tls
+      tr
+        td Enable Start TLS Auto
+        td
+          = current_user.email_config.enable_starttls_auto
+      tr
         td Domain
         td
           = current_user.email_config.domain

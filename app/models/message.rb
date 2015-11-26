@@ -13,4 +13,8 @@ class Message < ActiveRecord::Base
     #       search: "%#{query}%")
     where('title ILIKE :search OR content ILIKE :search', search: "%#{query}%")
   end
+
+  def tag_list_name
+    tags.map(&:name).join('; ')
+  end
 end

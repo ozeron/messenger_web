@@ -21,6 +21,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def update
+    params[:user].extract!(:email_password) if params[:user][:email_password].empty?
+    params[:user][:ssl] = (params[:user][:ssl] == 1) ? true : false
+    params[:user][:tls] = (params[:user][:tls] == 1) ? true : false
+    params[:user][:enable_starttls_auto] = params[:user][:enable_starttls_auto] == '1' ? true : false
     super
   end
 
@@ -73,6 +77,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def registration_params
     # figure out how t oproperly update
     params.require(:user).permit(:email, :language,
-                                 :password, :password_confirmation)
+                                 :password, :password_confirmation,
+                                 :vk_login, :vk_password,
+                                 :address, :domain, :authentication,
+                                 :port, :ssl, :tls, :enable_starttls_auto,
+                                 :email_name, :email_password
+                                 )
   end
 end

@@ -6,6 +6,7 @@ gem 'dotenv-rails', :groups => [:development, :test]
 gem 'rails', '4.2.4'
 # Use postgresql as the database for Active Record
 gem 'pg'
+gem 'pony'
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
@@ -32,7 +33,7 @@ gem 'bootstrap-sass', '~> 3.3.5'
 gem 'lodash-rails'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
-gem 'jquery-datatables-rails', '~> 3.3.0'
+#gem 'jquery-datatables-rails', '~> 3.3.0'
 
 gem 'react-rails', '~> 1.4.0'
 
@@ -55,6 +56,7 @@ gem 'devise'
 gem 'acts_as_tree'
 gem 'acts-as-taggable-on', '~> 3.4'
 gem 'rails_admin'
+gem 'rails_admin-i18n'
 
 gem 'kaminari'
 

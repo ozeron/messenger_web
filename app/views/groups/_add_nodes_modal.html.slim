@@ -13,9 +13,9 @@
         table.table.table-striped#mass_mailing_nodes[data-source="#{mass_mailing_nodes_url(format: :json)}"]
           thead
             tr
-              th ID
-              th Name
-              th Tags
+              th = Node.human_attribute_name('id')
+              th = Node.human_attribute_name('name')
+              th = Node.human_attribute_name('tags')
               th
                 input[name="select_all" value="1" type="checkbox"]
           tbody

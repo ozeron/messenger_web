@@ -48,8 +48,10 @@ class MassMailing < ActiveRecord::Base
     case children_statuses
     when ['failed']
       self.status = 'failed'
+      self.finished = Time.now
     when ['success']
       self.status = 'success'
+      self.finished = Time.now
     when include_only_error_and_success
       self.status = 'warning'
     else

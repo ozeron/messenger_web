@@ -2,13 +2,17 @@ uk:
   activerecord:
     models:
       node: Об’єкт для розсилки
+      node/vk: ВК
+      node/email: Email
     attributes:
       node:
+        id: ID
         name: Им’я
         email: Email
         description: Опис
         vk_id: Ідентифікатор Вконтакті
         tag_list: Список тегів
+        tags: Теги
   nodes:
     plural: Об’єкти для розсилки
     messages: Повідомлення
@@ -17,6 +21,7 @@ uk:
     index:
       list: Список об’єктів для розсилки
       new: Створити об’єкт
+    new: Новий об’єкт для розсилки
     data_table:
       id: ID
       name: Им’я
@@ -24,3 +29,4 @@ uk:
       tag_list: Список тегів
       edit: Редагувати
       destroy: Видалили
+      confirmation: 'Ви впевнені?'

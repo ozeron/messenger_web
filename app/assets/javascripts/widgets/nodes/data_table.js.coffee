@@ -6,20 +6,20 @@ class window.Widgets.Nodes.DataTable extends window.Widgets.Base
 
   _options = () ->
     {
-      bProcessing: true,
-      bServerSide: true,
-      sAjaxSource: $(table).data('source'),
-      order: [[ 0, "desc" ]],
+      # bProcessing: true,
+      # bServerSide: true,
+      # sAjaxSource: $(table).data('source'),
+      order: [[ 0, "asc" ]],
       columnDefs: [
         { "targets": 3, "orderable": false },
-        { "targets": 4, "orderable": false },
-        { "targets": 5, "orderable": false }
+        # { "targets": 4, "orderable": false },
+        # { "targets": 5, "orderable": false }
       ]
     }
 
   _renderDataTable = ->
     if !dataTable
-      dataTable = $(table).DataTable(_options());
+      dataTable = $(table).DataTable(_options);
     true
 
   _destroyDataTable = ->

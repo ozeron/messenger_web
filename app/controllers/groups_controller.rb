@@ -1,4 +1,5 @@
 class GroupsController < ApplicationController
+  load_and_authorize_resource
   before_filter :board
 
   def index
@@ -12,7 +13,7 @@ class GroupsController < ApplicationController
 
   def create
     byebug
-    
+
   end
 
   def edit

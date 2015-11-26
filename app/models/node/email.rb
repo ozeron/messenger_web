@@ -5,6 +5,10 @@ class Node::Email < Node
     new(attributes)
   end
 
+  def mailer
+    MassMailer
+  end
+
   def email=(value)
     options['email'] = value
   end
@@ -55,7 +59,7 @@ class Node::Email < Node
   def description
     ''.tap do |str|
       str.concat(self['description'] + "\n") if self['description']
-      str.concat("тел. #{telephones.try(:join, ',')}\n") if telephones.present?
+      str.concat("тел. #{telephones.try(:join, ', ')}\n") if telephones.present?
       str.concat("аддрес: #{address}\n") if address.present?
       str.concat("email: #{email}\n") if email.present?
       str.concat("website: #{website}\n") if website.present?

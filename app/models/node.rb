@@ -21,4 +21,8 @@ class Node < ActiveRecord::Base
   def self.types
     %w(Node::Vk Node::Email)
   end
+
+  def tag_list_name
+    tags.map(&:name).join('; ')
+  end
 end

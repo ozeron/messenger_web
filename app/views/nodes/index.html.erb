@@ -4,7 +4,9 @@
   </div>
   <div class="col-md-1">
     <div class="header_toolbar pull-right">
+      <% if can?(:create, Node) %>
         <%= link_to glyphicon_with_text('plus', t('.new')), new_node_path, class: 'btn btn-primary pull-right' %>
+      <% end %>
     </div>
 
   </div>

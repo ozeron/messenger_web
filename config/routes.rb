@@ -22,7 +22,11 @@ Rails.application.routes.draw do
   resources 'messages'
   resources 'vk_groups'
   resources 'groups'
-  resources :mass_mailings
+  resources :mass_mailings do
+    member do
+      get :retry
+    end
+  end
 
   resources :mass_mailing_nodes, controller: 'mass_mailing_nodes'
   resources :statistics, controller: 'statistics'

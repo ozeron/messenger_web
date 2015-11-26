@@ -13,12 +13,15 @@
  *= require jquery-ui
  *= require groups
  *= require nodes
- *= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
+ *= require datatables
  *= require_self
  *= require_tree .
  */
 
-
+ table { // this somehow makes it work for td
+   table-layout:fixed;
+   width:100%;
+ }
 
  @font-face {
    font-family: 'Glyphicons Halflings';

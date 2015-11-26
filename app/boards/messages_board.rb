@@ -8,4 +8,8 @@ class MessagesBoard < BasicBoard
   def message_tags
     message.tags.map(&:name)
   end
+
+  def messages
+    @messages = Message.all.includes_tags
+  end
 end
