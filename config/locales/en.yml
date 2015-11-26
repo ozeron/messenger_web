@@ -1,23 +1,251 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
+---
 en:
-  hello: "Hello world"
+  date:
+    abbr_day_names:
+    - sun.
+    - mon.
+    - tue.
+    - wed.
+    - thu.
+    - fri.
+    - sun.
+    abbr_month_names:
+    - 
+    - jan.
+    - feb.
+    - mar.
+    - apr.
+    - may.
+    - june.
+    - july.
+    - aug.
+    - sept.
+    - oct.
+    - nov.
+    - dec.
+    day_names:
+    - sunday
+    - monday
+    - tuesday
+    - wednesday
+    - thursday
+    - friday
+    - saturday
+    formats:
+      default: "%d.%m.%Y"
+      long: "%d %B %Y"
+      short: "%d %b"
+    month_names:
+    - 
+    - January
+    - February
+    - March
+    - April
+    - May
+    - June
+    - July
+    - August
+    - September
+    - October
+    - November
+    - December
+    order:
+    - :day
+    - :month
+    - :year
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        few: about %{count} hours
+        many: about %{count} hours
+        one: adout %{count} hour
+        other: adout %{count} hours
+      about_x_months:
+        few: adout %{count} months
+        many: adout %{count} months
+        one: adout %{count} month
+        other: adout %{count} months
+      about_x_years:
+        few: adout %{count} years
+        many: adout %{count} years
+        one: adout %{count} year
+        other: adout %{count} years
+      almost_x_years:
+        few: almost %{count} years
+        many: almost %{count} years
+        one: almost %{count} year
+        other: almost %{count} years
+      half_a_minute: half a minute
+      less_than_x_minutes:
+        few: less then %{count} minutes
+        many: less then %{count} minutes
+        one: less then %{count} minute
+        other: less then %{count} minutes
+      less_than_x_seconds:
+        few: less then %{count} seconds
+        many: less then %{count} seconds
+        one: less then %{count} second
+        other: less then %{count} seconds
+      over_x_years:
+        few: over %{count} years
+        many: over %{count} years
+        one: over %{count} year
+        other: over %{count} years
+      x_days:
+        few: "%{count} days"
+        many: "%{count} days"
+        one: "%{count} day"
+        other: "%{count} days"
+      x_minutes:
+        few: "%{count} minutes"
+        many: "%{count} minutes"
+        one: "%{count} minute"
+        other: "%{count} minutes"
+      x_months:
+        few: "%{count} months"
+        many: "%{count} months"
+        one: "%{count} month"
+        other: "%{count} months"
+      x_seconds:
+        few: "%{count} seconds"
+        many: "%{count} seconds"
+        one: "%{count} second"
+        other: "%{count} seconds"
+    prompts:
+      day: Day
+      hour: Hour
+      minute: Minute
+      month: Month
+      second: Second
+      year: Year
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: should be accepted
+      blank: can not be empty
+      confirmation: does not match with confirmation
+      empty: can not be empty
+      equal_to: must equal to %{count}
+      even: must be even
+      exclusion: reserved
+      greater_than: must be greater then %{count}
+      greater_than_or_equal_to: must be greater then or equal to %{count}
+      inclusion: not included in the list
+      invalid: invalid
+      less_than: must be less than %{count}
+      less_than_or_equal_to: must be less than or equal to %{count}
+      not_a_number: not a number
+      not_an_integer: not an integer
+      odd: must be odd
+      record_invalid: 'Error: %{errors}'
+      taken: taken
+      too_long:
+        few: too long (maximum %{count} characters)
+        many: too long (maximum %{count} characters)
+        one: too long (maximum %{count} character)
+        other: too long (maximum %{count} characters)
+      too_short:
+        few: too short (minimum %{count} characters)
+        many: too short (minimum %{count} characters)
+        one: too short (minimum %{count} character)
+        other: too short (minimum %{count} characters)
+      wrong_length:
+        few: wrong length (must be %{count} characters)
+        many: wrong length (must be %{count} characters)
+        one: wrong length (must be %{count} character)
+        other: wrong length (must be %{count} characters)
+    template:
+      body: 'Errors found in such fields:'
+      header:
+        few: "%{model} did not save couse %{count} errors"
+        many: "%{model} did not save couse %{count} errors"
+        one: "%{model} did not save couse %{count} error"
+        other: "%{model} did not save couse %{count} errors"
+  helpers:
+    select:
+      prompt: 'Shoose: '
+    submit:
+      create: Create %{model}
+      submit: Submit %{model}
+      update: Update %{model}
+  number:
+    currency:
+      format:
+        delimiter: " "
+        format: "%n %u"
+        precision: 2
+        separator: ","
+        significant: false
+        strip_insignificant_zeros: false
+        unit: uah.
+    format:
+      delimiter: " "
+      precision: 3
+      separator: ","
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion:
+            few: Billions
+            many: Billions
+            one: Billion
+            other: Billions
+          million:
+            few: Millions
+            many: Millions
+            one: Million
+            other: Millions
+          quadrillion:
+            few: Quadrillions
+            many: Quadrillions
+            one: Quadrillion
+            other: Quadrillions
+          thousand:
+            few: Thousands
+            many: Thousands
+            one: Thousand
+            other: Thousands
+          trillion:
+            few: Trillions
+            many: Trillions
+            one: Trillion
+            other: Trillions
+          unit: ''
+      format:
+        delimiter: ''
+        precision: 1
+        significant: false
+        strip_insignificant_zeros: false
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            few: bytes
+            many: bytes
+            one: byte
+            other: bytes
+          gb: GB
+          kb: kB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        delimiter: ''
+    precision:
+      format:
+        delimiter: ''
+  support:
+    array:
+      last_word_connector: " and "
+      two_words_connector: " and "
+      words_connector: ", "
+  time:
+    am: after morning
+    formats:
+      default: "%a, %d %b %Y, %H:%M:%S %z"
+      long: "%d %B %Y, %H:%M"
+      short: "%d %b, %H:%M"
+    pm: past morning
