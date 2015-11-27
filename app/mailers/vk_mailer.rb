@@ -22,7 +22,8 @@ class VkMailer
   end
 
   def node_id
-    node.vk_id
+    i = node.vk_id.to_i
+    i < 0 ? i : -1 * i
   end
 
   def posts_id

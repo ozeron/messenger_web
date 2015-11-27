@@ -59,6 +59,7 @@ gem 'rails_admin'
 gem 'rails_admin-i18n'
 
 gem 'kaminari'
+gem 'foreman'
 
 gem 'pry-rails'
 gem 'vk-ruby', github: 'ikonyshev/vk-ruby', branch: 'client_auth_greedy_regexp'
