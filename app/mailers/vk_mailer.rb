@@ -12,11 +12,11 @@ class VkMailer
 
     @message = mass_mailing_node.message
     @node = mass_mailing_node.node
-    return unless Node.is_a? Node::Vk
+    return MailerResponce.new unless @node.is_a? Node::Vk
     posts_id.each do |post_id|
       vk_client.wall.addComment(post_id: post_id,
                                 owner_id: node_id,
-                                text: message.content)
+                                text: @message.content)
     end
     MailerResponce.new
   end

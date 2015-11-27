@@ -39,7 +39,7 @@ class MassMailing < ActiveRecord::Base
 
   def include_only_error_and_success
     lambda do |array|
-      array.size == 2 && array.include?('success') && array.include?('error')
+      array.size == 2 && array.include?('success') && array.include?('failed')
     end
   end
 

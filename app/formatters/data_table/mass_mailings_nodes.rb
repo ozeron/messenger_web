@@ -35,7 +35,7 @@ module DataTable
     end
 
     def fetch_nodes
-      nodes = Node::Email.includes_tags.order("#{sort_column} #{sort_direction}")
+      nodes = Node.includes_tags.order("#{sort_column} #{sort_direction}")
       nodes = nodes.page(page).per(per_page)
       if params[:sSearch].present?
         nodes = nodes.search(params[:sSearch])
