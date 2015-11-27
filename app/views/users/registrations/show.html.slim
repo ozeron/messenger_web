@@ -31,6 +31,10 @@ br
         td
           = current_user.vk.password ? '*'*10 : 'No password'
       tr
+        td AppId
+        td
+          = current_user.vk_app_id
+      tr
         td[colspan=2]
           strong Email
       tr

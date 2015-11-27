@@ -50,6 +50,10 @@ class User < ActiveRecord::Base
     vk.password
   end
 
+  def vk_app_id
+    vk.app_id
+  end
+
   def connection_parameters
     self['connection_parameters'] ||= {}
   end
@@ -57,6 +61,11 @@ class User < ActiveRecord::Base
   def vk_password=(value)
     connection_parameters['vk'] ||= {}
     connection_parameters['vk']['password'] = value
+  end
+
+  def vk_app_id=(value)
+    connection_parameters['vk'] ||= {}
+    connection_parameters['vk']['app_id'] = value
   end
 
   def vk_login=(value)
