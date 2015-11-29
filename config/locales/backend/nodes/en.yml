@@ -1,0 +1,32 @@
+en:
+  activerecord:
+    models:
+      node: Objects to mailing
+      node/vk: VK
+      node/email: Email
+    attributes:
+      node:
+        id: ID
+        name: Name
+        email: Email
+        description: Description
+        vk_id: VK ID
+        tag_list: Tag list
+        tags: Tags
+  nodes:
+    plural: Objects to mailing
+    messages: Messages
+    massmailings: Mass mailing
+
+    index:
+      list: Objects list to mailing
+      new: Create new object
+    new: New object to mailing
+    data_table:
+      id: ID
+      name: Name
+      description: Description
+      tag_list: Tag list
+      edit: Edit
+      destroy: Delate
+      confirmation: 'Are you sure?'
