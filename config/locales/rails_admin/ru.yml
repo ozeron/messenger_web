@@ -1,129 +1,130 @@
 ru:
   admin:
-    actions:
-      bulk_delete:
-        breadcrumb:
-        bulk_link:
-        menu:
-        title:
-      dashboard:
-        breadcrumb:
-        menu:
-        title:
-      delete:
-        breadcrumb:
-        done:
-        link:
-        menu:
-        title:
-      edit:
-        breadcrumb:
-        done:
-        link:
-        menu:
-        title:
-      export:
-        breadcrumb:
-        bulk_link:
-        done:
-        link:
-        menu:
-        title:
-      history_index:
-        breadcrumb:
-        menu:
-        title:
-      history_show:
-        breadcrumb:
-        menu:
-        title:
-      index:
-        breadcrumb:
-        menu:
-        title:
-      new:
-        breadcrumb:
-        done:
-        link:
-        menu:
-        title:
-      show:
-        breadcrumb:
-        menu:
-        title:
-      show_in_app:
-        menu:
-    export:
-      click_to_reverse_selection:
-      confirmation:
-      csv:
-        col_sep:
-        col_sep_help:
-        default_col_sep:
-        encoding_to:
-        encoding_to_help:
-        header_for_association_methods:
-        header_for_root_methods:
-        skip_header:
-        skip_header_help:
-      display:
-      empty_value_for_associated_objects:
-      fields_from:
-      fields_from_associated:
-      options_for:
-      select:
-    flash:
-      error:
-      model_not_found:
-      noaction:
-      object_not_found:
-      successful:
-    form:
-      all_of_the_following_related_items_will_be_deleted:
-      are_you_sure_you_want_to_delete_the_object:
-      basic_info:
-      bulk_delete:
-      cancel:
-      char_length_of:
-      char_length_up_to:
-      confirmation:
-      new_model:
-      one_char:
-      optional:
-      required:
-      save:
-      save_and_add_another:
-      save_and_edit:
-    misc:
-      add_filter:
-      add_new:
-      ago:
-      bulk_menu_title:
-      chose_all:
-      chosen:
-      clear_all:
-      down:
-      filter:
-      filter_date_format:
-      log_out:
-      navigation:
-      refresh:
-      remove:
-      search:
-      show_all:
-      up:
-    table_headers:
-      changes:
-      created_at:
-      item:
-      last_used:
-      message:
-      model_name:
-      records:
-      username:
     home:
-      name:
+      name: "Домашняя"
     pagination:
-      next:
-      previous:
-      truncate:
+      previous: "&laquo; Назад"
+      next: "Вперед &raquo;"
+      truncate: "…"
+    misc:
+      filter_date_format: "dd.mm.yy" # a combination of 'dd', 'mm' and 'yy' with any delimiter. No other interpolation will be done!
+      search: "Поиск"
+      filter: "Фильтры"
+      refresh: "Оновить"
+      show_all: "Показать все"
+      add_filter: "Добавить фильтр"
+      bulk_menu_title: "Вибраные елементи"
+      remove: "Удалить"
+      add_new: "создать"
+      chosen: "Выбраный %{name}"
+      chose_all: "Выбрать все"
+      clear_all: "Удалить все"
+      up: "Вверх"
+      down: "Вниз"
+      navigation: "Навигация"
+      navigation_static_label: "Ссылка"
+      log_out: "Выйти"
+      ago: "назад"
+    flash:
+      successful: "%{name} успешно %{action}"
+      error: "%{name} не %{action} через ошибку"
+      noaction: "Ничего не случилось"
+      model_not_found: "Модель '%{model}' не найдено"
+      object_not_found: "%{model} з id '%{id}' не найдено"
+    table_headers:
+      model_name: "Название модели"
+      last_used: "Последний раз был использован"
+      records: "Записи"
+      username: "Пользователь"
+      changes: "Изменения"
+      created_at: "Дата/Час"
+      item: "Елемент"
+      message: "Сообщения"
+    actions:
+      dashboard:
+        title: "Администрирование сайта"
+        menu: "Дашборд"
+        breadcrumb: "Дашборд"
+      index:
+        title: "Список %{model_label_plural}"
+        menu: "Список"
+        breadcrumb: "%{model_label_plural}"
+      show:
+        title: "Детально про %{model_label} «%{object_label}»"
+        menu: "Показать"
+        breadcrumb: "%{object_label}"
+      show_in_app:
+        menu: "Show in app"
+      new:
+        title: "Новый %{model_label}"
+        menu: "Создать"
+        breadcrumb: "Создание"
+        link: "Создать %{model_label}"
+        done: "создано"
+      edit:
+        title: "Редактирования %{model_label} «%{object_label}»"
+        menu: "Редактироваль"
+        breadcrumb: "Редактирования"
+        link: "Редактировать %{model_label}"
+        done: "оновлено"
+      delete:
+        title: "Удаление %{model_label} «%{object_label}»"
+        menu: "Удалить"
+        breadcrumb: "Удаление"
+        link: "Удалить %{object_label}"
+        done: "удалено"
+      bulk_delete:
+        title: "Удалить %{model_label_plural}"
+        menu: "Массовое удаление"
+        breadcrumb: "Массовое удаление"
+        bulk_link: "Удалить выбраные %{model_label_plural}"
+      export:
+        title: "Экспорт %{model_label_plural}"
+        menu: "Экспорт"
+        breadcrumb: "Экспорт"
+        link: "Экспортировать найденые «%{model_label_plural}»"
+        bulk_link: "Экспортировать выделеные «%{model_label_plural}»"
+        done: "экспортовано"
+      history_index:
+        title: "История для «%{model_label_plural}»"
+        menu: "История"
+        breadcrumb: "История"
+      history_show:
+        title: "История для %{model_label} «%{object_label}»"
+        menu: "История"
+        breadcrumb: "История"
+    form:
+      cancel: "Отменить"
+      basic_info: "Осоновная информация"
+      required: "Обязательное"
+      optional: "Опциональное"
+      one_char: "символ"
+      char_length_up_to: "длиной до"
+      char_length_of: "длина"
+      save: "Сохранить"
+      save_and_add_another: "Сохранить и добавить новый элемент"
+      save_and_edit: "Сохранить и редактировать"
+      all_of_the_following_related_items_will_be_deleted: "? Все связаные элементы было удалено или отвязоно:"
+      are_you_sure_you_want_to_delete_the_object: "Действительно удалить %{model_name}"
+      confirmation: "Да, я уверенный"
+      bulk_delete: "Следующие объекты будет удалено, это приведет к удалению следующих связаных элементов (или только связи с ними):"
+      new_model: "%{name} (new)"
+    export:
+      confirmation: "Экспортировать в %{name}"
+      select: "Выберете поля для экспотру"
+      fields_from: "Поля с %{name}"
+      fields_from_associated: "Поля с связаного %{name}"
+      display: "Показать %{name}: %{type}"
+      options_for: "Опции для %{name}"
+      empty_value_for_associated_objects: "<empty>"
+      click_to_reverse_selection: 'Click to reverse selection'
+      csv:
+        header_for_root_methods: "%{name}" # 'model' is available
+        header_for_association_methods: "%{name} [%{association}]"
+        encoding_to: "Кодировать"
+        encoding_to_help: "Выберите кодирование вводу. Оставте поле пустым чтобы поточное кодирование не изменилось: (%{name})"
+        skip_header: "Без заголовка"
+        skip_header_help: "Не выводит заголовок (без описания полей)"
+        default_col_sep: ","
+        col_sep: "распределитель столбцов"
+        col_sep_help: "Лишит пустым по умолчанию  ('%{value}')" # value is default_col_sep
