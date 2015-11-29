@@ -1,3 +1,14 @@
-ru:
+en:
   groups:
-    plural: Node groups
+    plural: Groups of objects
+    index:
+      id: ID
+      name: Name
+      node_count: Count of groups
+      edit: Edit
+      destroy: Delate
+      new: Create new group
+      list: List of group objects
+    add_nodes_modal:
+      modal:
+        title: Add object to group
