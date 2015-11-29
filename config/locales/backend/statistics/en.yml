@@ -2,3 +2,5 @@ uk:
   statistics:
     index:
       header: 'Statistics'
+      mass_mailing:
+        count: 'Mass-mailings statistics'

@@ -9,12 +9,14 @@
 br
 .row
   .col-md-12
-    p
-      strong Started:
-      = time_ago_in_words(b.mass_mailing.started)
-    p
-      strong Finished:
-      = time_ago_in_words(b.mass_mailing.finished)
+    - if b.mass_mailing.started
+      p
+        strong Started:
+        = time_ago_in_words(b.mass_mailing.started)
+    - if b.mass_mailing.finished
+      p
+        strong Finished:
+        = time_ago_in_words(b.mass_mailing.finished)
 .row
   - if b.mass_mailing.mass_mailing_nodes.present?
     .col-md-12

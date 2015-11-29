@@ -31,7 +31,7 @@ Rails.application.routes.draw do
   resources :mass_mailing_nodes, controller: 'mass_mailing_nodes'
   resources :statistics, controller: 'statistics'
 
-  root 'nodes#index'
+  root 'mass_mailings#index'
   resources :node_vks, controller: 'nodes', type: 'Node::Vk'
   resources :node_emails, controller: 'nodes', type: 'Node::Email'
 

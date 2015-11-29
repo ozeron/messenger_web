@@ -77,9 +77,9 @@
           <ul class="nav navbar-nav navbar-right">
             <% if current_user %>
               <% if can? :access, :rails_admin %>
-                <li><%= link_to glyphicon_with_text('control-sign', "#{t('devise.registrations.show.admin')},"), rails_admin_path, data: { no: { turbolink: true }}%></li>
+                <li><%= link_to glyphicon_with_text('control-sign', "#{t('devise.registrations.show.admin')}"), rails_admin_path, method: :get%></li>
               <% end %>
-              <li><%= link_to glyphicon_with_text('info-sign', "#{t('devise.registrations.show.cabinet')},"), cabinet_path%></li>
+              <li><%= link_to glyphicon_with_text('info-sign', "#{t('devise.registrations.show.cabinet')}"), cabinet_path%></li>
               <li><%= link_to t('log_out'), destroy_user_session_path, method: :delete%></li>
             <%end%>
           </ul>

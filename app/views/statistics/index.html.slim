@@ -7,14 +7,17 @@ br
   .col-md-12
     table.table
       tr
-        td  Створено розсилок
+        td
+          = t('.mass_mailing.count')
         td
           = MassMailing.count
       tr
-        td Створено повідомлень
+        td
+          = t('.message.count')
         td
           = Message.count
       tr
-        td Створено об`єктів для розсилки
+        td
+          = t('.node.count')
         td
           = Node.count
