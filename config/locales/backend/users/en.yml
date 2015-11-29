@@ -1,0 +1,13 @@
+en:
+  users:
+    registrations:
+      edit:
+        domain: 'Domain name of your email provaider'
+        ssl: 'Use SSL encryption'
+        tls: 'Use TLS encryption'
+        enable_starttls_auto: 'Сipher SSL/TLS'
+        email_name: 'Input full email addres! For example: email@example.com'
+        email_password: 'Input the password of your email'
+        port: 'Input port for server'
+        address: 'Input the addres of SMTP server'
+        authentication: 'Chose the authentication mode. plain - standart. Information about this option is in your email provaider' 
