@@ -18,7 +18,7 @@ class MassMailer
 
     @text = message_to_send.content
     @title = message_to_send.title
-    smtp_settings = default.merge(user.email_parameters).symbolize_keys
+    smtp_settings = default.merge(user.email_parameters || {}).symbolize_keys
     hash = {
       to: node.email,
       from: user.email_name,
