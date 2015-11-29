@@ -1,0 +1,22 @@
+ru:
+  activerecord:
+    models:
+      node: Массовая рассылка
+    attributes:
+      node:
+        id: ID
+        title: Заголовок
+        message_title: Название сообщения
+        nodes: Объекты для рассылки
+        started: Начало
+        finished: Конец
+  mass_mailings:
+    list: 'Массовые рассылки'
+    new: 'Создать россылку'
+    edit: 'Редактировать массовою рассылку'
+    index:
+      retry: 'Повторить рассылку'
+      confirmation: 'Вы уверены, что хотите повторить рассылку?'
+    show:
+      mass_mailing_empty: 'Нету статистики по объектам'
+      confirmation: 'Вы уверены, что хотите повторить рассылку?'
