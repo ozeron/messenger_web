@@ -28,8 +28,6 @@ class User < ActiveRecord::Base
         :current_sign_in_at, :last_sign_in_at, :current_sign_in_ip, :last_sign_in_ip
     end
 
-    field :permission, :enum do
-    end
   end
 
   validates :language,
