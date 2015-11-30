@@ -1,0 +1,32 @@
+ru:
+  simple_form:
+      labels:
+        user:
+          email: Email
+          language: Язык
+          password: Пароль
+          vk_login: Логин для Вконтакте
+          vk_password: Пароль для Вконтакте
+          address: 'Адреса SMTP сервера'
+          domain: 'Доменное имя вашего провайдера'
+          port: Порт
+          email_name: Ваш Email
+          email_password: Пароль для Email
+          remember_me: Запомнить мене
+  log_in_header: 'Войти в систему'
+  log_out: Выйти
+  log_in: Войти
+  sign_up: Зарегестрироватся
+  forgot_password: Забыли пароль?
+  confirm_account: Подтвердить акаунт
+  change_my_password: Изменить мой пароль
+  unlock_my_account: Розблокировать мой акаунт
+  change_my_password: Изменить мой пароль
+  new_password: Новый пароль
+  confirm_your_new_password: Подтвердить ваш новый пароль
+  send_me_reset_password_instructions: Отправить мне инструкцию по изменению пароля
+  copy: 2001—2015 Министерство обороны Украины, Управления Информационных Технологий
+  new_message: Новое сообщение
+  listing_messages: Список сообщений
+  back: Назад
+  show: Посмотреть
