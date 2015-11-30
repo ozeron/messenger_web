@@ -1,31 +1,32 @@
 en:
   simple_form:
-    "yes": 'Yes'
-    "no": 'No'
-    required:
-      text: 'required'
-      mark: '*'
-      # You can uncomment the line below if you need to overwrite the whole required html.
-      # When using html, text and mark won't be used.
-      # html: '<abbr title="required">*</abbr>'
-    error_notification:
-      default_message: "Please review the problems below:"
-    # Examples
-    # labels:
-    #   defaults:
-    #     password: 'Password'
-    #   user:
-    #     new:
-    #       email: 'E-mail to sign in.'
-    #     edit:
-    #       email: 'E-mail.'
-    # hints:
-    #   defaults:
-    #     username: 'User name to sign in.'
-    #     password: 'No special characters, please.'
-    # include_blanks:
-    #   defaults:
-    #     age: 'Rather not say'
-    # prompts:
-    #   defaults:
-    #     age: 'Select your age'
+      labels:
+        user:
+          email: Email
+          language: Language
+          password: Password
+          vk_login: VK login
+          vk_password: VK password
+          address: 'Address of SMTP server'
+          domain: 'Domein name of your provider'
+          port: Port
+          email_name: Your Email
+          email_password: Password for your Email
+          remember_me: Remember me
+  log_in_header: 'Log in'
+  log_out: Log out
+  log_in: Log in
+  sign_up: Registration
+  forgot_password: Forgot password?
+  confirm_account: Confirm account
+  change_my_password: Change my password
+  unlock_my_account: Unlock my account
+  change_my_password: Change my password
+  new_password: New password
+  confirm_your_new_password: Confirm your new password
+  send_me_reset_password_instructions: Send me reset password instructions
+  copy: 2001—2015 Ministry of Defence of Ukraine, Department of Information Technology
+  new_message: New message
+  listing_messages: List of messages
+  back: Back
+  show: Show
