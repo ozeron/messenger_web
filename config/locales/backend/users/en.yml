@@ -2,7 +2,7 @@ en:
   users:
     registrations:
       edit:
-        domain: 'Domain name of your email provaider'
+        domain: 'Domain name of your email provider'
         ssl: 'Use SSL encryption'
         tls: 'Use TLS encryption'
         enable_starttls_auto: 'Сipher SSL/TLS'
