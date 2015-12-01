@@ -1,0 +1,15 @@
+ru:
+  edit: 'Редактировать'
+  destroy: 'Удалить'
+  confirmation: 'Вы уверены?'
+  message:
+    new: 'Новое сообщение'
+    edit: 'Редактировать сообщение'
+  activerecord:
+    models:
+      message: Сообщение
+    attributes:
+      message:
+        title: Заголовок
+        content: Содержание
+        tag_list: Список категорий

@@ -1,0 +1,15 @@
+uk:
+  edit: 'Edit'
+  destroy: 'Delate'
+  confirmation: 'Are you sure?'
+  message:
+    new: 'New message'
+    edit: 'Edit message'
+  activerecord:
+    models:
+      message: Message
+    attributes:
+      message:
+        title: Title
+        content: Content
+        tag_list: List of categories

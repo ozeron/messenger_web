@@ -4,3 +4,7 @@ uk:
       header: 'Statistics'
       mass_mailing:
         count: 'Mass-mailings statistics'
+      node:
+        count: 'Count of objects for mailing'
+      message:
+        count: 'Count of messages for mailing'
