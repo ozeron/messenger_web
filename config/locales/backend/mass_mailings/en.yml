@@ -19,4 +19,4 @@ en:
       confirmation: 'Are you sure to retry the mailing?'
     show:
       mass_mailing_empty: 'No statistics adout objects'
-      confirmation: 'Are you sure to retry the mailing'
+      confirmation: 'Are you sure want to retry the mailing'
