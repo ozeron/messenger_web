@@ -5,6 +5,6 @@ uk:
       mass_mailing:
         count: 'Mass-mailings statistics'
       node:
-        count: 'Count of objects to mailing'
+        count: 'Count of objects for mailing'
       message:
-        count: 'Count of messages to mailing'
+        count: 'Count of messages for mailing'
