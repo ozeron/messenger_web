@@ -1,0 +1,32 @@
+ru:
+  activerecord:
+    models:
+      node: Объекты для рассылки
+      node/vk: ВК
+      node/email: Email
+    attributes:
+      node:
+        id: ID
+        name: Имя
+        email: Email
+        description: Описание
+        vk_id: Идентефикатор Вконтакте
+        tag_list: Список тегов
+        tags: Теги
+  nodes:
+    plural: Объекты для рассылки
+    messages: Сообщения
+    massmailings: Массовая рассылка
+
+    index:
+      list: Список объектов для рассылки
+      new: Создать объект
+    new: Новый объект для рассылки
+    data_table:
+      id: ID
+      name: Имя
+      description: Описание
+      tag_list: Список тегов
+      edit: Редактировать
+      destroy: Удалить
+      confirmation: 'Вы уверены?'

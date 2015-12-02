@@ -1,3 +1,14 @@
 ru:
   groups:
-    plural: Групи обьектов
+    plural: Групы объектов
+    index:
+      id: ID
+      name: Имя
+      node_count: Количество груп
+      edit: Редактировать
+      destroy: Удалить
+      new: Создать новую групу
+      list: Список груп объектов
+    add_nodes_modal:
+      modal:
+        title: Добавить объект к групе
