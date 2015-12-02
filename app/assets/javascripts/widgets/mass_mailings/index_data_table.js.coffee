@@ -1,18 +1,15 @@
 window.Widgets.Nodes ||= {}
 
-class window.Widgets.Nodes.DataTable extends window.Widgets.Base
-  table = '#nodes'
+class window.Widgets.Nodes.IndexDataTable extends window.Widgets.Base
+  table = '.table'
   dataTable = undefined;
 
   _options = () ->
     {
-      # bProcessing: true,
-      # bServerSide: true,
-      # sAjaxSource: $(table).data('source'),
-      order: [[ 0, "asc" ]],
+      order: [[ 0, "desc" ]],
       language: window.dataTableLocale(),
       columnDefs: [
-        { "targets": 3, "orderable": false },
+        # { "targets": 3, "orderable": false },
         # { "targets": 4, "orderable": false },
         # { "targets": 5, "orderable": false }
       ]

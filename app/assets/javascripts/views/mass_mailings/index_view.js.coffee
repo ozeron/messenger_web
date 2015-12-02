@@ -2,8 +2,13 @@ window.Views.MassMailings ||= {}
 
 class Views.MassMailings.IndexView extends Views.ApplicationView
   _options = {
-    order: [[ 0, "desc" ]]
+    order: [[ 0, "desc" ]],
+
   }
   render: ->
     super()
-    $('.table').DataTable(_options)
+    Widgets.Nodes.IndexDataTable.enable()
+
+  cleanup: ->
+    super()
+    Widgets.Nodes.IndexDataTable.cleanup()

@@ -97,6 +97,7 @@ class window.Widgets.Groups.DataTable extends window.Widgets.Base
   _options = () ->
     {
       pagingType: "full_numbers",
+      language: window.dataTableLocale(),
       order: [[ 0, "desc" ]],
       columnDefs: [
         { targets: 3, orderable: false, searchable: false }
