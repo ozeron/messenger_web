@@ -28,6 +28,13 @@ class User < ActiveRecord::Base
         :current_sign_in_at, :last_sign_in_at, :current_sign_in_ip, :last_sign_in_ip
     end
 
+    list do
+      field :id
+      field :email
+      field :last_sign_in_at
+      field :language
+      field :permission
+    end
   end
 
   validates :language,

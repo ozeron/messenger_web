@@ -1,4 +1,29 @@
 ru:
+  activerecord:
+    models:
+      user: Пользователь
+    attributes:
+      user:
+        id: ID
+        email: Email
+        password: Пароль
+        password_confirmation: Подтверждение паролю
+        connection_parameters: Параметри подключения
+        current_password: Текущий пароль
+        authentication: Способ авторизации
+        permission: Уровень доступу
+        language: Язык
+        last_sign_in_at: Последний раз входил в систему
+        vk_login: Логин ВКонтакте
+        vk_password: Пароль ВКонтакте
+        vk_app_id: Идентификатор App ID
+        enable_starttls_auto: Включить автоматическое шифрование SSL/TLS
+        domain: Домен
+        port: Порт
+        ssl: SSL
+        tls: TLS
+        address: Адреса smtp сервера
+        user_name: EMail пользователя
   users:
     registrations:
       edit:
@@ -10,4 +35,4 @@ ru:
         email_password: 'Введите пароль от вашого электронного ящика'
         port: 'Введите порт для сервера'
         address: 'Введите адресу SMTP сервера'
-        authentication: 'Выберите способ авторизации на сервере. plain - стандартный. Информация про этот параметер есть у вашего провайдера электронной почты' 
+        authentication: 'Выберите способ авторизации на сервере. plain - стандартный. Информация про этот параметер есть у вашего провайдера электронной почты'

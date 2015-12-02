@@ -1,4 +1,29 @@
 en:
+  activerecord:
+    models:
+      user: User
+    attributes:
+      user:
+        id: ID
+        email: Email
+        password: Password
+        password_confirmation: Password confirmation
+        connection_parameters: Connection parameters
+        current_password: Current password
+        authentication: Authentication
+        permission: Permission level
+        language: Language
+        last_sign_in_at: Last sing in at
+        vk_login: VK login
+        vk_password: VK Password
+        vk_app_id: VK App ID
+        enable_starttls_auto: Enable start TLS auto
+        domain: domain
+        port: port
+        ssl: SSL
+        tls: TLS
+        address: SMTP server address
+        user_name: smtp provider EMail
   users:
     registrations:
       edit:
@@ -10,4 +35,4 @@ en:
         email_password: 'Input the password of your email'
         port: 'Input port for server'
         address: 'Input the addres of SMTP server'
-        authentication: 'Chose the authentication mode. plain - standart. Information about this option is in your email provaider' 
+        authentication: 'Chose the authentication mode. plain - standart. Information about this option is in your email provaider'

@@ -16,57 +16,57 @@ br
           = current_user.email
       tr
         td
-          = t('.language')
+          = User.human_attribute_name('language')
         td
           = current_user.language_human
       tr
         td[colspan=2]
-          strong Vkontakte
+          strong VKontakte
       tr
-        td Login
+        td = User.human_attribute_name('vk_login')
         td
           = current_user.vk.login
       tr
-        td Password
+        td = User.human_attribute_name('vk_password')
         td
           = current_user.vk.password ? '*'*10 : 'No password'
       tr
-        td AppId
+        td = User.human_attribute_name('vk_app_id')
         td
           = current_user.vk_app_id
       tr
         td[colspan=2]
           strong Email
       tr
-        td Address
+        td = User.human_attribute_name('address')
         td
           = current_user.email_config.address
       tr
-        td Port
+        td = User.human_attribute_name('port')
         td
           = current_user.email_config.port
       tr
-        td SSL
+        td = User.human_attribute_name('ssl')
         td
           = current_user.email_config.ssl
       tr
-        td TLS
+        td = User.human_attribute_name('tls')
         td
           = current_user.email_config.tls
       tr
-        td Enable Start TLS Auto
+        td = User.human_attribute_name('enable_starttls_auto')
         td
           = current_user.email_config.enable_starttls_auto
       tr
-        td Domain
+        td = User.human_attribute_name('domain')
         td
           = current_user.email_config.domain
       tr
-        td Login
+        td = User.human_attribute_name('user_name')
         td
           = current_user.email_config.user_name
       tr
-        td Password
+        td = User.human_attribute_name('password')
         td
           = current_user.email_config.password ? '*'*10 : 'No password'
 
