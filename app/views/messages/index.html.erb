@@ -15,12 +15,12 @@
       <thead>
         <tr>
           <th>ID</th>
-          <th>Title</th>
-          <th>Content</th>
-          <th>Tags</th>
+          <th><%= Message.human_attribute_name('title') %></th>
+          <th><%= Message.human_attribute_name('content') %></th>
+          <th><%= Message.human_attribute_name('tags') %></th>
           <% if can? :update, Node %>
-            <th>Edit</th>
-            <th>Destory</th>
+            <th><%= t('edit') %></th>
+            <th><%= t('destroy') %></th>
           <% end %>
         </tr>
       </thead>
@@ -31,8 +31,8 @@
             <td><%= truncate(ERB::Util.h(message.content), length: 300) %></td>
             <td><%= message.tag_list_name %></td>
             <% if can? :update, Node %>
-              <td><%= link_to(t('.edit'), edit_message_path(message)) %></td>
-              <td><%= link_to(t('.destroy'), message, method: :delete, data: { confirm: t('.confirmation') }) %></td>
+              <td><%= link_to(t('edit'), edit_message_path(message)) %></td>
+              <td><%= link_to(t('destroy'), message, method: :delete, data: { confirm: t('confirmation') }) %></td>
             <% end %>
           </tr>
         <% end %>

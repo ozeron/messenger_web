@@ -1,7 +1,7 @@
 en:
   activerecord:
     models:
-      node: Objects to mailing
+      node: Objects for mailing
       node/vk: VK
       node/email: Email
     attributes:

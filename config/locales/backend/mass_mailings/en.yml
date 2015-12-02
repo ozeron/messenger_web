@@ -1,9 +1,9 @@
 en:
   activerecord:
     models:
-      node: Mass mailing
+      mass_mailing: Mass mailing
     attributes:
-      node:
+      mass_mailing:
         id: ID
         title: Title
         message_title: Title of message
@@ -15,7 +15,7 @@ en:
     new: 'Create mailing'
     edit: 'Edit mass mailing'
     index:
-      retry: 'Retry mailing'
+      retry: 'Retry'
       confirmation: 'Are you sure to retry the mailing?'
     show:
       mass_mailing_empty: 'No statistics about objects'

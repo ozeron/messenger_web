@@ -1,9 +1,9 @@
 uk:
   activerecord:
     models:
-      node: Масова розсилка
+      mass_mailing: Масова розсилка
     attributes:
-      node:
+      mass_mailing:
         id: ID
         title: Заголовок
         message_title: Назва повідомлення
@@ -15,7 +15,7 @@ uk:
     new: 'Створити розсилку'
     edit: 'Редагувати масову розсилку'
     index:
-      retry: 'Повторити розсилку'
+      retry: 'Повторити'
       confirmation: 'Ви впевнені, що хочете повторити розсилку?'
     show:
       mass_mailing_empty: 'Немає статистики по об’єктам'
