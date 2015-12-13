@@ -6,6 +6,7 @@ class Node < ActiveRecord::Base
   acts_as_taggable_on :groups
 
   scope :includes_tags, -> { includes(:tags) }
+  scope :with_tags, -> { includes(:tags) }
 
   def self.search(query)
     additional_ids = NodeIdsWhereTagNameMatch.query(query).join(",")
@@ -24,5 +25,9 @@ class Node < ActiveRecord::Base
 
   def tag_list_name
     tags.map(&:name).join('; ')
+  end
+
+  def human
+    "#{id} #{name}"
   end
 end

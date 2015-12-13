@@ -1,13 +1,13 @@
 window.Widgets.Groups ||= {}
 
 class window.Widgets.Groups.DataTable extends window.Widgets.Base
-  table = '#mass_mailing_nodes'
+  table = '#data-table'
+  dataId = '#groups_ids'
   dataTable = undefined;
   rows_selected = []
 
-
   updateDataTableSelectAllCtrl = (dataTable) ->
-    $table = dataTable.table().node()
+    $table = $(table).DataTable().table().node()
     $chkbox_all = $('tbody input[type="checkbox"]', $table)
     $chkbox_checked = $('tbody input[type="checkbox"]:checked', $table)
     chkbox_select_all = $('thead input[name="select_all"]', $table).get(0)
@@ -31,12 +31,17 @@ class window.Widgets.Groups.DataTable extends window.Widgets.Base
   _initializeCheckboxes = (e) ->
     _.forEach rows_selected, (id)->
       _hiddenInputsAdd(id)
+      setInputChecked(id)
     return
+
+  setInputChecked = (id) ->
+    $("tr td:contains(#{id})").siblings('td:last')
+      .children('input[type="checkbox"]').attr('checked', true)
 
   _checkBoxClickHandler = (e) ->
     $row = $(this).closest('tr')
     # Get row data
-    data = dataTable.row($row).data()
+    data = $(table).DataTable().row($row).data()
     # Get row ID
     rowId = data[0]
     # Determine whether row ID is in the list of selected row IDs
@@ -46,15 +51,17 @@ class window.Widgets.Groups.DataTable extends window.Widgets.Base
       rows_selected.push rowId
       _hiddenInputsAdd(rowId)
       # Otherwise, if checkbox is not checked and row ID is in list of selected row IDs
-    else if !@checked and index != -1
+    if !@checked and index != -1
       _hiddenInputsRemove(rowId)
       rows_selected.splice index, 1
+    if !@checked and index == -1
+      _hiddenInputsRemove(rowId)
     if @checked
       $row.addClass 'selected'
     else
       $row.removeClass 'selected'
     # Update state of "Select all" control
-    updateDataTableSelectAllCtrl dataTable
+    updateDataTableSelectAllCtrl $(table).DataTable()
     # Prevent click event from propagating to parent
     e.stopPropagation()
     return
@@ -71,28 +78,37 @@ class window.Widgets.Groups.DataTable extends window.Widgets.Base
     e.stopPropagation()
 
   _tableDrawEventHandler = ()->
-    updateDataTableSelectAllCtrl(dataTable);
+    updateDataTableSelectAllCtrl($(table).DataTable());
 
   _new_lement = (id, key, value) ->
-    "<input class='string required form-control' type='hidden' name='mass_mailing[mass_mailing_nodes_attributes][#{id}][#{key}]' id='mass_mailing_mass_mailing_nodes_attributes_#{id}_#{key}' value='#{value}' />"
+    "<input class='string required form-control' type='hidden' name='group[taggings_attributes][#{id}][#{key}]' id='group_taggings_attributes_#{id}_#{key}' value='#{value}' />"
 
   _hiddenInputsAdd = (id) ->
-    if ($("#mass_mailing_mass_mailing_nodes_attributes_#{id}__destroy").length > 0)
-      $("#mass_mailing_mass_mailing_nodes_attributes_#{id}__destroy").attr('value', 0)
+    if ($("#group_taggings_attributes_#{id}__destroy").length > 0)
+      $("#group_taggings_attributes_#{id}__destroy").attr('value', 0)
 
-    if !($("#mass_mailing_mass_mailing_nodes_attributes_#{id}_node_id").length > 0)
-      $('.form-group.required.mass_mailing_nodes_node_id').append(_new_lement(id, 'node_id', id))
+    if !($("#group_taggings_attributes_#{id}_taggable_id").length > 0)
+      $('.form-group.required.group_node_id').append(_new_lement(id, 'taggable_id', id))
+      $('.form-group.required.group_node_id').append(_new_lement(id, 'taggable_type', 'Node'))
     return
 
   _hiddenInputsRemove = (id) ->
-    if ($("#mass_mailing_mass_mailing_nodes_attributes_#{id}__destroy").length > 0)
-      $("#mass_mailing_mass_mailing_nodes_attributes_#{id}__destroy").attr('value', 1)
-    else if $("#mass_mailing_mass_mailing_nodes_attributes_#{id}_node_id").length > 0
-      $("#mass_mailing_mass_mailing_nodes_attributes_#{id}_node_id").after(_new_lement(id, '_destroy', 1))
+    if ($("#group_taggings_attributes_#{id}__destroy").length > 0)
+      $("#group_taggings_attributes_#{id}__destroy").attr('value', 1)
+    else if $("#group_taggings_attributes_#{id}_taggable_id").length > 0
+      $("#group_taggings_attributes_#{id}_taggable_id").after(_new_lement(id, '_destroy', 1))
     else
-      $('.form-group.required.mass_mailing_nodes_node_id').append(_new_lement(id, 'node_id', id))
-      $('.form-group.required.mass_mailing_nodes_node_id').append(_new_lement(id, '_destroy', 1))
+      $('.form-group.required.group_node_id').append(_new_lement(id, 'taggable_id', id))
+      $('.form-group.required.group_node_id').append(_new_lement(id, 'taggable_type', 'Node'))
+      $('.form-group.required.group_node_id').append(_new_lement(id, '_destroy', 1))
     return
+
+  initializeCheckboxes = () ->
+    $("#{table} tbody").on 'click', 'input[type="checkbox"]', _checkBoxClickHandler
+    $(table).on 'click', 'tbody td, thead th:first-child', _rowClickHandler
+    $("#{table} thead input[name=\"select_all\"]").click(_selectAllClickHandler)
+    $(table).DataTable().on('draw', _tableDrawEventHandler)
+    _initializeCheckboxes()
 
   _options = () ->
     {
@@ -102,6 +118,7 @@ class window.Widgets.Groups.DataTable extends window.Widgets.Base
       columnDefs: [
         { targets: 3, orderable: false, searchable: false }
       ]
+      drawCallback: initializeCheckboxes
     }
 
   _renderDataTable = ->
@@ -130,17 +147,11 @@ class window.Widgets.Groups.DataTable extends window.Widgets.Base
 
 
 
-  _renderDataTable = ->
+  _renderDataTable = =>
     if !dataTable
-      rows_selected = rows_selected.concat(JSON.parse($('#mass_mailing_nodes_ids').attr('data-ids')))
+      rows_selected = rows_selected.concat(JSON.parse($(dataId).attr('data-ids') || '[]'))
       $('#mass_mailing_nodes_ids').data('ids',[])
-      dataTable = $(table).DataTable(_options());
-      $("#{table} tbody").on 'click', 'input[type="checkbox"]', _checkBoxClickHandler
-      $(table).on 'click', 'tbody td, thead th:first-child', _rowClickHandler
-      $("#{table} thead input[name=\"select_all\"]").click(_selectAllClickHandler)
-      dataTable.on('draw', _tableDrawEventHandler)
-      _initializeCheckboxes()
-
+      @dataTable = $(table).DataTable(_options());
       #$(table).closest('form').on('submit', _formSubmissionHandler)
     true
 

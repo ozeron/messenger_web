@@ -1,5 +1,28 @@
-= simple_form_for(b.group, url: groups_path, method: :post) do |f|
+= simple_form_for(b.group) do |f|
   = f.input :name
-  .form-group.string.required.groups_node_id
-    .hidden#groups_ids[data-ids="#{b.group_node_ids}"]
+  .form-group.string.required.group_node_id
+    #groups_ids[data-ids="#{b.group_node_ids}"]
+    table.table#data-table
+      thead
+        tr
+          th
+            = Node.human_attribute_name('id')
+          th
+            = Node.human_attribute_name('name')
+          th
+            = Node.human_attribute_name(:tags)
+          th
+            input[name="select_all" value="1" type="checkbox"]
+      tbody
+        - b.nodes.each do |node|
+          tr
+            td
+              = node.id
+            td
+              = node.name
+            td
+              = node.tags.map(&:name).join('; ')
+            td
+              input[type='checkbox']
+
   = f.submit class: 'btn btn-primary'

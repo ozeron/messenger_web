@@ -1,4 +1,20 @@
 uk:
+  activerecord:
+    models:
+      groups: Групи
+    attributes:
+      group:
+        id: ID
+        name: Ім’я
+        taggings_count: К-кість прив’язаних об’єктів
+        taggings: Прив’язані об’єкти
+    errors:
+      models:
+        group:
+          attributes:
+            taggings:
+              too_short: 'Виберіть хоча б одну групу для тега'
+
   groups:
     plural: Групи об’єктів
     index:
@@ -9,6 +25,12 @@ uk:
       destroy: Видалити
       new: Створити нову групу
       list: Список груп об’єктів
+    create:
+      succeed: Група успішно створена!
+      failed: Група не створена!
+    update:
+      succeed: Група успішно оновлена!
+      failed: Група не оновлена!
     add_nodes_modal:
       modal:
         title: Дадати об’єкти до групи

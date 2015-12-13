@@ -2,15 +2,19 @@ class GroupsBoard < BasicBoard
   attr_accessor :group
 
   def groups
-    @groups = Tag.groups
+    @groups = Group.groups
   end
 
   def group
-    @group ||= params[:id] ? Tag.includes(:nodes).find(params[:id]) : Tag.new
+    @group ||= params[:id] ? Group.includes(:nodes).find(params[:id]) : Group.new
   end
 
   def group_nodes
-    group.nodes
+    group.nodes.with_tags.to_a.uniq
+  end
+
+  def nodes
+    @nodes ||= Node.with_tags
   end
 
   def all_free_nodes
