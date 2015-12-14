@@ -30,6 +30,8 @@ uk:
       mass_mailing_empty: 'Немає статистики по об’єктам'
       confirmation: 'Ви впевнені, що хочете повторити розсилку?'
       retry: Повторити
+    form:
+      submit: Почати розсилку  
     status:
       success: Успішно
       success_text: Відправлення пройшло успішно!
