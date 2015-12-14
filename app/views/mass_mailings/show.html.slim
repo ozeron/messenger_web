@@ -4,6 +4,12 @@
 - if b.mass_mailing.status == 'failed'
   .alert.alert-danger[role="alert"]
     = t("mass_mailings.status.#{b.mass_mailing.status}_text")
+- if b.mass_mailing.status == 'pending' || b.mass_mailing.status = 'in_progress'
+  .alert.alert-info[role="alert"]
+    = t("mass_mailings.status.#{b.mass_mailing.status}_text")
+    - if b.mass_mailing.status == 'warning'
+      .alert.alert-warning[role="alert"]
+        = t("mass_mailings.status.#{b.mass_mailing.status}_text")
 
 .row.header.header_row
   .col-md-10
