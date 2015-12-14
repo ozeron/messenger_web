@@ -1,5 +1,5 @@
 = simple_form_for(b.group) do |f|
-  = f.input :name
+  = f.input :name, required: true
   .form-group.string.required.group_node_id
     #groups_ids[data-ids="#{b.group_node_ids}"]
     table.table#data-table

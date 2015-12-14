@@ -6,6 +6,7 @@ class Group
       object.taggings.each do |tagging|
         tagging.destroy if destroy_taggable_ids.include?(tagging.taggable_id.to_s)
       end
+      object.update(taggings_count: object.taggings.size)
       object.reload if object.persisted?
       board.group.reload if object.persisted?
     end
@@ -32,6 +33,7 @@ class Group
       params.require(:group).permit(:name,
                                     taggings_attributes: [:taggable_id,
                                                           :taggable_type,
+                                                          :context,
                                                           :_destroy])
     end
 

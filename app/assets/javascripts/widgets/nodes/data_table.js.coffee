@@ -9,7 +9,7 @@ class window.Widgets.Nodes.DataTable extends window.Widgets.Base
       # bProcessing: true,
       # bServerSide: true,
       # sAjaxSource: $(table).data('source'),
-      order: [[ 0, "asc" ]],
+      order: [[ 0, "desc" ]],
       language: window.dataTableLocale(),
       columnDefs: [
         { "targets": 3, "orderable": false },

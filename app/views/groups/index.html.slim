@@ -15,7 +15,6 @@ br
           th = t('.name')
           th = t('.node_count')
           th = t('.edit')
-          th = t('.destroy')
       tbody
         - b.groups.each do |group|
           tr
@@ -23,4 +22,3 @@ br
             td = link_to group.name, group_path(group)
             td = group.taggings_count
             td = link_to t('.edit'), edit_group_path(group)
-            td = link_to t('.destroy'), { action: :destroy, id: group.id }, method: :delete, data: { confirm: 'Are you sure?' }

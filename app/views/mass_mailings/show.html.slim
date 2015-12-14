@@ -1,3 +1,10 @@
+- if b.mass_mailing.status == 'success'
+  .alert.alert-success[role="alert"]
+    = t("mass_mailings.status.#{b.mass_mailing.status}_text")
+- if b.mass_mailing.status == 'failed'
+  .alert.alert-danger[role="alert"]
+    = t("mass_mailings.status.#{b.mass_mailing.status}_text")
+
 .row.header.header_row
   .col-md-10
     h1
@@ -11,12 +18,22 @@ br
   .col-md-12
     - if b.mass_mailing.started
       p
-        strong Started:
+        strong = MassMailing.human_attribute_name(:started)
+        |:
         = time_ago_in_words(b.mass_mailing.started)
     - if b.mass_mailing.finished
       p
-        strong Finished:
+        strong = MassMailing.human_attribute_name(:finished)
+        |:
         = time_ago_in_words(b.mass_mailing.finished)
+.row
+  .col-md-12
+    strong = MassMailing.human_attribute_name(:status)
+    =< t("mass_mailings.status.#{b.mass_mailing.status}")
+.row
+  .col-md-12
+    strong = MassMailing.human_attribute_name(:message)
+    =< link_to b.mass_mailing.message.title, message_path(b.mass_mailing.message)
 .row
   - if b.mass_mailing.mass_mailing_nodes.present?
     .col-md-12
@@ -31,7 +48,7 @@ br
               td
                 = mmn.name
               td
-                = mmn.status_text
+                = t("mass_mailings.status.#{mmn.status_text}")
   - else
     .col-md-12
       p

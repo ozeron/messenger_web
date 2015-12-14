@@ -2,15 +2,15 @@ table.table
   thead
     tr
       th
-        = t('.id')
+        = Node.human_attribute_name('id')
       th
-        = t('.name')
+        = Node.human_attribute_name('name')
       th
-        = t('.description')
+        = Node.human_attribute_name('description')
       th
-        = t('.edit')
+        = t('edit')
       th
-        = t('.destroy')
+        = t('destroy')
   tbody
     - b.group_nodes.each do |n|
       tr
@@ -21,5 +21,5 @@ table.table
         td
           = n.description
         td
-          = link_to t('.edit'), edit_node_path(n)
-        td = link_to t('.destroy'), n, method: :delete, data: { confirm: 'Are you sure?' }
+          = link_to t('edit'), edit_node_path(n)
+        td = link_to t('destroy'), n, method: :delete, data: { confirm: 'Are you sure?' }

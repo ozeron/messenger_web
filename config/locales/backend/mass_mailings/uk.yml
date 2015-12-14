@@ -7,9 +7,18 @@ uk:
         id: ID
         title: Заголовок
         message_title: Назва повідомлення
+        message: Повідомлення
+        message_id: Виберіть повідомлення
         nodes: Об’єкти для розсилки
-        started: Початок
+        started: Почалася
         finished: Завершилась
+        status: Статус
+  errors:
+    models:
+      mass_mailing:
+        attributes:
+          nodes:
+            too_short: 'Виберіть хоча б одну групу для тега'
   mass_mailings:
     list: 'Масові розсилки'
     new: 'Створити розсилку'
@@ -20,3 +29,12 @@ uk:
     show:
       mass_mailing_empty: 'Немає статистики по об’єктам'
       confirmation: 'Ви впевнені, що хочете повторити розсилку?'
+      retry: Повторити
+    status:
+      success: Успішно
+      success_text: Відправлення пройшло успішно!
+      failed: Сталася помилка
+      failed_text: Під час відправлення сталася помилка!
+      warning: Увага! Проблема з відправкою!
+      pending: Очікує відправки!
+      in_progress: В процесі відправки

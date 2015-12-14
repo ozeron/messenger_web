@@ -19,7 +19,6 @@ class GroupsController < ApplicationController
       redirect_to group_path(b.group)
     else
       flash.now[:alert] = t('.failed')
-      byebug
       flash.now[:error] = b.group.human_errors if b.group.human_errors.present?
       render :new
     end

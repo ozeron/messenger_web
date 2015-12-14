@@ -30,15 +30,11 @@ class MassMailingsController < ApplicationController
   def create
     operation = MassMailing::CreateService.new(params, board)
     operation.perform!
-
-    respond_to do |format|
-      if operation.success?
-        format.html { redirect_to b.mass_mailing, notice: 'Mass Mailing was successfully created.' }
-        format.json { render :show, status: :created, location: b.mass_mailing }
-      else
-        format.html { render :new }
-        format.json { render json: b.mass_mailing.errors, status: :unprocessable_entity }
-      end
+    if operation.success?
+      redirect_to b.mass_mailing, notice: 'Mass Mailing was successfully created.'
+    else
+      flash.now[:error] = b.mass_mailing.human_errors if b.mass_mailing.human_errors.present?
+      render :new
     end
   end
 

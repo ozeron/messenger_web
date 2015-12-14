@@ -2,14 +2,16 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :title %>
+    <%= f.input :title, required: true %>
     <%= f.input :started %>
   </div>
 
   <div class="form-inputs">
-    <%= f.input :message_id, collection: Message.all,
+    <%= f.input :message_id,
+                collection: Message.all,
                 label_method: ->(m) { m.title },
-                value_method: ->(m) { m.id } %>
+                value_method: ->(m) { m.id },
+                required: true %>
 
   </div>
 
@@ -30,6 +32,15 @@
     </thead>
 
     <tbody>
+      <% b.nodes.map do |node| %>
+        <tr>
+          <td><%= node.id %></td>
+          <td><%= link_to(node.name, node) %></td>
+          <td><%= truncate(ERB::Util.h(node.description), length: 300) %></td>
+          <td><%= node.tags.map(&:name).join('; ') %></td>
+          <td><input type='checkbox' ></td>
+        </tr>
+      <% end %>
     </tbody>
   </table>
 

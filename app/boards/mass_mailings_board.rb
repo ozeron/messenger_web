@@ -13,4 +13,8 @@ class MassMailingsBoard < BasicBoard
   def mass_mailing_nodes_ids
     mass_mailing.nodes.map(&:id)
   end
+
+  def nodes
+    @nodes = Node.with_tags
+  end
 end

@@ -96,11 +96,11 @@ class window.Widgets.MassMailings.DataTable extends window.Widgets.Base
 
   _options = () ->
     {
-      bProcessing: true,
-      bServerSide: true,
+      # bProcessing: true,
+      # bServerSide: true,
       language: window.dataTableLocale(),
       pagingType: "full_numbers",
-      sAjaxSource: $(table).data('source'),
+      #sAjaxSource: $(table).data('source'),
       order: [[ 0, "desc" ]],
       columnDefs: [
         { "targets": 3, "orderable": false },

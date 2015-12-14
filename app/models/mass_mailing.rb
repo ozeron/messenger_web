@@ -1,4 +1,5 @@
 class MassMailing < ActiveRecord::Base
+  include Errorable
   belongs_to :message
   has_many :mass_mailing_nodes
   has_many :nodes, through: :mass_mailing_nodes
@@ -6,6 +7,10 @@ class MassMailing < ActiveRecord::Base
   #validate :at_least_one_mailing_node, :message_present?
 
   accepts_nested_attributes_for :mass_mailing_nodes
+
+  validates :title, length: { minimum: 3 }
+  validates :message_id, presence: true
+  validates :nodes, length: { minimum: 1 }
 
   def message_present?
     message.present?

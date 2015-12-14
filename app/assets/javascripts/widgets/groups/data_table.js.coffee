@@ -90,6 +90,7 @@ class window.Widgets.Groups.DataTable extends window.Widgets.Base
     if !($("#group_taggings_attributes_#{id}_taggable_id").length > 0)
       $('.form-group.required.group_node_id').append(_new_lement(id, 'taggable_id', id))
       $('.form-group.required.group_node_id').append(_new_lement(id, 'taggable_type', 'Node'))
+      $('.form-group.required.group_node_id').append(_new_lement(id, 'context', 'tags'))
     return
 
   _hiddenInputsRemove = (id) ->
@@ -100,6 +101,7 @@ class window.Widgets.Groups.DataTable extends window.Widgets.Base
     else
       $('.form-group.required.group_node_id').append(_new_lement(id, 'taggable_id', id))
       $('.form-group.required.group_node_id').append(_new_lement(id, 'taggable_type', 'Node'))
+      $('.form-group.required.group_node_id').append(_new_lement(id, 'context', 'tags'))
       $('.form-group.required.group_node_id').append(_new_lement(id, '_destroy', 1))
     return
 
