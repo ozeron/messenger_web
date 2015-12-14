@@ -13,6 +13,11 @@ uk:
         vk_id: Ідентифікатор Вконтакті
         tag_list: Список тегів
         tags: Теги
+        telephones: Телефон
+        address: Адресса
+        city: Місто
+        website: Веб-сайт
+
   nodes:
     plural: Об’єкти для розсилки
     messages: Повідомлення
@@ -22,6 +27,9 @@ uk:
       list: Список об’єктів для розсилки
       new: Створити об’єкт
     new: Новий об’єкт для розсилки
+    form:
+      email: Створити об’єкт для розсилки по E-Mail
+      vk: Створити об’єкт для розсилки в Vkontakte
     data_table:
       id: ID
       name: Им’я

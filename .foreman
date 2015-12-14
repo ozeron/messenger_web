@@ -1,1 +1,1 @@
-concurrency: server=1
+concurrency: server=1,resque=1

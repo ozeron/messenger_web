@@ -28,7 +28,16 @@ class MassMailing::CreateService
     @result = true
     object.reload
     object.mass_mailing_nodes.each do |mmn|
-      MassMailingNodeSendJob.set(wait: object.started).perform_later(mmn.id, current_user.id)
+      perform_job(mmn.id, current_user.id)
+
+    end
+  end
+
+  def perform_job(id, user_id)
+    if Time.now < object.started
+      MassMailingNodeSendJob.set(wait_until: object.started).perform_later(id, user_id)
+    else
+      MassMailingNodeSendJob.perform_later(id, user_id)
     end
   end
 

@@ -1,7 +1,7 @@
 class Node < ActiveRecord::Base
   has_many :taggings, as: :taggable
   has_many :mass_mailing_nodes
-  has_and_belongs_to_many :mass_mailings
+  has_and_belongs_to_many :mass_mailings, dependent: :destroy
   acts_as_taggable
   acts_as_taggable_on :groups
 

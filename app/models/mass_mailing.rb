@@ -10,7 +10,7 @@ class MassMailing < ActiveRecord::Base
 
   validates :title, length: { minimum: 3 }
   validates :message_id, presence: true
-  validates :nodes, length: { minimum: 1 }
+  validates :mass_mailing_nodes, length: { minimum: 1 }
 
   def message_present?
     message.present?

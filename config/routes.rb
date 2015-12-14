@@ -35,7 +35,7 @@ Rails.application.routes.draw do
   resources :node_vks, controller: 'nodes', type: 'Node::Vk'
   resources :node_emails, controller: 'nodes', type: 'Node::Email'
 
-  mount Resque::Server.new, at: "/admin/jobs"
+  mount Resque::Server.new, at: "/resque"
 
 
   # The priority is based upon order of creation: first created -> highest priority.
