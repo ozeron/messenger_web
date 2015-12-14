@@ -11,7 +11,7 @@
       .alert.alert-warning[role="alert"]
         = t("mass_mailings.status.#{b.mass_mailing.status}_text")
 
-.row.header.header_row
+.row.header.header_row#header[data-reload="#{should_reload(b.mass_mailing.status)}"]
   .col-md-10
     h1
       = b.mass_mailing.title

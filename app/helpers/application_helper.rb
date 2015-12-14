@@ -8,6 +8,10 @@ module ApplicationHelper
     link_to(name, '#', class: 'btn btn-default add_fields', data: {id: id, fields: fields.gsub("\n", "")})
   end
 
+  def should_reload(status)
+    status == 'pending' || status == 'in_progress'
+  end
+
   def glyphicon_with_text(glyphicon, text)
     "<span class='glyphicon glyphicon-#{glyphicon}' aria-hidden='true'></span> #{text}".html_safe
   end
