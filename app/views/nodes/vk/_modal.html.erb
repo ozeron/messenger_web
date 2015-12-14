@@ -2,8 +2,8 @@
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title" id="find_vk_group_label">Find groups</h4>
-        <button type="button" class="btn btn-default pull-right" data-dismiss="modal">Close</button>
+        <h4 class="modal-title" id="find_vk_group_label"><%= t('nodes.vk.find_group') %></h4>
+        <button type="button" class="btn btn-default pull-right" data-dismiss="modal"><%= t('close')%></button>
       </div>
       <div class="modal-body" data-vk-token="aa865a2ff5109578f7d7ee773d882eb32fccc36755a554f87d9516a96ab43150d25ed81e27a14b624b3c8">
         <%= render 'nodes/vk/search_form' %>
@@ -12,7 +12,7 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal"><%= t('close')%></button>
       </div>
     </div>
   </div>

@@ -7,4 +7,4 @@ class Views.Groups.EditView extends Views.ApplicationView
 
   cleanup: ->
     super()
-    Widgets.MassMailings.DataTable.cleanup()
+    Widgets.Groups.DataTable.cleanup()

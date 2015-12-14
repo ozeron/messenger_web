@@ -4,6 +4,7 @@
       = t('.list')
   .col-md-1
     .header_toolbar.pull-right
+      - if can?(:create, Group)
         = link_to glyphicon_with_text('plus', t('.new')), new_group_path, class: 'btn btn-primary pull-right'
 br
 .row

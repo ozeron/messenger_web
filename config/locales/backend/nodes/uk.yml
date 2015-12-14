@@ -23,6 +23,12 @@ uk:
     messages: Повідомлення
     massmailings: Масова розсилка
 
+    vk:
+      find_group: Шукати групу через API Vkontakte
+      search_form:
+        placeholder: Введіть пошуковий запит
+        blank: "Введіть пошуковий запит в поле зверху, щоб знайти групи за іменем. Наприклад: 'Політика'"
+
     index:
       list: Список об’єктів для розсилки
       new: Створити об’єкт
@@ -30,6 +36,7 @@ uk:
     form:
       email: Створити об’єкт для розсилки по E-Mail
       vk: Створити об’єкт для розсилки в Vkontakte
+
     data_table:
       id: ID
       name: Им’я
