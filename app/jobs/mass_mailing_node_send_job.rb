@@ -15,6 +15,7 @@ class MassMailingNodeSendJob < ActiveJob::Base
     mass_mailing_node.status_text = e.message
     mass_mailing_node.save
   ensure
+    mass_mailing = MassMailingNode.include_nested.find(mass_mailing_node_id).mass_mailing
     mass_mailing.processed_node_counter += 1
     mass_mailing.calculate_status
     mass_mailing.save
