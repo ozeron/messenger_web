@@ -8,8 +8,8 @@ module ApplicationHelper
     link_to(name, '#', class: 'btn btn-default add_fields', data: {id: id, fields: fields.gsub("\n", "")})
   end
 
-  def should_reload(status)
-    status == 'pending' || status == 'in_progress'
+  def should_reload(mass_mailing)
+    mass_mailing.pending? || mass_mailing.in_progress?
   end
 
   def glyphicon_with_text(glyphicon, text)

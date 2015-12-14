@@ -1,17 +1,17 @@
-- if b.mass_mailing.status == 'success'
+- if b.mass_mailing.success?
   .alert.alert-success[role="alert"]
     = t("mass_mailings.status.#{b.mass_mailing.status}_text")
-- if b.mass_mailing.status == 'failed'
+- if b.mass_mailing.failed?
   .alert.alert-danger[role="alert"]
     = t("mass_mailings.status.#{b.mass_mailing.status}_text")
-- if b.mass_mailing.status == 'pending' || b.mass_mailing.status = 'in_progress'
+- if b.mass_mailing.pending? || b.mass_mailing.in_progress?
   .alert.alert-info[role="alert"]
     = t("mass_mailings.status.#{b.mass_mailing.status}_text")
-    - if b.mass_mailing.status == 'warning'
-      .alert.alert-warning[role="alert"]
-        = t("mass_mailings.status.#{b.mass_mailing.status}_text")
+- if b.mass_mailing.warning?
+  .alert.alert-warning[role="alert"]
+    = t("mass_mailings.status.#{b.mass_mailing.status}_text")
 
-.row.header.header_row#header[data-reload="#{should_reload(b.mass_mailing.status)}"]
+.row.header.header_row#header[data-reload="#{should_reload(b.mass_mailing)}"]
   .col-md-10
     h1
       = b.mass_mailing.title

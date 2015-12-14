@@ -7,7 +7,10 @@ class MassMailingsBoard < BasicBoard
   end
 
   def mass_mailing
-    @mass_mailing ||= params[:id] ? MassMailing.includes(:nodes, mass_mailing_nodes: :node).find(params[:id]) : MassMailing.new
+    return @mass_mailing if @mass_mailing.present?
+    @mass_mailing = params[:id] ? MassMailing.includes(:nodes, mass_mailing_nodes: :node).find(params[:id]) : MassMailing.new
+    @mass_mailing.calculate_status
+    @mass_mailing
   end
 
   def mass_mailing_nodes_ids

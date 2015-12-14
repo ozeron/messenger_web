@@ -4,6 +4,14 @@ class MassMailing < ActiveRecord::Base
   has_many :mass_mailing_nodes
   has_many :nodes, through: :mass_mailing_nodes
 
+  enum status: {
+    'success' => 'success',
+    'pending' => 'pending',
+    'failed' => 'failed',
+    'in_progress' => 'in_progress',
+    'warning' => 'warning'
+  }
+
   #validate :at_least_one_mailing_node, :message_present?
 
   accepts_nested_attributes_for :mass_mailing_nodes
