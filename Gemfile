@@ -8,6 +8,7 @@ gem 'rails', '4.2.4'
 gem 'pg'
 gem 'pony'
 gem 'resque'
+gem 'resque-scheduler'
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
