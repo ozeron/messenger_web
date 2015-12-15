@@ -38,7 +38,7 @@ class MassMailing < ActiveRecord::Base
     when equal_node_size
       calculate_success_or_not
     else
-      fail "Undetermined status for #{processed_node_counter} and #{nodes.size}"
+      self.failed!
     end
   end
 
