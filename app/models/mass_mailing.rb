@@ -38,7 +38,7 @@ class MassMailing < ActiveRecord::Base
     when equal_node_size
       calculate_success_or_not
     else
-      self.failed!
+      self.status = 'failed'
     end
   end
 
