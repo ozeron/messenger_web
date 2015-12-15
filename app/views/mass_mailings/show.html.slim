@@ -35,11 +35,14 @@ br
 .row
   .col-md-12
     strong = MassMailing.human_attribute_name(:status)
+    |:
     =< t("mass_mailings.status.#{b.mass_mailing.status}")
 .row
   .col-md-12
     strong = MassMailing.human_attribute_name(:message)
+    |:
     =< link_to b.mass_mailing.message.title, message_path(b.mass_mailing.message)
+br
 .row
   - if b.mass_mailing.mass_mailing_nodes.present?
     .col-md-12
@@ -58,7 +61,7 @@ br
   - else
     .col-md-12
       p
-        strong = t('.mass_mailing_empty')
+        h2 = t('.mass_mailing_empty')
 br
 .row
   .col-md-12
