@@ -15,7 +15,8 @@
 #= require jquery_ujs
 #= require bootstrap-sprockets
 #= require datatables.js
-#= require bootstrap_vendor.js
+#= require bootstrap.min.js
+#= require bootstrap.js.coffee
 #= require turbolinks
 #= require i18n/translations
 #= require lodash
