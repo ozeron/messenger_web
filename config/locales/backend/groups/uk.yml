@@ -1,7 +1,7 @@
 uk:
   activerecord:
     models:
-      groups: Групи
+      group: Групи
     attributes:
       group:
         id: ID

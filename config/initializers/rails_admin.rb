@@ -21,6 +21,8 @@ end
 ActiveRecord::Base.send(:extend, ActiveRecord::RailsAdminEnum)
 
 RailsAdmin.config do |config|
+  config.excluded_models << "Tagging"
+  config.excluded_models << "MassMailingNode"
   ActiveRecord::Base.descendants.each do |imodel|
     config.model "#{imodel.name}" do
       list do
