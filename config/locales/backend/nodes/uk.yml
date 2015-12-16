@@ -33,9 +33,21 @@ uk:
       list: Список об’єктів для розсилки
       new: Створити об’єкт
     new: Новий об’єкт для розсилки
+
+    email:
+      form:
+        submit: Зберегти E-mail об’єкт
+
+    vk:
+      form:
+        submit: Зберегти Vkontakte об’єкт
+
     form:
       email: Створити об’єкт для розсилки по E-Mail
       vk: Створити об’єкт для розсилки в Vkontakte
+
+    edit:
+      title: Редагувати об’єкт для розсилки
 
     data_table:
       id: ID

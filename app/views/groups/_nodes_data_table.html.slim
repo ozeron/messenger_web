@@ -19,7 +19,7 @@ table.table
         td
           = n.name
         td
-          = n.description
+          = n.description_human
         td
           = link_to t('edit'), edit_node_path(n)
         td = link_to t('destroy'), n, method: :delete, data: { confirm: 'Are you sure?' }

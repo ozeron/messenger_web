@@ -23,7 +23,7 @@ module DataTable
         [
           node.id,
           link_to(node.name, node),
-          truncate(ERB::Util.h(node.description), length: 300),
+          truncate(ERB::Util.h(node.description_human), length: 300),
           node.tags.map(&:name).join('; '),
           link_to('Edit', edit_node_path(node)),
           link_to('Destroy', node, method: :delete, data: { confirm: 'Are you sure?' })

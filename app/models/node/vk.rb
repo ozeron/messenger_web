@@ -4,6 +4,10 @@ class Node::Vk < Node
     new(attributes)
   end
 
+  def description_human
+    description
+  end
+
   def vk_id=(value)
     options['vk_id'] = value
   end

@@ -5,12 +5,12 @@ class NodesBoard < BasicBoard
     @node ||= params[:id] ? Node.find(params[:id]) : Node.new
   end
 
-  def new_vk_node
-    @vk_node ||= Node::Vk.new
+  def vk_node
+    node.becomes(Node::Vk)
   end
 
   def new_email_node
-    @email_node ||= Node::Email.new
+    node.becomes(Node::Vk)
   end
 
   def node_tags

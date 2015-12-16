@@ -16,7 +16,7 @@
       <tr>
         <td><%= node.id %></td>
         <td><%= node.name %></td>
-        <td><%= truncate(ERB::Util.h(node.description), length: 300) %></td>
+        <td><%= truncate(ERB::Util.h(node.description_human), length: 300) %></td>
         <td><%= node.tag_list_name %></td>
         <% if can? :update, Node %>
           <td><%= link_to(t('.edit'), edit_node_path(node)) %></td>

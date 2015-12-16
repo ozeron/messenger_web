@@ -56,7 +56,7 @@ class Node::Email < Node
     @options_mash
   end
 
-  def description
+  def description_human
     ''.tap do |str|
       str.concat(self['description'] + "\n") if self['description']
       str.concat("тел. #{telephones.try(:join, ', ')}\n") if telephones.present?

@@ -1,6 +1,11 @@
-<h1>Editing Node</h1>
+<h1><%= t('.title') %></h1>
 
-<%= render 'form' %>
+<% if Node::Vk === b.node %>
+  <%= render 'nodes/vk/form' %>
+<% else %>
+  <%= render 'nodes/email/form' %>
+<% end %>
 
-<%= link_to 'Show', b.node %> |
-<%= link_to 'Back', nodes_path %>
+<%= link_to t('show'), b.node %>
+<br>
+<%= link_to t('back'), nodes_path %>
