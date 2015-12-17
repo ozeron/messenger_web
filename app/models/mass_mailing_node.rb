@@ -2,7 +2,7 @@ class MassMailingNode < ActiveRecord::Base
   self.table_name = 'mass_mailings_nodes'
 
   belongs_to :node
-  belongs_to :mass_mailing
+  belongs_to :mass_mailing, dependent: :destroy
 
   validates :node, presence: true
 

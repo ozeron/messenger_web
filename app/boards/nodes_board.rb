@@ -9,8 +9,8 @@ class NodesBoard < BasicBoard
     node.becomes(Node::Vk)
   end
 
-  def new_email_node
-    node.becomes(Node::Vk)
+  def email_node
+    node.becomes(Node::Email)
   end
 
   def node_tags

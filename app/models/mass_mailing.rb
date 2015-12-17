@@ -1,7 +1,7 @@
 class MassMailing < ActiveRecord::Base
   include Errorable
   belongs_to :message
-  has_many :mass_mailing_nodes
+  has_many :mass_mailing_nodes, dependent: :destroy
   has_many :nodes, through: :mass_mailing_nodes
 
   enum status: {

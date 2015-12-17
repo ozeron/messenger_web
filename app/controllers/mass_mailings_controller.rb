@@ -45,9 +45,17 @@ class MassMailingsController < ApplicationController
     create
   end
 
+  def destroy
+    if b.mass_mailing.destroy
+      redirect_to mass_mailing_path
+    else
+      redirect_to mass_mailing_path(b.mass_mailing)
+    end
+  end
+
   private
 
   def mass_mailing_params
-    params.require(:mass_mailing).permit(:title, :started, :message_id, mass_mailing_nodes_attributes: [:node_ir, :_destroy])
+    params.require(:mass_mailing).permit(:title, :started, :message_id, mass_mailing_nodes_attributes: [:node_id, :_destroy])
   end
 end

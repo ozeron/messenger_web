@@ -20,6 +20,7 @@
           <th><%= MassMailing.human_attribute_name('started')%></th>
           <th><%= MassMailing.human_attribute_name('finished')%></th>
           <th><%= t('.retry')%></th>
+          <th><%= t('destroy')%></th>
         </tr>
       </thead>
 
@@ -33,6 +34,7 @@
             <td><%= time_ago_in_words(mass_mailing.started) if mass_mailing.started %></td>
             <td><%= time_ago_in_words(mass_mailing.finished) if mass_mailing.finished %></td>
             <td><%= link_to t('.retry'), retry_mass_mailing_path(mass_mailing), class: 'btn btn-primary', data: { confirm: t('.confirmation') } %></td>
+            <td><%= link_to(t('destroy'), mass_mailing, method: :delete, data: { confirm: t('confirmation') }) %></td>
           </tr>
         <% end %>
       </tbody>
