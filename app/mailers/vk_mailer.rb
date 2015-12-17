@@ -17,6 +17,7 @@ class VkMailer
       vk_client.wall.addComment(post_id: post_id,
                                 owner_id: node_id,
                                 text: @message.content)
+      sleep(2)
     end
     MailerResponce.new
   end
@@ -28,6 +29,6 @@ class VkMailer
 
   def posts_id
     @posts_id ||= vk_client.wall.get(owner_id: node_id)['items']
-                  .map { |h| h['id'] }
+                  .map { |h| h['id'] }[0..10]
   end
 end
