@@ -15,7 +15,6 @@
 #= require jquery_ujs
 #= require bootstrap-sprockets
 #= require datatables.js
-#= require modernizr-custom.js
 #= require bootstrap.js.coffee
 #= require turbolinks
 #= require i18n/translations
