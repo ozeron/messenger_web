@@ -4,6 +4,7 @@ class MassMailing < ActiveRecord::Base
   has_many :mass_mailing_nodes, dependent: :destroy
   has_many :nodes, through: :mass_mailing_nodes
 
+  before_create { self.started = Time.now }
   enum status: {
     'success' => 'success',
     'pending' => 'pending',

@@ -34,11 +34,12 @@ class MassMailing::CreateService
   end
 
   def perform_job(id, user_id)
-    if Time.now < object.started
-      MassMailingNodeSendJob.set(wait_until: object.started).perform_later(id, user_id)
-    else
-      MassMailingNodeSendJob.perform_later(id, user_id)
-    end
+    # if Time.now < object.started
+    #
+    #   MassMailingNodeSendJob.set(wait_until: object.started).perform_later(id, user_id)
+    # else
+    MassMailingNodeSendJob.perform_later(id, user_id)
+    # end
   end
 
   def error_callback
