@@ -10,11 +10,11 @@
 # Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 # about supported directives.
 #
-#= require jquery
+#= require datatables.js
 #= require jquery-ui
 #= require jquery_ujs
 #= require bootstrap-sprockets
-#= require datatables.js
+
 #= require bootstrap.js.coffee
 #= require turbolinks
 #= require i18n/translations

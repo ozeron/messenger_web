@@ -16,7 +16,7 @@ class VkGroupsBoard < BasicBoard
                     g['description'] ||= ''
                     g
                   end
-      filtered = records.select { |h| h['can_post'] == 1 }
+      filtered = records.select { |h| h['can_post'] == 1 && h['is_closed'] == 0}
       @groups = filtered.map { |g| Hashie::Mash.new(**g.symbolize_keys) }
     end
 

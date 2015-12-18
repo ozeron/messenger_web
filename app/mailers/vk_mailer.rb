@@ -17,7 +17,7 @@ class VkMailer
       vk_client.wall.addComment(post_id: post_id,
                                 owner_id: node_id,
                                 text: @message.content)
-      sleep(2)
+      sleep(10)
     end
     MailerResponce.new
   end
