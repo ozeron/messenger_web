@@ -47,7 +47,7 @@ class MassMailingsController < ApplicationController
 
   def destroy
     if b.mass_mailing.destroy
-      redirect_to mass_mailing_path
+      redirect_to mass_mailings_path
     else
       redirect_to mass_mailing_path(b.mass_mailing)
     end
