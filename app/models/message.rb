@@ -1,6 +1,6 @@
 class Message < ActiveRecord::Base
   has_many :taggings, as: :taggable
-  belongs_to :mass_mailing
+  belongs_to :mass_mailing, dependent: :destroy
   acts_as_taggable
 
 

@@ -26,10 +26,14 @@ uk:
     index:
       retry: 'Повторити'
       confirmation: 'Ви впевнені, що хочете повторити розсилку?'
+      missing:
+        message: 'Повідомлення видалене'
     show:
       mass_mailing_empty: 'Немає статистики по об’єктам'
       confirmation: 'Ви впевнені, що хочете повторити розсилку?'
       retry: Повторити
+      missing:
+        message: 'Повідомлення видалене'
     form:
       submit: Почати розсилку
     status:

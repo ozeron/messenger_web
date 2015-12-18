@@ -29,7 +29,11 @@
           <tr class="<%=mass_mailing_status(mass_mailing)%>">
             <td><%= mass_mailing.id %></td>
             <td><%= link_to mass_mailing.title, mass_mailing %></td>
-            <td><%= link_to mass_mailing.message.title, mass_mailing.message %></td>
+            <% if mass_mailing.message %>
+              <td><%= link_to mass_mailing.message.title, mass_mailing.message %></td>
+            <% else %>
+              <td><%= t('.missing.message') %></td>
+            <% end %>
             <td><%= mass_mailing.nodes.map(&:name).join(', ') %></td>
             <td><%= time_ago_in_words(mass_mailing.started) if mass_mailing.started %></td>
             <td><%= time_ago_in_words(mass_mailing.finished) if mass_mailing.finished %></td>
