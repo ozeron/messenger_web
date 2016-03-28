@@ -6,6 +6,8 @@
         span[class="#{mass_mailing_badge(b.mass_mailing)}"]
   .col-md-2
     = link_to t('.retry'), retry_mass_mailing_path(b.mass_mailing), class: 'btn btn-primary', data: { confirm: t('.confirmation') }
+    = link_to t('.retry_unsent'), try_more_mass_mailing_path(b.mass_mailing), class: 'btn btn-default', data: { confirm: t('.confirm_unsent') } if isUnsent(b.mass_mailing)
+
 br
 .row
   .col-md-12

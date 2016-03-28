@@ -15,8 +15,14 @@ en:
     new: 'Create mailing'
     edit: 'Edit mass mailing'
     index:
-      retry: 'Retry mailing'
+      retry: 'Retry all'
       confirmation: 'Are you sure to retry the mailing?'
+      retry_unsent: 'Retry'
+      unsent: 'Unsent'
+      confirm_unsent: 'Are you sure to submit unsent mails'
     show:
       mass_mailing_empty: 'No statistics about objects'
       confirmation: 'Are you sure want to retry the mailing'
+      retry: 'Retry all'
+      retry_unsent: 'Retry unsent'
+      confirm_unsent: 'Are you sure want to retry the mailing to unsent objects?'

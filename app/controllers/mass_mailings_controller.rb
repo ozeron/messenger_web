@@ -49,6 +49,24 @@ class MassMailingsController < ApplicationController
     create
   end
 
+  def try_more
+    board.mass_mailing.title += ' (unsent)'
+    attributes = board.mass_mailing.attributes
+    filtered = board.mass_mailing.mass_mailing_nodes.select{ |mmn| mmn.status_text != 'success'}
+    attributes["mass_mailing_nodes_attributes"] = filtered.map { |mmn|  {"node_id" => mmn.node_id  }  }
+    params[:mass_mailing] = attributes
+    create
+  end
+
+  helper_method :isUnsent
+
+  def isUnsent(mass_mailing)
+    mass_mailing.mass_mailing_nodes.each do |mmn|
+      return true if mmn.status_text !=  'success'
+    end
+    return false
+  end
+
   private
 
   def mass_mailing_params

@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   resources :mass_mailings do
     member do
       get :retry
+      get :try_more
     end
   end
 
