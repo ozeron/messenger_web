@@ -11,8 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160331201902) do
+<<<<<<< 3df788affb7a1c440c3a343bd9c5ce00a3292e0d
 ActiveRecord::Schema.define(version: 20160407145229) do
+=======
+ActiveRecord::Schema.define(version: 20160331201902) do
+>>>>>>> Added ability to create post or comment for vk node
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"

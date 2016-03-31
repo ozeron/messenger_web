@@ -38,6 +38,7 @@
         <th><%= Node.human_attribute_name(:description) %></th>
         <th><%= Node.human_attribute_name(:tags) %></th>
         <th><input name="select_all" value="1" type="checkbox"></th>
+        <th>Create Post</th>
       </tr>
     </thead>
 
@@ -49,6 +50,7 @@
           <td><%= truncate(ERB::Util.h(node.description_human), length: 300) %></td>
           <td><%= node.tags.map(&:name).join('; ') %></td>
           <td><input type='checkbox' ></td>
+          <td><input type='checkbox' <%= (node.is_a? Node::Vk) ? '' : 'disabled' %> </td>
         </tr>
       <% end %>
     </tbody>

@@ -48,6 +48,6 @@ class MassMailing::CreateService
 
   def mass_mailing_params
     params.require(:mass_mailing).permit(:title, :started, :finished, :message_id, :sender_id,
-                                          { mass_mailing_nodes_attributes: [:id, :node_id, :_destroy]})
+                                          { mass_mailing_nodes_attributes: [:id, :node_id, :_destroy, :type]})
   end
 end
