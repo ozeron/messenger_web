@@ -7,6 +7,7 @@ gem 'rails', '4.2.4'
 # Use postgresql as the database for Active Record
 gem 'pg'
 gem 'pony'
+gem "paperclip", "~> 5.0.0.beta1"
 gem 'resque'
 gem 'resque-scheduler'
 gem 'rubocop'

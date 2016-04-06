@@ -78,6 +78,10 @@ GEM
     builder (3.2.2)
     byebug (6.0.2)
     cancancan (1.12.0)
+    climate_control (0.0.3)
+      activesupport (>= 3.0)
+    cocaine (0.5.8)
+      climate_control (>= 0.0.3, < 1.0)
     coderay (1.1.0)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
@@ -156,6 +160,7 @@ GEM
       webrobots (>= 0.0.9, < 0.2)
     method_source (0.8.2)
     mime-types (2.99)
+    mimemagic (0.3.1)
     mini_portile2 (2.0.0)
     minitest (5.8.3)
     mono_logger (1.1.0)
@@ -172,6 +177,12 @@ GEM
     orm_adapter (0.5.0)
     parser (2.3.0.1)
       ast (~> 2.2)
+    paperclip (5.0.0.beta1)
+      activemodel (>= 4.2.0)
+      activesupport (>= 4.2.0)
+      cocaine (~> 0.5.5)
+      mime-types
+      mimemagic (~> 0.3.0)
     pg (0.18.3)
     pg (0.18.3-x86-mingw32)
     pony (1.11)
@@ -353,6 +364,7 @@ DEPENDENCIES
   jquery-ui-rails
   kaminari
   lodash-rails
+  paperclip (~> 5.0.0.beta1)
   pg
   pony
   pry-rails

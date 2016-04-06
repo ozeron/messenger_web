@@ -2,6 +2,10 @@
   <%= f.input :title %>
   <%= f.input :content, as: :text, input_html: { rows: 20 }%>
   <%= f.input :tag_list %>
+  Attach files: 
+  <br>
+  Picture: <%= f.file_field :pic1%>
+  Any document: <%= f.file_field :doc1%>
   <br>
   <%= f.button :submit, class: 'btn btn-primary' %>
 <% end %>

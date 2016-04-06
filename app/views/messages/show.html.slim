@@ -11,6 +11,11 @@ br
 .row
   .col-md-12
     = simple_format(b.message.content)
+h1 Attached files:
+.row
+ 	  = b.message.pic1_file_name
+.row
+    = b.message.doc1_file_name
 .row
   .col-md-12
     = link_to t('back'), mass_mailings_path, class: 'btn btn-default'
