@@ -14,6 +14,13 @@ class User < ActiveRecord::Base
     end
   end
 
+  after_update do
+    if connection_parameters_changed?
+      connection_parameters['vk']['access_token'] = ''
+      set_vk_name
+    end
+  end
+
   before_save do
     self.connection_parameters ||= {}
   end
@@ -59,6 +66,19 @@ class User < ActiveRecord::Base
     vk.app_id
   end
 
+  def vk_name
+    return vk['name'] if vk.key?('name')
+    name = set_vk_name
+    save
+    name
+  end
+
+  def set_vk_name
+    hash = get_vk_app.users.get[0]
+    name = "#{hash['first_name']} #{hash['last_name']}"
+    connection_parameters['vk']['name'] = name
+  end
+
   def connection_parameters
     self['connection_parameters'] ||= {}
   end
@@ -79,12 +99,16 @@ class User < ActiveRecord::Base
   end
 
   def vk_app
-    @app ||= ApiWrapper::VkFabric.build(connection_parameters['vk'])
+    @app ||= get_vk_app
     if connection_parameters['vk']['access_token'] != @app.access_token
       connection_parameters['vk']['access_token'] = @app.access_token
       save
     end
     @app
+  end
+
+  def get_vk_app
+    ApiWrapper::VkFabric.build(connection_parameters['vk'])
   end
 
   def vk

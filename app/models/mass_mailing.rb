@@ -3,6 +3,7 @@ class MassMailing < ActiveRecord::Base
   belongs_to :message
   has_many :mass_mailing_nodes, dependent: :destroy
   has_many :nodes, through: :mass_mailing_nodes
+  belongs_to :sender, class_name: "User"
 
   before_create { self.started = Time.now }
   enum status: {
