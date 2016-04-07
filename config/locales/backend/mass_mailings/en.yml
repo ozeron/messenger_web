@@ -10,6 +10,7 @@ en:
         nodes: Object to mailing
         started: Started
         finished: Finished
+        sender: Sender
   mass_mailings:
     list: 'Mass mailing'
     new: 'Create mailing'

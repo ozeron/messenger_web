@@ -7,6 +7,14 @@
   </div>
 
   <div class="form-inputs">
+    <%= f.input :sender_id,
+        collection: User.all,
+        label_method: ->(u) { "#{t('social.vk')} #{u.vk_name} | #{u.email_name}" },
+        value_method: ->(u) { u.id } %>
+    <!-- <%= f.input :started %> -->
+  </div>
+
+  <div class="form-inputs">
     <%= f.input :message_id,
                 collection: Message.all,
                 label_method: ->(m) { m.title },
@@ -19,6 +27,8 @@
     <div class="hidden" id="mass_mailing_nodes_ids" data-ids="<%= b.mass_mailing_nodes_ids %>" >
     </div>
   </div>
+
+  <h3> <%= I18n.t('activerecord.models.node') %> </h3>
 
   <table class='table table-striped' id="mass_mailing_nodes" data-source="<%= mass_mailing_nodes_url(format: :json)%>">
     <thead>

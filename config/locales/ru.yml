@@ -1,5 +1,5 @@
 ---
-ry:
+ru:
   date:
     abbr_day_names:
     - нд.
@@ -10,7 +10,7 @@ ry:
     - пт.
     - сб.
     abbr_month_names:
-    - 
+    -
     - янв.
     - фев.
     - март.
@@ -36,7 +36,7 @@ ry:
       long: "%d %B %Y"
       short: "%d %b"
     month_names:
-    - 
+    -
     - Январь
     - Февраль
     - Март
@@ -249,3 +249,5 @@ ry:
       long: "%d %B %Y, %H:%M"
       short: "%d %b, %H:%M"
     pm: по полудни
+  social:
+    vk: ВК  

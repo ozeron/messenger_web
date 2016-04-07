@@ -9,7 +9,7 @@ gem 'pg'
 gem 'pony'
 gem 'resque'
 gem 'resque-scheduler'
-
+gem 'rubocop'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 

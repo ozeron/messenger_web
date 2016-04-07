@@ -13,6 +13,7 @@ uk:
         started: Почалася
         finished: Завершилась
         status: Статус
+        sender: Відправник
   errors:
     models:
       mass_mailing:

@@ -10,7 +10,7 @@ en:
     - fri.
     - sun.
     abbr_month_names:
-    - 
+    -
     - jan.
     - feb.
     - mar.
@@ -36,7 +36,7 @@ en:
       long: "%d %B %Y"
       short: "%d %b"
     month_names:
-    - 
+    -
     - January
     - February
     - March
@@ -249,3 +249,5 @@ en:
       long: "%d %B %Y, %H:%M"
       short: "%d %b, %H:%M"
     pm: past morning
+  social:
+    vk: VK    
