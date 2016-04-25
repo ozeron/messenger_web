@@ -2,6 +2,8 @@ module ApiWrapper
   class VkFabric < BasicObject
     attr_reader :api, :login, :password, :app_id, :access_token
 
+    SETTINGS = 'notify,friends,offline,messages,groups,photos,docs,wall'
+
     def self.build(params)
       new(params).api
     end
@@ -11,10 +13,11 @@ module ApiWrapper
       @password = params['password']
       @app_id = params['app_id']
       @access_token = params['access_token']
-      @api ||= ::VK::Application.new do |a|
+      application ||= ::VK::Application.new(settings: SETTINGS) do |a|
         a.app_id = app_id if app_id.present?
         a.access_token = access_token if access_token.present?
       end
+      @api = ::VK::ApplicationDecorator.new(application)
       check_connection
     end
     #
