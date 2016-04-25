@@ -1,5 +1,4 @@
 class MassMailer
-
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
   #
@@ -25,28 +24,17 @@ class MassMailer
     @pic1_name = message_to_send.pic1_file_name
     @doc1_name = message_to_send.doc1_file_name
     smtp_settings = default.merge(user.email_parameters || {}).symbolize_keys
-    attachments = Hash.new
-   	#TODO. Remove this code and make a good validation
-    if(@pic1_name != nil)
-    	#TODO. Rework directory to depend on some 'hash'!
-    	attachments.merge!({ "#{@pic1_name}" => File.read("#{Rails.root.to_s}/public/images/attachments/#{@pic1_name}") })
-    end
-    if (@doc1_name != nil) 
-      attachments.merge!({ "#{@doc1_name}" => File.read("#{Rails.root.to_s}/public/docs/attachments/#{@doc1_name}") }) 
-	end
-   	#End TODO
-   	hash = {
-     		to: node.email,
-      		from: user.email_name,
-      		subject: @title,
-      		body: @text,
-      		via: :smtp,
-      		via_options: smtp_settings,
-      	}
-    if(!attachments.empty?)
-    	hash[:attachments] = attachments
-   	end
-   
+    hash = {
+      to: node.email,
+      from: user.email_name,
+      subject: @title,
+      body: @text,
+      via: :smtp,
+      via_options: smtp_settings
+    }
+    attachments = message_to_send.load_attachments
+    hash[:attachments] = attachments unless attachments.empty?
+
     Pony.mail(hash)
     MailerResponce.new
   end

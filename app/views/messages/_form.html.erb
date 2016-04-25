@@ -1,11 +1,17 @@
 <%= simple_form_for(b.message, defaults: { input_html: { class: 'form-horizontal' } }) do |f| %>
-  <%= f.input :title %>
-  <%= f.input :content, as: :text, input_html: { rows: 20 }%>
+  <%= f.input :title, required: true %>
+  <%= f.input :content, as: :text, input_html: { rows: 20 }, required: true%>
   <%= f.input :tag_list %>
-  Attach files: 
+  Attach files:
   <br>
-  Picture: <%= f.file_field :pic1%>
-  Any document: <%= f.file_field :doc1%>
+  <div class="form-group">
+    Picture: <%= f.file_field :pic1%><br>
+    <button class="btn btn-danger btn-xs" id="btn-reset-picture">Remove picture</button>
+  </div>
+  <div class="form-group">
+    Any document: <%= f.file_field :doc1%><br>
+    <button class="btn btn-danger btn-xs" id="btn-reset-file">Remove file</button>
+  </div>
   <br>
   <%= f.button :submit, class: 'btn btn-primary' %>
 <% end %>

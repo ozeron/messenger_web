@@ -11,6 +11,7 @@ gem "paperclip", "~> 5.0.0.beta1"
 gem 'resque'
 gem 'resque-scheduler'
 gem 'rubocop'
+gem 'typhoeus'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
@@ -65,6 +66,7 @@ gem 'foreman'
 
 gem 'pry-rails'
 gem 'vk-ruby', github: 'ikonyshev/vk-ruby', branch: 'client_auth_greedy_regexp'
+gem 'ruby-filemagic'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
