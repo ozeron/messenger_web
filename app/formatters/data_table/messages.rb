@@ -25,7 +25,6 @@ module DataTable
           link_to(message.title, message),
           truncate(ERB::Util.h(message.content), length: 300),
           message.tags.map(&:name).join('; '),
-          message.pic1,
           link_to(t('edit'), edit_message_url(message)),
           link_to(t('destroy'), message, method: :delete, data: { confirm: t('confirmation') })
         ]

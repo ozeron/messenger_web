@@ -1,4 +1,5 @@
 class MassMailer
+
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
   #
@@ -17,12 +18,6 @@ class MassMailer
 
     @text = message_to_send.content
     @title = message_to_send.title
-    # Attachment object
-    @pic1 = message_to_send.pic1
-    @doc1 = message_to_send.doc1
-    # Attachment file name
-    @pic1_name = message_to_send.pic1_file_name
-    @doc1_name = message_to_send.doc1_file_name
     smtp_settings = default.merge(user.email_parameters || {}).symbolize_keys
     hash = {
       to: node.email,
@@ -32,9 +27,6 @@ class MassMailer
       via: :smtp,
       via_options: smtp_settings
     }
-    attachments = message_to_send.load_attachments
-    hash[:attachments] = attachments unless attachments.empty?
-
     Pony.mail(hash)
     MailerResponce.new
   end

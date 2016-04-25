@@ -13,16 +13,4 @@ br
     = simple_format(b.message.content)
 .row
   .col-md-12
-    - if b.message.attacments?
-      h1 Attached files:
-      .col-md-12
-        ul
-          - if b.message.pic1_exist?
-            li
-               = b.message.pic1_file_name
-          - if b.message.doc1_exist?
-            li
-              = b.message.doc1_file_name
-.row
-  .col-md-12
     = link_to t('back'), mass_mailings_path, class: 'btn btn-default'
