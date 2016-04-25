@@ -52,7 +52,7 @@ class MessagesController < ApplicationController
 
   def message_params
     params.require('message')
-          .permit(:title, :content, :tag_list)
+          .permit(:title, :content, :tag_list, :pic1, :doc1)
   end
 
   def board
