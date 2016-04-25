@@ -9,6 +9,9 @@ class Message < ActiveRecord::Base
   validates_attachment :pic1, pic1_content_type: ["image/jpeg", "image/gif", "image/png"]
   validates_attachment_file_name :pic1, matches: [/png\Z/, /jpe?g\Z/]
 
+  validates :title, presence: true
+  validates :content, presence: true
+
   #validates_attachment_content_type :pic1, content_type: /\Aimage\/.*\Z/
   #validates_attachment :pic1, pic1_file_name: matches: [/png\Z/, /jpe?g\Z/]#["image/jpeg", "image/gif", "image/png"]
 
@@ -23,7 +26,7 @@ class Message < ActiveRecord::Base
     where('title ILIKE :search OR content ILIKE :search', search: "%#{query}%")
   end
 # Will be corrected to enable attachment from remote
-=begin  
+=begin
    def pic1_remote=(url)
 
     @pic1_remote = url
@@ -33,7 +36,42 @@ class Message < ActiveRecord::Base
   end
 =end
 
+  def load_attachments
+    {}.tap do |hash|
+      hash[pic1_name.to_s] = File.read(pic1_path) if pic1_exist?
+      hash[doc1_name.to_s] = File.read(doc1_path) if doc1_exist?
+    end
+  end
+
   def tag_list_name
     tags.map(&:name).join('; ')
+  end
+
+  def pic1_exist?
+    File.exist?(pic1_path)
+  end
+
+  def pic1_path
+    attachment_path(pic1_file_name)
+  end
+
+  def doc1_path
+    attachment_path(doc1_file_name)
+  end
+
+  def doc1_exist?
+    File.exist?(doc1_path)
+  end
+
+  def attacments?
+    doc1_exist? || pic1_exist?
+  end
+
+  def attachment_path(name)
+    if name.present?
+      "#{Rails.root.to_s}/public/images/attachments/#{name}"
+    else
+      ''
+    end
   end
 end
