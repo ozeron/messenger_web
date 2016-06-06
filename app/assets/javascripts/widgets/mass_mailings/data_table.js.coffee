@@ -4,12 +4,12 @@ class window.Widgets.MassMailings.DataTable extends window.Widgets.Base
   table = '#mass_mailing_nodes'
   dataTable = undefined;
   rows_selected = []
-
+  rows_post = []
 
   updateDataTableSelectAllCtrl = (dataTable) ->
     $table = dataTable.table().node()
-    $chkbox_all = $('tbody input[type="checkbox"]', $table)
-    $chkbox_checked = $('tbody input[type="checkbox"]:checked', $table)
+    $chkbox_all = $('tbody input.select[type="checkbox"]', $table)
+    $chkbox_checked = $('tbody input.select[type="checkbox"]:checked', $table)
     chkbox_select_all = $('thead input[name="select_all"]', $table).get(0)
     # If none of the checkboxes are checked
     if $chkbox_checked.length == 0
@@ -34,39 +34,66 @@ class window.Widgets.MassMailings.DataTable extends window.Widgets.Base
     return
 
   _checkBoxClickHandler = (e) ->
-    $row = $(this).closest('tr')
+    className = $(e.target).attr('class')
+    if className == 'select'
+      _selectCheckBoxHandler(e)
+    else
+      _typeCheckBoxHandler(e)
+
+  _selectCheckBoxHandler = (e) ->
+    row = $(e.target).closest('tr')
+    checked = $(e.target).is(':checked')
     # Get row data
-    data = dataTable.row($row).data()
+    data = dataTable.row(row).data()
     # Get row ID
     rowId = data[0]
     # Determine whether row ID is in the list of selected row IDs
     index = $.inArray(rowId, rows_selected)
     # If checkbox is checked and row ID is not in list of selected row IDs
-    if @checked and index == -1
+    if checked and index == -1
       rows_selected.push rowId
       _hiddenInputsAdd(rowId)
       # Otherwise, if checkbox is not checked and row ID is in list of selected row IDs
-    else if !@checked and index != -1
+    else if !checked and index != -1
       _hiddenInputsRemove(rowId)
       rows_selected.splice index, 1
-    if @checked
-      $row.addClass 'selected'
+    if checked
+      row.addClass 'selected'
     else
-      $row.removeClass 'selected'
+      row.removeClass 'selected'
     # Update state of "Select all" control
     updateDataTableSelectAllCtrl dataTable
     # Prevent click event from propagating to parent
     e.stopPropagation()
     return
 
+  _typeCheckBoxHandler = (e) ->
+    row = $(e.target).closest('tr')
+    checked = $(e.target).is(':checked')
+    data = dataTable.row(row).data()
+    # Get row ID
+    rowId = data[0]
+    # Determine whether row ID is in the list of selected row IDs
+    index = $.inArray(rowId, rows_post)
+    # If checkbox is checked and row ID is not in list of selected row IDs
+    if checked and index == -1
+      rows_post.push rowId
+      _hiddenInputsAddType(rowId)
+      # Otherwise, if checkbox is not checked and row ID is in list of selected row IDs
+    else if !checked and index != -1
+      _hiddenInputsRemoveType(rowId)
+      rows_post.splice index, 1
+    e.stopPropagation()  
+
   _rowClickHandler = (e)->
-    $(this).parent().find('input[type="checkbox"]').trigger('click')
+    $(this).parent().find('input.select[type="checkbox"]').trigger('click')
 
   _selectAllClickHandler = (e)->
+    e.target
     if @checked
-      $("#{table} tbody input[type=\"checkbox\"]:not(:checked)").trigger 'click'
+      $("#{table} tbody input.select[type=\"checkbox\"]:not(:checked)").trigger 'click'
     else
-      $("#{table} tbody input[type=\"checkbox\"]:checked").trigger 'click'
+      $("#{table} tbody input.select[type=\"checkbox\"]:checked").trigger 'click'
     # Prevent click event from propagating to parent
     e.stopPropagation()
 
@@ -83,6 +110,16 @@ class window.Widgets.MassMailings.DataTable extends window.Widgets.Base
     if !($("#mass_mailing_mass_mailing_nodes_attributes_#{id}_node_id").length > 0)
       $('.form-group.required.mass_mailing_nodes_node_id').append(_new_lement(id, 'node_id', id))
     return
+
+  _hiddenInputsAddType = (id) ->
+    if !($("#mass_mailing_mass_mailing_nodes_attributes_#{id}_type").length > 0)
+      $('.form-group.required.mass_mailing_nodes_node_id').append(_new_lement(id, 'type', 'post'))
+    else
+      $("#mass_mailing_mass_mailing_nodes_attributes_#{id}_type").val('post')
+    return
+
+  _hiddenInputsRemoveType = (id) ->
+    $("#mass_mailing_mass_mailing_nodes_attributes_#{id}_type").val('')
 
   _hiddenInputsRemove = (id) ->
     if ($("#mass_mailing_mass_mailing_nodes_attributes_#{id}__destroy").length > 0)
@@ -114,6 +151,14 @@ class window.Widgets.MassMailings.DataTable extends window.Widgets.Base
       columnDefs:
         [{ "targets": 3, "orderable": false },
         {
+         'targets': 5,
+         'searchable': false,
+         'orderable': false,
+         'className': 'dt-body-center',
+        #  'render': ((data, type, full, meta) ->
+        #     '<input type="checkbox">')
+       },
+        {
          'targets': 4,
          'searchable': false,
          'orderable': false,
@@ -141,7 +186,7 @@ class window.Widgets.MassMailings.DataTable extends window.Widgets.Base
       dataTable = $(table).DataTable(_options());
       $("#{table} tbody").on 'click', 'input[type="checkbox"]', _checkBoxClickHandler
       $(table).on 'click', 'tbody td, thead th:first-child', _rowClickHandler
-      $("#{table} thead input[name=\"select_all\"]").click(_selectAllClickHandler)
+      $("#{table} thead input.select[name=\"select_all\"]").click(_selectAllClickHandler)
       dataTable.on('draw', _tableDrawEventHandler)
       _initializeCheckboxes()
 

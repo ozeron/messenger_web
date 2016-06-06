@@ -16,16 +16,16 @@ class VkMailer
     attachments = attachment_string(@message)
     hash = {
       owner_id: node_id,
-      text: @message.content,
+      message: @message.content,
       attachments: attachments
     }
-    if post?(node)
+    if post?(mass_mailing_node)
+      vk_client.wall.post(hash)
+    else
       posts_id.each do |post_id|
         vk_client.wall.addComment(hash.merge({post_id: post_id}))
         sleep(10)
       end
-    else
-      vk_client.wall.post(hash)
     end
     MailerResponce.new
   end
