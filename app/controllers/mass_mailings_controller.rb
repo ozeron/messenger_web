@@ -42,6 +42,7 @@ class MassMailingsController < ApplicationController
     attributes = board.mass_mailing.attributes
     attributes["mass_mailing_nodes_attributes"] = board.mass_mailing.mass_mailing_nodes.map { |mmn| { "node_id" => mmn.node_id, 'type' => mmn.type } }
     params[:mass_mailing] = attributes
+    board.mass_mailing.id = nil
     render :new
   end
 

@@ -1,4 +1,4 @@
-<%= simple_form_for(b.mass_mailing) do |f| %>
+<%= simple_form_for(b.mass_mailing, url: mass_mailings_url, method: :post) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
@@ -44,7 +44,7 @@
 
     <tbody>
       <% b.nodes.map do |node| %>
-        <tr>
+        <tr id='node<%= node.id %>'>
           <td><%= node.id %></td>
           <td><%= link_to(node.name, node) %></td>
           <td><%= truncate(ERB::Util.h(node.description_human), length: 300) %></td>
