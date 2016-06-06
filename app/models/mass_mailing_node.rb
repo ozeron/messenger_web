@@ -11,4 +11,8 @@ class MassMailingNode < ActiveRecord::Base
   delegate :message, to: :mass_mailing
 
   scope :include_nested, -> { includes(:node, mass_mailing: :message) }
+
+  def post?
+    type == 'post'
+  end
 end

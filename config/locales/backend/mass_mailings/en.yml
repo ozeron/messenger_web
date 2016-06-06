@@ -17,7 +17,10 @@ en:
     edit: 'Edit mass mailing'
     index:
       retry: 'Retry'
+      dublicate: 'Dublicate'
       confirmation: 'Are you sure to retry the mailing?'
     show:
+      retry: 'Retry'
+      dublicate: 'Копировать'
       mass_mailing_empty: 'No statistics about objects'
       confirmation: 'Are you sure want to retry the mailing'

@@ -12,13 +12,14 @@
     = t("mass_mailings.status.#{b.mass_mailing.status}_text")
 
 .row.header.header_row#header[data-reload="#{should_reload(b.mass_mailing)}"]
-  .col-md-10
+  .col-md-9
     h1
       = b.mass_mailing.title
       span.badge
         span[class="#{mass_mailing_badge(b.mass_mailing)}"]
-  .col-md-2
-    = link_to t('.retry'), retry_mass_mailing_path(b.mass_mailing), class: 'btn btn-primary', data: { confirm: t('.confirmation') }
+  .col-md-3.pull-right
+    => link_to glyphicon_with_text('repeat', t('.retry')), retry_mass_mailing_path(b.mass_mailing), class: 'btn btn-primary', data: { confirm: t('.confirmation') }
+    = link_to glyphicon_with_text('duplicate', t('.dublicate')), retry_mass_mailing_path(b.mass_mailing), class: 'btn btn-primary', data: { confirm: t('.confirmation') }
 br
 .row
   .col-md-12

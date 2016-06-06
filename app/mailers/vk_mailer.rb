@@ -19,7 +19,7 @@ class VkMailer
       message: @message.content,
       attachments: attachments
     }
-    if post?(mass_mailing_node)
+    if mass_mailing_node.post?
       vk_client.wall.post(hash)
     else
       posts_id.each do |post_id|
@@ -52,13 +52,5 @@ class VkMailer
   def posts_id
     @posts_id ||= vk_client.wall.get(owner_id: node_id)['items']
                       .map { |h| h['id'] }[0..10]
-  end
-
-  def post?(post)
-    if post.type == 'post'
-      return true
-    else
-      return false
-    end
   end
 end

@@ -1,4 +1,4 @@
-<%= simple_form_for(b.mass_mailing) do |f| %>
+<%= simple_form_for(b.mass_mailing, url: mass_mailings_url, method: :post) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
@@ -24,8 +24,8 @@
   </div>
 
   <div class="form-group string required mass_mailing_nodes_node_id">
-    <div class="hidden" id="mass_mailing_nodes_ids" data-ids="<%= b.mass_mailing_nodes_ids %>" >
-    </div>
+    <div class="hidden" id="mass_mailing_nodes_ids" data-ids="<%= b.mass_mailing_nodes_ids %>"></div>
+    <div class="hidden" id="mass_mailing_nodes_types" data-ids="<%= b.mass_mailing_nodes_types %>" ></div>
   </div>
 
   <h3> <%= I18n.t('activerecord.models.node') %> </h3>
@@ -44,7 +44,7 @@
 
     <tbody>
       <% b.nodes.map do |node| %>
-        <tr>
+        <tr id='node<%= node.id %>'>
           <td><%= node.id %></td>
           <td><%= link_to(node.name, node) %></td>
           <td><%= truncate(ERB::Util.h(node.description_human), length: 300) %></td>

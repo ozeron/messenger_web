@@ -9,7 +9,6 @@ class MassMailing::CreateService
   end
 
   def perform!
-    byebug
     @object = MassMailing.new(mass_mailing_params)
     if object.save
       success_callback
