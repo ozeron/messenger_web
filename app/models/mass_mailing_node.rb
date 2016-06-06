@@ -1,5 +1,6 @@
 class MassMailingNode < ActiveRecord::Base
   self.table_name = 'mass_mailings_nodes'
+  self.inheritance_column = 'kind'
 
   belongs_to :node
   belongs_to :mass_mailing, dependent: :destroy

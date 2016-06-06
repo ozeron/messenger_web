@@ -17,6 +17,10 @@ class NodesBoard < BasicBoard
     node.tag_list
   end
 
+  def post
+    vk_node.post
+  end
+
   def nodes
     @nodes ||= Node.all.includes(:tags)
   end

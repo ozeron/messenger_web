@@ -14,15 +14,18 @@ class VkMailer
     @node = mass_mailing_node.node
     return MailerResponce.new unless @node.is_a? Node::Vk
     attachments = attachment_string(@message)
-    posts_id.each do |post_id|
-      hash = {
-        post_id: post_id,
-        owner_id: node_id,
-        text: @message.content,
-        attachments: attachments
-      }
-      vk_client.wall.addComment(hash)
-      sleep(10)
+    hash = {
+      owner_id: node_id,
+      message: @message.content,
+      attachments: attachments
+    }
+    if post?(mass_mailing_node)
+      vk_client.wall.post(hash)
+    else
+      posts_id.each do |post_id|
+        vk_client.wall.addComment(hash.merge({post_id: post_id}))
+        sleep(10)
+      end
     end
     MailerResponce.new
   end
@@ -48,6 +51,14 @@ class VkMailer
 
   def posts_id
     @posts_id ||= vk_client.wall.get(owner_id: node_id)['items']
-                  .map { |h| h['id'] }[0..10]
+                      .map { |h| h['id'] }[0..10]
+  end
+
+  def post?(post)
+    if post.type == 'post'
+      return true
+    else
+      return false
+    end
   end
 end

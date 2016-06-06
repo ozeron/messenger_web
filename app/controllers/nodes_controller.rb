@@ -78,6 +78,6 @@ class NodesController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list through.
   def node_params
     params.require(type_name.parameterize('_').to_sym)
-          .permit(:name, :description, :email, :vk_id, :tag_list)
+          .permit(:name, :description, :email, :vk_id, :tag_list, :post)
   end
 end
