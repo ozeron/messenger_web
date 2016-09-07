@@ -7,6 +7,22 @@
   </div>
 
   <div class="form-inputs">
+    <%= f.input :span, collection: [0, 5, 10, 20, 50, 100], include_blank: false %>
+  </div>
+
+  <div class="form-inputs">
+    <%= f.input :comment_count, collection: [0, 5, 10, 20, 50, 100], include_blank: false %>
+  </div>
+
+  <div class="form-inputs">
+    <%= f.input :comment_strategy,
+                collection: ['default', 'odd', 'even', 'random'],
+                value_method: ->(u) { u },
+                label_method: ->(u) { t(".#{u}") },
+                include_blank: false %>
+  </div>
+
+  <div class="form-inputs">
     <%= f.input :sender_id,
         collection: Account.all,
         label_method: ->(u) { "#{t('social.vk')} #{u.vk_name} | #{u.email_name}" },

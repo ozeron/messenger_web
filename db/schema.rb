@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160907222638) do
+ActiveRecord::Schema.define(version: 20160907231944) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,7 +51,9 @@ ActiveRecord::Schema.define(version: 20160907222638) do
     t.string   "status",                 default: "pending"
     t.integer  "processed_node_counter", default: 0
     t.integer  "sender_id"
-    t.integer  "account_id"
+    t.integer  "span",                   default: 0
+    t.integer  "comment_count",          default: 20
+    t.string   "comment_strategy",       default: "default"
   end
 
   create_table "mass_mailings_nodes", force: :cascade do |t|

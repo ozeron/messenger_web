@@ -16,3 +16,4 @@ config/database.yml
 /tmp
 public/assets/*
 .idea/*
+.byebug_history

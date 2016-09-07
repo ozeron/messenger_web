@@ -8,7 +8,12 @@ uk:
         title: Заголовок
         message_title: Назва повідомлення
         message: Повідомлення
+        span: Пропустити записів в групі
+        comment_count: Коментувати записів в групі
+        comment_strategy: Стратегія коментування
         message_id: Виберіть повідомлення
+        sender: Відправник
+        sender_id: Відправник
         nodes: Об’єкти для розсилки
         started: Почалася
         finished: Завершилась
@@ -39,6 +44,10 @@ uk:
         message: 'Повідомлення видалене'
     form:
       submit: Почати розсилку
+      default: Всі
+      odd: Парні
+      even: Не парні
+      random:  Випадково
     status:
       success: Успішно
       success_text: Відправлення пройшло успішно!
