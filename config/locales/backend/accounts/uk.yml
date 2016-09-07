@@ -1,0 +1,30 @@
+uk:
+  activerecord:
+    models:
+      accounts: Обліковий запис
+    attributes:
+      account:
+        id: ID
+        vk_name: Ім’я Вконтакті
+        message_title: Название сообщения
+        nodes: Объекты для рассылки
+        started: Начало
+        finished: Конец
+        sender: Отправитель
+  accounts:
+    plural: Облікові записи
+    index:
+      id: ID
+      vk_name: Ім’я Вконтакті
+      email: Email
+      edit: Редагувати
+      destroy: Видалити
+      new: Додати обліковий запис
+      list: Список облікових записів
+    show:
+      show: Обліковий запис
+      edit_link: Редагувати
+    edit:
+      heading: Редагувати
+    new:
+      heading: Створити

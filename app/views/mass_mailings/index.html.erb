@@ -29,8 +29,13 @@
           <tr class="<%=mass_mailing_status(mass_mailing)%>">
             <td><%= mass_mailing.id %></td>
             <td><%= link_to mass_mailing.title, mass_mailing %></td>
-            <% if mass_mailing.message %>
-              <td><%= link_to mass_mailing.message.title, mass_mailing.message %></td>
+            <% if mass_mailing.messages.present? %>
+              <td>
+                <% mass_mailing.messages.each do |message| %>
+                  <%= link_to message.title, message %>
+                  <br>
+                <% end %>
+              </td>
             <% else %>
               <td><%= t('.missing.message') %></td>
             <% end %>

@@ -11,10 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160407145229) do
+ActiveRecord::Schema.define(version: 20160907222638) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "accounts", force: :cascade do |t|
+    t.json     "connection_parameters", default: {}
+    t.string   "type"
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+  end
 
   create_table "groups", force: :cascade do |t|
     t.string   "name",                     null: false
@@ -23,6 +30,16 @@ ActiveRecord::Schema.define(version: 20160407145229) do
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
   end
+
+  create_table "mass_mailing_messages", force: :cascade do |t|
+    t.integer  "mass_mailing_id"
+    t.integer  "message_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "mass_mailing_messages", ["mass_mailing_id"], name: "index_mass_mailing_messages_on_mass_mailing_id", using: :btree
+  add_index "mass_mailing_messages", ["message_id"], name: "index_mass_mailing_messages_on_message_id", using: :btree
 
   create_table "mass_mailings", force: :cascade do |t|
     t.string   "title"
@@ -34,6 +51,7 @@ ActiveRecord::Schema.define(version: 20160407145229) do
     t.string   "status",                 default: "pending"
     t.integer  "processed_node_counter", default: 0
     t.integer  "sender_id"
+    t.integer  "account_id"
   end
 
   create_table "mass_mailings_nodes", force: :cascade do |t|
@@ -52,12 +70,12 @@ ActiveRecord::Schema.define(version: 20160407145229) do
     t.text     "content"
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
-    t.string   "doc1_remote",       default: ""
     t.string   "pic1_file_name"
     t.string   "pic1_content_type"
     t.integer  "pic1_file_size"
     t.datetime "pic1_updated_at"
     t.string   "pic1_remote",       default: ""
+    t.string   "doc1_remote",       default: ""
     t.string   "doc1_file_name"
     t.string   "doc1_content_type"
     t.integer  "doc1_file_size"

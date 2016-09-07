@@ -2,7 +2,7 @@ class Message < ActiveRecord::Base
   #attr_reader :pic1_remote
   #attr_reader :pic1_file_name
   has_many :taggings, as: :taggable
-  belongs_to :mass_mailing, dependent: :destroy
+  has_many :mass_mailing, through: :mass_mailing_nodes
   acts_as_taggable
   has_attached_file :pic1, path: ":rails_root/public/images/attachments/:filename"
   has_attached_file :doc1, path: ":rails_root/public/docs/attachments/:filename"

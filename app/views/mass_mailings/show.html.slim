@@ -44,10 +44,8 @@ br
     p
       strong = MassMailing.human_attribute_name(:message)
       |:
-      - if b.mass_mailing.message
-        =< link_to b.mass_mailing.message.title, message_path(b.mass_mailing.message)
-      - else
-        = t('.missing.message')
+      - b.mass_mailing.messages.each do |message|
+        =< link_to message.title, message_path(message)
 
 br
 .row

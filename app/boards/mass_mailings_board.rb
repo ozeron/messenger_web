@@ -2,7 +2,7 @@ class MassMailingsBoard < BasicBoard
   attr_accessor :mass_mailing
 
   def mass_mailings
-    @mass_mailings ||= MassMailing.includes(:nodes, :message, mass_mailing_nodes: :node)
+    @mass_mailings ||= MassMailing.includes(:nodes, :messages, mass_mailing_nodes: :node)
                        .all.order(id: :desc)
   end
 

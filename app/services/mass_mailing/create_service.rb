@@ -10,6 +10,7 @@ class MassMailing::CreateService
 
   def perform!
     @object = MassMailing.new(mass_mailing_params)
+    message_ids.each { |i| object.mass_mailing_messages << MassMailingMessage.new(message_id: i) }
     if object.save
       success_callback
     else
@@ -46,8 +47,17 @@ class MassMailing::CreateService
   def error_callback
   end
 
+  def message_ids
+    params.require("mass_mailing")['message_id'].reject(&:empty?)
+  end
+
   def mass_mailing_params
-    params.require(:mass_mailing).permit(:title, :started, :finished, :message_id, :sender_id,
-                                          { mass_mailing_nodes_attributes: [:id, :node_id, :_destroy, :type]})
+    params.require(:mass_mailing)
+          .permit(:title,
+                  :started,
+                  :finished,
+                  :sender_id,
+                  message_id: [],
+                  mass_mailing_nodes_attributes: [:id, :node_id, :_destroy, :type])
   end
 end

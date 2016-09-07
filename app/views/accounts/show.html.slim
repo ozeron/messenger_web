@@ -1,0 +1,64 @@
+.row.header.header_row
+  .col-md-10
+    h1
+      = "#{t('.show')} #{b.account.id}"
+  .col-md-2
+    .header_toolbar.pull-right
+        = link_to glyphicon_with_text('pencil', t('.edit_link')), edit_account_path(b.account), class: 'btn btn-primary pull-right'
+
+br
+.row
+  .col-md-12
+    table.table
+      tr
+        td[colspan=2]
+          strong VKontakte
+      tr
+        td = Account.human_attribute_name('vk_login')
+        td
+          = b.account.vk.login
+      tr
+        td = Account.human_attribute_name('vk_password')
+        td
+          = b.account.vk.password ? '*'*10 : 'No password'
+      tr
+        td = Account.human_attribute_name('vk_app_id')
+        td
+          = b.account.vk_app_id_full
+      tr
+        td[colspan=2]
+          strong Email
+      tr
+        td = Account.human_attribute_name('address')
+        td
+          = b.account.email_config.address
+      tr
+        td = Account.human_attribute_name('port')
+        td
+          = b.account.email_config.port
+      tr
+        td = Account.human_attribute_name('ssl')
+        td
+          = b.account.email_config.ssl
+      tr
+        td = Account.human_attribute_name('tls')
+        td
+          = b.account.email_config.tls
+      tr
+        td = Account.human_attribute_name('enable_starttls_auto')
+        td
+          = b.account.email_config.enable_starttls_auto
+      tr
+        td = Account.human_attribute_name('domain')
+        td
+          = b.account.email_config.domain
+      tr
+        td = Account.human_attribute_name('user_name')
+        td
+          = b.account.email_config.user_name
+      tr
+        td = Account.human_attribute_name('password')
+        td
+          = b.account.email_config.password ? '*'*10 : 'No password'
+
+    = link_to t('.destroy'), account_path(b.account), method: :delete, class: 'btn btn-danger'

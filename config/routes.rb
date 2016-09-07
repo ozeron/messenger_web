@@ -19,6 +19,7 @@ Rails.application.routes.draw do
 
   resources :groups
   resources 'nodes'
+  resources 'accounts'
   resources 'messages'
   resources 'vk_groups'
   resources 'groups'

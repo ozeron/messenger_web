@@ -8,7 +8,7 @@
 
   <div class="form-inputs">
     <%= f.input :sender_id,
-        collection: User.all,
+        collection: Account.all,
         label_method: ->(u) { "#{t('social.vk')} #{u.vk_name} | #{u.email_name}" },
         value_method: ->(u) { u.id } %>
     <!-- <%= f.input :started %> -->
@@ -19,7 +19,8 @@
                 collection: Message.all,
                 label_method: ->(m) { m.title },
                 value_method: ->(m) { m.id },
-                required: true %>
+                required: true,
+                input_html: { multiple: true } %>
 
   </div>
 

@@ -1,0 +1,16 @@
+en:
+  accounts:
+    plural: Accounts
+    index:
+      id: ID
+      name: Name
+      node_count: Count of groups
+      edit: Edit
+      destroy: Delate
+      new: Create new group
+      list: List of group objects
+    show:
+      show: Account  
+    add_nodes_modal:
+      modal:
+        title: Add object to group

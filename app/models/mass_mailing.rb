@@ -1,9 +1,11 @@
 class MassMailing < ActiveRecord::Base
   include Errorable
-  belongs_to :message
   has_many :mass_mailing_nodes, dependent: :destroy
   has_many :nodes, through: :mass_mailing_nodes
-  belongs_to :sender, class_name: "User"
+  has_many :mass_mailing_messages, dependent: :destroy
+  has_many :messages, through: :mass_mailing_messages
+  belongs_to :sender, class_name: "Account"
+
 
   before_create { self.started = Time.now }
   enum status: {
@@ -17,13 +19,19 @@ class MassMailing < ActiveRecord::Base
   #validate :at_least_one_mailing_node, :message_present?
 
   accepts_nested_attributes_for :mass_mailing_nodes
+  accepts_nested_attributes_for :mass_mailing_messages
 
   validates :title, length: { minimum: 3 }
-  validates :message_id, presence: true
+#  validates :message_id, presence: true
   validates :mass_mailing_nodes, length: { minimum: 1 }
+  validates :mass_mailing_messages, length: { minimum: 1 }
 
   def message_present?
     message.present?
+  end
+
+  def message
+    messages.sample
   end
 
   def at_least_one_mailing_node

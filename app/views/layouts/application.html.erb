@@ -42,13 +42,15 @@
         <div class="row">
           <div class="col-sm-3">
             <a class="navbar-brand logo" href="/">
-              <%= image_tag('sign.png') %>
+              <!-- <%= image_tag('sign.png') %> -->
             </a>
           </div>
           <div class="col-sm-6 center">
-            <h2>Міністерство оборони України</h2>
-            <h3>Управління інформаційних технологій</h3>
-            <h4>Проект "Месседж"</h4>
+            <!--
+              <h2>Міністерство оборони України</h2>
+              <h3>Управління інформаційних технологій</h3>
+              <h4>Проект "Месседж"</h4>
+            -->
           </div>
         </div>
 
@@ -69,8 +71,9 @@
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
             <li><%= nav_link t('nodes.plural'), nodes_path  %></li>
-            <li><%= nav_link t('groups.plural'), groups_path  %></li> 
+            <li><%= nav_link t('groups.plural'), groups_path  %></li>
             <li><%= nav_link t('nodes.messages'), messages_path  %></li>
+            <li><%= nav_link t('accounts.plural'), accounts_path  %></li>
             <li><%= nav_link t('nodes.massmailings'), mass_mailings_path  %></li>
             <li><%= nav_link t('statistics.index.header'), statistics_path %></li>
           </ul>

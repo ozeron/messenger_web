@@ -1,0 +1,25 @@
+<%= simple_form_for(b.account) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :vk_login %>
+    <%= f.input :vk_password, type: :password %>
+    <%= f.input :vk_app_id, input_html: { value: '4840426'} %>
+  </div>
+  <hr>
+  <div class="form-inputs">
+    <%= f.input :address, hint: t('.address') %>
+    <%= f.input :port, hint: t('.port'), input_html: { value: '587'} %>
+    <%= f.input :ssl, hint: t('.ssl'), as: 'boolean' %>
+    <%= f.input :tls, hint: t('.tls'), as: 'boolean' %>
+    <%= f.input :enable_starttls_auto, as: 'boolean', hint: t('.enable_starttls_auto') %>
+    <%= f.input :authentication, collection: User::AUTHENTICATIONS, default: 'plain', hint: t('.authentication') %>
+    <%= f.input :domain, hint: t('.domain') %>
+    <%= f.input :email_name, hint: t('.email_name') %>
+    <%= f.input :email_password, hint: t('.email_password') %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, t('update') %>
+  </div>
+<% end %>

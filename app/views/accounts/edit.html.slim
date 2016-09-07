@@ -1,0 +1,9 @@
+h2
+  => t('.heading')
+  = b.account.id
+
+= render 'form'
+
+= link_to t('show'), account_path(b.account)
+br
+= link_to t('back'), accounts_path
