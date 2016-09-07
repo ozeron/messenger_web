@@ -24,7 +24,7 @@ class VkMailer
     else
       posts_id.each do |post_id|
         vk_client.wall.addComment(hash.merge({post_id: post_id}))
-        sleep(10)
+        sleep(random(20))
       end
     end
     MailerResponce.new
