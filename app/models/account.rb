@@ -1,6 +1,14 @@
 class Account < ActiveRecord::Base
   has_many :mass_mailings
 
+  validates :vk_login, presence: true, if: :vk_config_present?
+  validates :vk_password, presence: true, if: :vk_config_present?
+
+  validates :email_name, presence: true, if: :email_config_present?
+  validates :email_password, presence: true, if: :email_config_present?
+  validates :domain, presence: true, if: :email_config_present?
+  validates :address, presence: true, if: :email_config_present?
+
   after_initialize do
     if new_record?
       self.connection_parameters ||= {}
@@ -12,7 +20,7 @@ class Account < ActiveRecord::Base
   end
 
   after_update do
-    if connection_parameters_changed?
+    if connection_parameters_changed? && vk_config_present?
       connection_parameters['vk']['access_token'] = ''
       set_vk_name
     end
@@ -35,6 +43,7 @@ class Account < ActiveRecord::Base
   end
 
   def vk_name
+    return 'VK not connected' unless vk_config_present?
     return vk['name'] if vk.key?('name')
     name = set_vk_name
     save
@@ -106,6 +115,10 @@ class Account < ActiveRecord::Base
     email_parameters['password']
   end
 
+  def email_full_name
+    email_parameters['user_name'] || 'Email not connected'
+  end
+
   def email_name
     email_parameters['user_name']
   end
@@ -117,6 +130,17 @@ class Account < ActiveRecord::Base
 
   def email_name=(val)
     connection_parameters['email'] ||= {}
-    connection_parameters['email']['user_name'] = val
+    connection_parameters['email']['user_name'] = val if val != 'Email not connected'
+  end
+
+  private
+
+  def vk_config_present?
+    vk_login.present? || vk_login.present?
+  end
+
+  def email_config_present?
+    (email_name.present? && email_name != 'Email not connected') ||
+      email_password.present?
   end
 end

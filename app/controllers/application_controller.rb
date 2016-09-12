@@ -5,6 +5,12 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   around_filter :set_user_time_zone_and_language
 
+  before_filter do
+   resource = controller_name.singularize.to_sym
+   method = "#{resource}_params"
+   params[resource] &&= send(method) if respond_to?(method, true)
+ end
+
   def board
     @board ||= BasicBoard.new(self)
   end

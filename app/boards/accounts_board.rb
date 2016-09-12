@@ -1,4 +1,6 @@
 class AccountsBoard < BasicBoard
+  attr_writer :account
+
   def accounts
     @accounts = Account.all
   end
