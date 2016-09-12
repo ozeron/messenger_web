@@ -47,3 +47,6 @@ head ->
       window.applicationView.cleanup()
       pageLoad()
       true
+    $(document).on "turbolinks:load", ->
+      window.applicationView.cleanup()
+      pageLoad()
