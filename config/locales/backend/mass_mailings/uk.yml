@@ -45,8 +45,8 @@ uk:
     form:
       submit: Почати розсилку
       default: Всі
-      odd: Парні
-      even: Не парні
+      odd: Не парні
+      even: Парні
       random:  Випадково
     status:
       success: Успішно

@@ -1,17 +1,19 @@
 class VkMailer
-  attr_reader :vk_client, :node, :message_to_send
+  attr_reader :vk_client, :node, :message_to_send, :mass_mailing
 
   def self.send_to_node(*args)
     new.send_to_node(*args)
   end
 
   def send_to_node(mass_mailing_node, user)
-    @vk_client = user.vk_app
+    @message = mass_mailing_node.message
+    @node = mass_mailing_node.node
+    @mass_mailing = mass_mailing_node.mass_mailing
+    @vk_client = @mass_mailing.sender.vk_app
     mass_mailing_node.status = 'in_progress'
     mass_mailing_node.save
 
-    @message = mass_mailing_node.message
-    @node = mass_mailing_node.node
+
     return MailerResponce.new unless @node.is_a? Node::Vk
     attachments = attachment_string(@message)
     hash = {
@@ -22,9 +24,9 @@ class VkMailer
     if mass_mailing_node.post?
       vk_client.wall.post(hash)
     else
-      posts_id.each do |post_id|
+      filtered_posts_id.each do |post_id|
         vk_client.wall.addComment(hash.merge({post_id: post_id}))
-        sleep(random(20))
+        sleep(rand(20))
       end
     end
     MailerResponce.new
@@ -49,8 +51,13 @@ class VkMailer
     i < 0 ? i : -1 * i
   end
 
+  def filtered_posts_id
+    posts_id.select.with_index(&mass_mailing.comment_strategy_proc)
+  end
+
   def posts_id
-    @posts_id ||= vk_client.wall.get(owner_id: node_id)['items']
-                      .map { |h| h['id'] }[0..10]
+    @posts_id ||= vk_client.wall
+                      .get(owner_id: node_id, offset: mass_mailing.span, count: mass_mailing.comment_count )['items']
+                      .map { |h| h['id'] }
   end
 end

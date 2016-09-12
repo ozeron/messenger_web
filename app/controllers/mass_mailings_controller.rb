@@ -57,6 +57,6 @@ class MassMailingsController < ApplicationController
   private
 
   def mass_mailing_params
-    params.require(:mass_mailing).permit(:title, :started, :message_id, mass_mailing_nodes_attributes: [:node_id, :_destroy])
+    params.require(:mass_mailing).permit(:title, :started,  :sender_id, message_id: [],mass_mailing_nodes_attributes: [:node_id, :_destroy])
   end
 end

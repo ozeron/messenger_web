@@ -81,4 +81,13 @@ class MassMailing < ActiveRecord::Base
       fail "Undetermined MassMailing status #{children_statuses}"
     end
   end
+
+  def comment_strategy_proc
+    {
+      'default' => proc { |_id, _i| true },
+      'odd' => proc { |_id, i| i.odd? },
+      'even' => proc { |_id, i| i.even? },
+      'random' => proc { rand(2) == 1}
+    }
+  end
 end
