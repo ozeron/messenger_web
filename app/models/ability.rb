@@ -12,7 +12,7 @@ class Ability
       cannot [:create, :update, :destroy], User
     else user.user?
       can :read, :all
-      can :create, :retry, MassMailing
+      can :manage, MassMailing
     end
     #
     # The first argument to `can` is the action you are giving the user
