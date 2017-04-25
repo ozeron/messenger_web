@@ -35,7 +35,7 @@ window.Components.Search.VkGroup = React.createClass({
             <p>{this.props.description}</p>
           </div>
           <div className="col-md-2">
-            <a link="#" className="group-select pull-right btn btn-primary">Select</a>
+            <a href="#" className="group-select pull-right btn btn-primary">Select</a>
           </div>
         </div>
       </li>

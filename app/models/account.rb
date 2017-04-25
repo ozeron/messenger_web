@@ -21,7 +21,7 @@ class Account < ActiveRecord::Base
 
   after_update do
     if connection_parameters_changed? && vk_config_present?
-      connection_parameters['vk']['access_token'] = ''
+      #connection_parameters['vk']['access_token'] = ''
       set_vk_name
     end
   end

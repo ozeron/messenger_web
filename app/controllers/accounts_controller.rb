@@ -61,6 +61,6 @@ class AccountsController < ApplicationController
   private
 
   def account_params
-    params.require(:account).permit(:vk_login, :vk_password, :vk_app_id, :port, :domain, :address, :enable_starttls_auto, :ssl, :tls, :authentication, :email_name, :email_password)
+    params.require(:account).permit(:vk_access_token, :vk_login, :vk_password, :vk_app_id, :port, :domain, :address, :enable_starttls_auto, :ssl, :tls, :authentication, :email_name, :email_password)
   end
 end

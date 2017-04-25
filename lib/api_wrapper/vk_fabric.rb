@@ -60,10 +60,10 @@ module ApiWrapper
 
     def check_connection
       return if api.users.get.present?
-      api.client_auth(login: login, password: password)
+#      api.client_auth(login: login, password: password)
     rescue ::VK::APIError => e
       ::Rails.logger.debug("ApiError: #{e}")
-      api.client_auth(login: login, password: password)
+#      api.client_auth(login: login, password: password)
     end
   end
 end
