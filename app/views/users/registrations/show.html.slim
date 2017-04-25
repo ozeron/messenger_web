@@ -1,73 +1,8 @@
 .row.header.header_row
-  .col-md-11
+  .col-md-12
     h1
       = t('devise.registrations.show.cabinet')
-  .col-md-1
-    .header_toolbar.pull-right
-        = link_to glyphicon_with_text('pencil', t('devise.registrations.edit.link')), cabinet_edit_path, class: 'btn btn-primary pull-right'
-
-br
 .row
   .col-md-12
-    table.table
-      tr
-        td Email
-        td
-          = current_user.email
-      tr
-        td
-          = User.human_attribute_name('language')
-        td
-          = current_user.language_human
-      tr
-        td[colspan=2]
-          strong VKontakte
-      tr
-        td = User.human_attribute_name('vk_login')
-        td
-          = current_user.vk.login
-      tr
-        td = User.human_attribute_name('vk_password')
-        td
-          = current_user.vk.password ? '*'*10 : 'No password'
-      tr
-        td = User.human_attribute_name('vk_app_id')
-        td
-          = current_user.vk_app_id
-      tr
-        td[colspan=2]
-          strong Email
-      tr
-        td = User.human_attribute_name('address')
-        td
-          = current_user.email_config.address
-      tr
-        td = User.human_attribute_name('port')
-        td
-          = current_user.email_config.port
-      tr
-        td = User.human_attribute_name('ssl')
-        td
-          = current_user.email_config.ssl
-      tr
-        td = User.human_attribute_name('tls')
-        td
-          = current_user.email_config.tls
-      tr
-        td = User.human_attribute_name('enable_starttls_auto')
-        td
-          = current_user.email_config.enable_starttls_auto
-      tr
-        td = User.human_attribute_name('domain')
-        td
-          = current_user.email_config.domain
-      tr
-        td = User.human_attribute_name('user_name')
-        td
-          = current_user.email_config.user_name
-      tr
-        td = User.human_attribute_name('password')
-        td
-          = current_user.email_config.password ? '*'*10 : 'No password'
-
+    => link_to glyphicon_with_text('pencil', t('devise.registrations.edit.link')), cabinet_edit_path, class: 'btn btn-primary'
     = link_to t('log_out'), destroy_user_session_path, method: :delete, class: 'btn btn-danger'

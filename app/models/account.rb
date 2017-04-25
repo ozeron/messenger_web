@@ -1,8 +1,8 @@
 class Account < ActiveRecord::Base
   has_many :mass_mailings
 
-  validates :vk_login, presence: true, if: :vk_config_present?
-  validates :vk_password, presence: true, if: :vk_config_present?
+  validates :vk_app_id, presence: true, if: :vk_config_present?
+  validates :vk_access_token, presence: true, if: :vk_config_present?
 
   validates :email_name, presence: true, if: :email_config_present?
   validates :email_password, presence: true, if: :email_config_present?
@@ -26,16 +26,12 @@ class Account < ActiveRecord::Base
     end
   end
 
-  def vk_login
-    vk.login
-  end
-
-  def vk_password
-    vk.password
-  end
-
   def vk_app_id_full
     vk.app_id || VK.config.app_id
+  end
+
+  def vk_access_token
+    vk.access_token
   end
 
   def vk_app_id
@@ -60,19 +56,14 @@ class Account < ActiveRecord::Base
     self['connection_parameters'] ||= {}
   end
 
-  def vk_password=(value)
-    connection_parameters['vk'] ||= {}
-    connection_parameters['vk']['password'] = value
-  end
-
   def vk_app_id=(value)
     connection_parameters['vk'] ||= {}
     connection_parameters['vk']['app_id'] = value
   end
 
-  def vk_login=(value)
+  def vk_access_token=(value)
     connection_parameters['vk'] ||= {}
-    connection_parameters['vk']['login'] = value
+    connection_parameters['vk']['access_token'] = value
   end
 
   def vk_app
@@ -136,7 +127,7 @@ class Account < ActiveRecord::Base
   private
 
   def vk_config_present?
-    vk_login.present? || vk_login.present?
+    vk_app_id.present? || vk_access_token.present?
   end
 
   def email_config_present?

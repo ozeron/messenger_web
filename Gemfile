@@ -23,8 +23,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 
 gem 'cancancan'
 
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 
@@ -39,7 +37,7 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 #gem 'jquery-datatables-rails', '~> 3.3.0'
 
-gem 'react-rails', '~> 1.4.0'
+gem 'react-rails'
 
 gem 'headjs-rails'
 

@@ -7,7 +7,7 @@ class MassMailingNodeSendJob < ActiveJob::Base
     mass_mailing_node.save
     mass_mailing = mass_mailing_node.mass_mailing
 
-    user = mass_mailing.sender || User.find(user_id)
+    user = mass_mailing.sender || User.find(user_id).account
     mass_mailing_node.node.mailer.send_to_node(mass_mailing_node,
                                                user).deliver_now
     mass_mailing_node.status = 'success'

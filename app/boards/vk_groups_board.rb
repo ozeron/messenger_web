@@ -4,12 +4,12 @@ class VkGroupsBoard < BasicBoard
   end
 
   def groups
-    if params[:query].blank?
-      @groups ||= []
-    else
+    @groups ||= []
+    if !params[:query].blank?
       raw = app.groups.search(q: params[:query], fields: %w(description members_count))
                 .fetch('items')
       ids = raw.map { |h| h['id'] }
+      return if ids.blank?
       request = app.groups.get_by_id(group_ids: ids, fields: ['description', 'can_post'])
       records = request.map do |g|
                     g['members_count'] ||= 'unknown'

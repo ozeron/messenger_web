@@ -1,3 +1,5 @@
+require 'byebug'
+
 module ApiWrapper
   class VkFabric < BasicObject
     attr_reader :api, :login, :password, :app_id, :access_token
@@ -6,6 +8,15 @@ module ApiWrapper
 
     def self.build(params)
       new(params).api
+    end
+
+    def self.auth_url(params = {})
+      redirect_uri = 'localhost:8000'
+      ::VK::Application.new.authorization_url(
+        type: :client,
+        app_id: params['app_id'] || '{app_id}',
+        settings: SETTINGS,
+        redirect_uri: params['redirect_uri'] || redirect_uri)
     end
 
     def initialize(params)

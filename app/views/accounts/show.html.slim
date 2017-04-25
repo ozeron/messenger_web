@@ -14,17 +14,13 @@ br
         td[colspan=2]
           strong VKontakte
       tr
-        td = Account.human_attribute_name('vk_login')
-        td
-          = b.account.vk.login
-      tr
-        td = Account.human_attribute_name('vk_password')
-        td
-          = b.account.vk.password ? '*'*10 : 'No password'
-      tr
         td = Account.human_attribute_name('vk_app_id')
         td
           = b.account.vk_app_id_full
+      tr
+        td = Account.human_attribute_name('vk_access_token')
+        td
+          = truncate(b.account.vk.access_token)
       tr
         td[colspan=2]
           strong Email

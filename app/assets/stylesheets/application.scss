@@ -142,3 +142,9 @@ table tbody tr:hover td {
 .center {
   text-align: center;
 }
+
+@media screen and (min-width: 768px) {
+  .modal-dialog {
+    left: 0px !important;
+  }
+}

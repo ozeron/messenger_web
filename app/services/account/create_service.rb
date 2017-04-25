@@ -34,6 +34,6 @@ class Account::CreateService
 
   def account_params
     params.require(:account)
-          .permit(:vk_login, :vk_password, :vk_app_id, :port, :domain, :address, :enable_starttls_auto, :ssl, :tls, :authentication, :email_name, :email_password)
+          .permit(:vk_app_id, :vk_access_token, :port, :domain, :address, :enable_starttls_auto, :ssl, :tls, :authentication, :email_name, :email_password)
   end
 end

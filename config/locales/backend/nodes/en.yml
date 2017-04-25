@@ -22,6 +22,13 @@ en:
       list: Objects list to mailing
       new: Create new object
     new: New object to mailing
+    vk:
+      find_group: Search group via VK API
+      search_form:
+        placeholder: Enter search query
+        blank: "Enter search query in field above. Example: 'Meaning of Life'"
+      form:
+        submit: Save VK object
     data_table:
       id: ID
       name: Name

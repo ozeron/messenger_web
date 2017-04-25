@@ -16,7 +16,6 @@
 #= require bootstrap-sprockets
 
 #= require bootstrap.js.coffee
-#= require turbolinks
 #= require i18n/translations
 #= require lodash
 #= require react

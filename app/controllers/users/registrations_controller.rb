@@ -21,7 +21,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def update
-    
+
     super
   end
 
@@ -78,7 +78,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
                                  :vk_login, :vk_password,
                                  :address, :domain, :authentication,
                                  :port, :ssl, :tls, :enable_starttls_auto,
-                                 :email_name, :email_password
+                                 :email_name, :email_password, :account_id
                                  )
   end
 end

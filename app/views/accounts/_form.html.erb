@@ -2,9 +2,17 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :vk_login %>
-    <%= f.input :vk_password, type: :password %>
-    <%= f.input :vk_app_id, input_html: { value: '4840426'} %>
+    <div class="form-group">
+      <%= f.input :vk_app_id, input_html: { value: '4840426'} %>
+    </div>
+    <div class="form-group">
+      <a target="_blank" href="<%= ApiWrapper::VkFabric.auth_url %>" >
+        Get Access Token
+      </a>
+    </div>
+    <div class="form-group">
+      <%= f.input :vk_access_token %>
+    </div>
   </div>
   <hr>
   <div class="form-inputs">

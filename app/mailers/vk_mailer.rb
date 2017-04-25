@@ -21,6 +21,7 @@ class VkMailer
       message: @message.content,
       attachments: attachments
     }
+    
     if mass_mailing_node.post?
       vk_client.wall.post(hash)
     else
@@ -52,7 +53,11 @@ class VkMailer
   end
 
   def filtered_posts_id
-    posts_id.select.with_index(&mass_mailing.comment_strategy_proc)
+    posts_id.select.with_index(&comment_strategy_proc)
+  end
+
+  def comment_strategy_proc
+    mass_mailing.comment_strategy_proc[mass_mailing.comment_strategy]
   end
 
   def posts_id

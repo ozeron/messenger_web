@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  belongs_to :account
+
   LANGUAGES = [['English','en'], ['Русский','ru'], ['Українська','uk']]
   AUTHENTICATIONS = [['plain','plain'], ['login','login'], ['cram_md5','cram_md5']]
 
@@ -41,6 +43,10 @@ class User < ActiveRecord::Base
     'moderator' => 'moderator',
     'admin' => 'admin'
   }
+
+  def vk_app
+    account.vk_app
+  end
 
   def language_human
     Hash[User::LANGUAGES].invert[language]
